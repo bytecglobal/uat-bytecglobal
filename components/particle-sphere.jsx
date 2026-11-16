@@ -49,15 +49,15 @@ export default function ParticleSphere({ className, onStageChange, burstKey = 0,
         lastShape = motion.shape;
         settings.current.onStageChange?.(lastShape);
       }
-      const follow = 1 - Math.exp(-dt * .006);
+      const follow = 1 - Math.exp(-dt * .01);
       tiltX += ((moving ? pointerX : 0) - tiltX) * follow;
       tiltY += ((moving ? pointerY : 0) - tiltY) * follow;
       // Reserve room for the full projected cloud, including touch repulsion.
       const radius = Math.min(slotWidth * .345, (slotHeight - 95) * .42, 225, Math.max(30, horizontalRoom - 45) / 2.1, (160 + (slotHeight - 80) * .49 - 45) / 2.1);
       const cx = width * .5 + tiltX * 17;
       const cy = 160 + (slotHeight - 80) * .49 + tiltY * 12;
-      const yaw = Math.sin(rotation) * .18 + tiltX * .35;
-      const pitch = -.2 - tiltY * .32;
+      const yaw = Math.sin(rotation) * .18 + tiltX * .65;
+      const pitch = -.2 - tiltY * .55;
       const cosY = Math.cos(yaw), sinY = Math.sin(yaw);
       const cosX = Math.cos(pitch), sinX = Math.sin(pitch);
       const scatter = motion.scatter;

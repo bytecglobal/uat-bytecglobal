@@ -282,12 +282,16 @@ export function ServicesShowcase() {
 					onBlurCapture={event => { if (!event.currentTarget.contains(event.relatedTarget)) setFocused(false); }}
 				>
 					{SERVICES.map((s, i) => (
-						<article key={s.slug} className={`service-panel ${active === i ? "expanded" : ""} ${i % 2 ? "service-dark" : ""}`}>
+						<article
+							key={s.slug}
+							className={`service-panel ${active === i ? "expanded" : ""} ${i % 2 ? "service-dark" : ""}`}
+							onPointerEnter={event => { if (event.pointerType === "mouse") setActive(i); }}
+						>
 							<button
 								type="button"
 								id={`service-tab-${i}`}
 								className="service-rail"
-								onClick={() => setActive(active === i ? null : i)}
+								onClick={() => setActive(i)}
 								aria-expanded={active === i}
 								aria-controls={`service-content-${i}`}
 							>
@@ -366,7 +370,8 @@ export function FAQ({ items = SHARED_CONTENT.generalFAQs }) {
 	return (
 		<div className="faq-list">
 			{items.map(({ q, a }, i) => (
-				<div className={`faq-entry ${open === i ? "is-open" : ""}`} key={q}>
+				<div className={`faq-entry ${open === i ? "is-open" : ""}`} key={q}
+					onPointerEnter={event => { if (event.pointerType === "mouse") setOpen(i); }}>
 					<h3>
 						<button type="button" aria-expanded={open === i} aria-controls={`${faqId}-${i}`} onClick={() => setOpen(open === i ? null : i)}>
 							<span>{q}</span>
