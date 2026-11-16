@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { getCurrentAdmin, recordAuditLogSync } from "@/lib/auth/session";
-import { getDb, saveDb } from "@/lib/db";
+import { AdminRepository } from "@/lib/repositories/admin.repository";
 import bcrypt from "bcryptjs";
 
 export async function POST(req) {
@@ -21,15 +21,15 @@ export async function POST(req) {
       return NextResponse.json({ success: false, error: "New password must be at least 8 characters long." }, { status: 400 });
     }
 
-    const db = getDb();
-    const user = (db.users || []).find((u) => u.id === admin.id);
-
+    const user = await AdminRepository.findById(admin.id);
     if (!user || !bcrypt.compareSync(currentPassword, user.passwordHash)) {
       return NextResponse.json({ success: false, error: "Incorrect current password." }, { status: 400 });
     }
 
-    const salt = bcrypt.genSaltSync(10);
-    user.passwordHash = bcrypt.hashSync(newPassword, salt);
+    const salt = bcrypt.genSaltSync(12);
+    const passwordHash = bcrypt.hashSync(newPassword, salt);
+
+    await AdminRepository.updateUser(user.id, { passwordHash });
 
     recordAuditLogSync({
       adminId: user.id,
@@ -41,8 +41,6 @@ export async function POST(req) {
       details: "Password changed by authenticated user.",
       result: "success",
     });
-
-    await saveDb(db);
 
     return NextResponse.json({ success: true, message: "Password updated successfully." });
   } catch (err) {

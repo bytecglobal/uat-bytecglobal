@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { BarChart3, TrendingUp, Compass, Globe, Smartphone, Monitor, Eye, MousePointerClick, RefreshCw } from "lucide-react";
+import { BarChart3, TrendingUp, Compass, Globe, Smartphone, Monitor, Eye, MousePointerClick, RefreshCw, Users2 } from "lucide-react";
 import { DailyTrafficChart, DeviceDonut } from "@/components/admin/charts";
 
 export default function AnalyticsPage() {
@@ -91,14 +91,14 @@ export default function AnalyticsPage() {
 
         <div className="rounded-2xl border border-gray-100 bg-white p-5 shadow-xs">
           <div className="flex items-center justify-between text-gray-500">
-            <span className="text-xs font-medium">WhatsApp CTA Clicks</span>
-            <MousePointerClick size={18} className="text-emerald-600" />
+            <span className="text-xs font-medium">Inquiries Received</span>
+            <Users2 size={18} className="text-[#806000]" />
           </div>
           <div className="mt-2 text-3xl font-black text-gray-900 font-display">
-            {kpis.whatsappClicks || 0}
+            {kpis.totalInquiries || 0}
           </div>
           <div className="mt-1 text-xs text-emerald-700 font-medium">
-            Floating action button
+            Contact form submissions
           </div>
         </div>
 

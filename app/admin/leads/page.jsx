@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { KanbanSquare, Plus, ArrowRight, UserCheck, DollarSign, Building2, Phone, Mail, MoreHorizontal, CheckCircle2 } from "lucide-react";
+import { KanbanSquare, Plus, ArrowRight, UserCheck, DollarSign, Building2, Mail, MoreHorizontal, CheckCircle2 } from "lucide-react";
 import { Modal } from "@/components/admin/modal";
 
 const STAGES = [
@@ -21,7 +21,6 @@ export default function LeadsPipelinePage() {
   const [newLeadForm, setNewLeadForm] = useState({
     name: "",
     email: "",
-    phone: "",
     companyName: "",
     service: "Software Development",
     estimatedValue: 20000,
@@ -82,7 +81,6 @@ export default function LeadsPipelinePage() {
         setNewLeadForm({
           name: "",
           email: "",
-          phone: "",
           companyName: "",
           service: "Software Development",
           estimatedValue: 20000,
@@ -203,8 +201,8 @@ export default function LeadsPipelinePage() {
                 <p className="font-semibold text-gray-900">{selectedLead.email}</p>
               </div>
               <div>
-                <span className="text-gray-400 font-mono uppercase text-[10px]">Phone</span>
-                <p className="font-semibold text-gray-900">{selectedLead.phone || "Not set"}</p>
+                <span className="text-gray-400 font-mono uppercase text-[10px]">Service</span>
+                <p className="font-semibold text-gray-900">{selectedLead.service || "General"}</p>
               </div>
               <div>
                 <span className="text-gray-400 font-mono uppercase text-[10px]">Company</span>
@@ -265,12 +263,12 @@ export default function LeadsPipelinePage() {
                 />
               </div>
               <div>
-                <label className="block font-semibold text-gray-700 mb-1">Phone</label>
+                <label className="block font-semibold text-gray-700 mb-1">Service Focus</label>
                 <input
                   type="text"
-                  value={newLeadForm.phone}
-                  onChange={(e) => setNewLeadForm({ ...newLeadForm, phone: e.target.value })}
-                  placeholder="+1 555-0123"
+                  value={newLeadForm.service}
+                  onChange={(e) => setNewLeadForm({ ...newLeadForm, service: e.target.value })}
+                  placeholder="e.g. Cloud & DevOps"
                   className="w-full rounded-xl border border-gray-200 p-2.5 text-xs focus:ring-1 focus:ring-[#f5c518]"
                 />
               </div>

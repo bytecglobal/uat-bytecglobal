@@ -48,7 +48,7 @@ export default function AnalyticsTracker() {
     } catch {}
   }, [pathname]);
 
-  // Global click listener for important website actions (WhatsApp, Calendly, CTA buttons)
+  // Global click listener for important website actions (Calendly, CTA buttons)
   useEffect(() => {
     if (initializedRef.current) return;
     initializedRef.current = true;
@@ -62,9 +62,7 @@ export default function AnalyticsTracker() {
         const text = (target.textContent || "").trim();
 
         let eventName = null;
-        if (href.includes("wa.me") || target.closest(".vx-whatsapp")) {
-          eventName = "whatsapp_click";
-        } else if (href.includes("calendly.com") || text.includes("Book a Meeting")) {
+        if (href.includes("calendly.com") || text.includes("Book a Meeting")) {
           eventName = "meeting_click";
         } else if (text.includes("Let's talk") || text.includes("Start Your Software Project") || text.includes("Start a Project")) {
           eventName = "lets_talk_click";

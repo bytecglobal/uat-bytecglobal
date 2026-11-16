@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { ContactFormSchema } from "@/lib/validation";
 import { checkRateLimit, isDuplicateSubmission } from "@/lib/rate-limiter";
 import { getContactRecipientEmail, getResendApiKey } from "@/lib/env";
-import { getDb, saveDb } from "@/lib/db";
+import { ContactRepository } from "@/lib/repositories/contact.repository";
 import { triggerWorkflow } from "@/lib/automations";
 
 const MAX_BODY_SIZE_BYTES = 32 * 1024; // 32KB max payload
@@ -115,47 +115,37 @@ export async function POST(req) {
       );
     }
 
-    // 7. Save inquiry into real enterprise database
-    const db = getDb();
-    const now = new Date().toISOString();
-    const contactId = `cnt_${Date.now()}_${Math.random().toString(36).substring(2, 7)}`;
+    // 7. Save inquiry into Supabase PostgreSQL
+    const companyName = data.companyName || data.company || "";
+    const subject = data.subject || `Inquiry: ${data.service || "Software & Cloud Services"}`;
 
-    const newContact = {
-      id: contactId,
+    const newContact = await ContactRepository.create({
       name: data.name,
       email: data.email,
-      phone: data.phone || "",
-      companyName: data.company || "",
+      companyName,
       service: data.service || "General Inquiry",
-      subject: `Inquiry: ${data.service || "Software & Cloud Services"}`,
+      subject,
       message: data.message,
       budget: data.budget || "",
       timeline: data.timeline || "",
       sourcePage: parsedJson.sourcePage || "/contact",
-      status: "new",
-      assignedTo: "usr_superadmin",
-      notes: [],
       clientIp,
-      createdAt: now,
-      updatedAt: now,
-    };
-
-    if (!db.contacts) db.contacts = [];
-    db.contacts.unshift(newContact);
-    await saveDb(db);
-
-    // 8. Execute automated workflows
-    await triggerWorkflow("contact_submit", {
-      contactId,
-      name: data.name,
-      email: data.email,
-      phone: data.phone,
-      companyName: data.company,
-      service: data.service,
-      message: data.message,
     });
 
-    // 9. Email sending via Resend API if configured
+    // 8. Execute automated workflows (creates lead, notifies admins, logs email)
+    await triggerWorkflow("contact_submit", {
+      contactId: newContact.id,
+      name: data.name,
+      email: data.email,
+      companyName,
+      service: data.service,
+      subject,
+      message: data.message,
+      budget: data.budget,
+      timeline: data.timeline,
+    });
+
+    // 9. Email notification via Resend API if configured
     const resendApiKey = getResendApiKey();
     const recipientEmail = getContactRecipientEmail();
     const sanitizedSubject = `New Website Inquiry from ${data.name.replace(/[\r\n]/g, "")}`;
@@ -171,10 +161,10 @@ export async function POST(req) {
             <td style="padding: 8px 0; font-weight: bold; color: #646b76;">Email Address:</td>
             <td style="padding: 8px 0;"><a href="mailto:${escapeHtml(data.email)}" style="color: #806000;">${escapeHtml(data.email)}</a></td>
           </tr>
-          ${data.phone ? `
+          ${companyName ? `
           <tr>
-            <td style="padding: 8px 0; font-weight: bold; color: #646b76;">Phone / WhatsApp:</td>
-            <td style="padding: 8px 0;">${escapeHtml(data.phone)}</td>
+            <td style="padding: 8px 0; font-weight: bold; color: #646b76;">Company Name:</td>
+            <td style="padding: 8px 0;">${escapeHtml(companyName)}</td>
           </tr>` : ""}
           ${data.service ? `
           <tr>

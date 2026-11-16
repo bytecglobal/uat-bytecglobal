@@ -8,7 +8,6 @@ export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    phone: "",
     service: "",
     message: "",
     website: "", // Honeypot field
@@ -57,7 +56,6 @@ export default function ContactForm() {
       setFormData({
         name: "",
         email: "",
-        phone: "",
         service: "",
         message: "",
         website: "",
@@ -159,22 +157,6 @@ export default function ContactForm() {
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2">
-        <div>
-          <label htmlFor="contact-phone" className="mb-1 block font-mono text-xs uppercase tracking-[0.08em] text-faint">
-            Phone / WhatsApp
-          </label>
-          <input
-            id="contact-phone"
-            name="phone"
-            type="tel"
-            maxLength={30}
-            value={formData.phone}
-            onChange={handleChange}
-            placeholder="+1 (555) 000-0000"
-            className="w-full rounded-lg border border-border bg-subtle px-3.5 py-2.5 text-sm text-foreground outline-none transition-colors focus:border-accent-ink"
-          />
-        </div>
-
         <div>
           <label htmlFor="contact-service" className="mb-1 block font-mono text-xs uppercase tracking-[0.08em] text-faint">
             Service of Interest

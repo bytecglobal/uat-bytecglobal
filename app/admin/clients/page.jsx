@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Building2, Plus, Search, Edit3, Trash2, FolderKanban, Phone, Mail, CheckCircle2 } from "lucide-react";
+import { Building2, Plus, Search, Edit3, Trash2, FolderKanban, Mail, CheckCircle2 } from "lucide-react";
 import { Modal, ConfirmDialog } from "@/components/admin/modal";
 
 export default function ClientsManagementPage() {
@@ -16,7 +16,6 @@ export default function ClientsManagementPage() {
     name: "",
     contactPerson: "",
     email: "",
-    phone: "",
     industry: "Enterprise Software",
     totalValue: 30000,
     status: "active",
@@ -56,7 +55,6 @@ export default function ClientsManagementPage() {
           name: "",
           contactPerson: "",
           email: "",
-          phone: "",
           industry: "Enterprise Software",
           totalValue: 30000,
           status: "active",
@@ -82,7 +80,6 @@ export default function ClientsManagementPage() {
       name: client.name,
       contactPerson: client.contactPerson || "",
       email: client.email,
-      phone: client.phone || "",
       industry: client.industry || "",
       totalValue: client.totalValue || 0,
       status: client.status || "active",
@@ -163,12 +160,6 @@ export default function ClientsManagementPage() {
                     <Mail size={13} className="text-gray-400" />
                     <a href={`mailto:${c.email}`} className="hover:underline text-gray-800">{c.email}</a>
                   </div>
-                  {c.phone && (
-                    <div className="flex items-center gap-2">
-                      <Phone size={13} className="text-gray-400" />
-                      <span>{c.phone}</span>
-                    </div>
-                  )}
                 </div>
 
                 {/* Linked Projects */}
@@ -259,12 +250,12 @@ export default function ClientsManagementPage() {
                 />
               </div>
               <div>
-                <label className="block font-semibold text-gray-700 mb-1">Phone Number</label>
+                <label className="block font-semibold text-gray-700 mb-1">Industry</label>
                 <input
                   type="text"
-                  value={form.phone}
-                  onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                  placeholder="+1 800-555-0100"
+                  value={form.industry}
+                  onChange={(e) => setForm({ ...form, industry: e.target.value })}
+                  placeholder="e.g. Fintech / E-commerce"
                   className="w-full rounded-xl border border-gray-200 p-2.5 text-xs focus:ring-1 focus:ring-[#f5c518]"
                 />
               </div>

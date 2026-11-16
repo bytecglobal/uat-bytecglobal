@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { withAdminAuth } from "@/lib/auth/guard";
-import { getDb, saveDb } from "@/lib/db";
+import { SettingsRepository } from "@/lib/repositories/settings.repository";
 import { recordAuditLogSync } from "@/lib/auth/session";
 
 const ALLOWED_PLACEHOLDERS = [
@@ -15,135 +15,151 @@ const ALLOWED_PLACEHOLDERS = [
 
 export async function GET(req) {
   return withAdminAuth(req, "templates", async () => {
-    const { searchParams } = new URL(req.url);
-    const category = searchParams.get("category") || "all";
+    try {
+      const { searchParams } = new URL(req.url);
+      const category = searchParams.get("category") || "all";
 
-    const db = getDb();
-    let templates = [...(db.templates || [])];
+      let templates = await SettingsRepository.listEmailTemplates();
+      if (category !== "all") {
+        templates = templates.filter((t) => t.category === category);
+      }
 
-    if (category !== "all") {
-      templates = templates.filter((t) => t.category === category);
+      return NextResponse.json({
+        success: true,
+        templates,
+        allowedPlaceholders: ALLOWED_PLACEHOLDERS,
+      });
+    } catch (err) {
+      return NextResponse.json(
+        { success: false, error: err.message || "Failed to fetch email templates" },
+        { status: 500 }
+      );
     }
-
-    return NextResponse.json({
-      success: true,
-      templates,
-      allowedPlaceholders: ALLOWED_PLACEHOLDERS,
-    });
   });
 }
 
-export async function POST(req, admin) {
-  return withAdminAuth(req, "templates", async () => {
-    const body = await req.json().catch(() => ({}));
-    const { name, category, subject, content } = body;
+export async function POST(req) {
+  return withAdminAuth(req, "templates", async (request, admin) => {
+    try {
+      const body = await request.json().catch(() => ({}));
+      const { name, category, subject, content } = body;
 
-    if (!name || !subject || !content) {
-      return NextResponse.json({ success: false, error: "Name, subject, and content are required" }, { status: 400 });
+      if (!name || !subject || !content) {
+        return NextResponse.json(
+          { success: false, error: "Name, subject, and content are required" },
+          { status: 400 }
+        );
+      }
+
+      // Extract placeholders
+      const matches = (subject + " " + content).match(/\{\{([a-zA-Z0-9_]+)\}\}/g) || [];
+      const usedPlaceholders = [...new Set(matches.map((m) => m.replace(/[{}]/g, "")))];
+
+      const template = await SettingsRepository.createEmailTemplate({
+        name,
+        category: category || "General",
+        subject,
+        content,
+        placeholders: usedPlaceholders,
+      });
+
+      recordAuditLogSync({
+        adminId: admin.id,
+        adminEmail: admin.email,
+        action: "CREATE_TEMPLATE",
+        module: "TEMPLATES",
+        recordId: template.id,
+        ip: request.headers.get("x-forwarded-for") || "127.0.0.1",
+        details: `Created template ${template.name}.`,
+        result: "success",
+      });
+
+      return NextResponse.json({ success: true, template });
+    } catch (err) {
+      return NextResponse.json(
+        { success: false, error: err.message || "Failed to create template" },
+        { status: 500 }
+      );
     }
-
-    const db = getDb();
-    const now = new Date().toISOString();
-
-    // Extract placeholders
-    const matches = (subject + " " + content).match(/\{\{([a-zA-Z0-9_]+)\}\}/g) || [];
-    const usedPlaceholders = [...new Set(matches.map((m) => m.replace(/[{}]/g, "")))];
-
-    const newTemplate = {
-      id: `tpl_${Date.now()}_${Math.random().toString(36).substring(2, 6)}`,
-      name,
-      category: category || "General",
-      subject,
-      content,
-      placeholders: usedPlaceholders,
-      createdAt: now,
-      updatedAt: now,
-    };
-
-    if (!db.templates) db.templates = [];
-    db.templates.unshift(newTemplate);
-
-    recordAuditLogSync({
-      adminId: admin.id,
-      adminEmail: admin.email,
-      action: "CREATE_TEMPLATE",
-      module: "TEMPLATES",
-      recordId: newTemplate.id,
-      ip: req.headers.get("x-forwarded-for") || "127.0.0.1",
-      details: `Created template ${newTemplate.name}.`,
-      result: "success",
-    });
-
-    await saveDb(db);
-    return NextResponse.json({ success: true, template: newTemplate });
   });
 }
 
-export async function PATCH(req, admin) {
-  return withAdminAuth(req, "templates", async () => {
-    const body = await req.json().catch(() => ({}));
-    const { id, name, category, subject, content } = body;
+export async function PATCH(req) {
+  return withAdminAuth(req, "templates", async (request, admin) => {
+    try {
+      const body = await request.json().catch(() => ({}));
+      const { id, name, category, subject, content } = body;
 
-    if (!id) {
-      return NextResponse.json({ success: false, error: "Template ID required" }, { status: 400 });
+      if (!id) {
+        return NextResponse.json({ success: false, error: "Template ID required" }, { status: 400 });
+      }
+
+      const updates = {};
+      if (name !== undefined) updates.name = name;
+      if (category !== undefined) updates.category = category;
+      if (subject !== undefined) updates.subject = subject;
+      if (content !== undefined) updates.content = content;
+
+      if (subject || content) {
+        const combined = `${subject || ""} ${content || ""}`;
+        const matches = combined.match(/\{\{([a-zA-Z0-9_]+)\}\}/g) || [];
+        if (matches.length > 0) {
+          updates.placeholders = [...new Set(matches.map((m) => m.replace(/[{}]/g, "")))];
+        }
+      }
+
+      const template = await SettingsRepository.updateEmailTemplate(id, updates);
+
+      recordAuditLogSync({
+        adminId: admin.id,
+        adminEmail: admin.email,
+        action: "UPDATE_TEMPLATE",
+        module: "TEMPLATES",
+        recordId: id,
+        ip: request.headers.get("x-forwarded-for") || "127.0.0.1",
+        details: `Updated template ${template?.name || id}.`,
+        result: "success",
+      });
+
+      return NextResponse.json({ success: true, template });
+    } catch (err) {
+      return NextResponse.json(
+        { success: false, error: err.message || "Failed to update template" },
+        { status: 500 }
+      );
     }
-
-    const db = getDb();
-    const template = (db.templates || []).find((t) => t.id === id);
-
-    if (!template) {
-      return NextResponse.json({ success: false, error: "Template not found" }, { status: 404 });
-    }
-
-    if (name) template.name = name;
-    if (category) template.category = category;
-    if (subject) template.subject = subject;
-    if (content) template.content = content;
-
-    const matches = ((subject || template.subject) + " " + (content || template.content)).match(/\{\{([a-zA-Z0-9_]+)\}\}/g) || [];
-    template.placeholders = [...new Set(matches.map((m) => m.replace(/[{}]/g, "")))];
-    template.updatedAt = new Date().toISOString();
-
-    recordAuditLogSync({
-      adminId: admin.id,
-      adminEmail: admin.email,
-      action: "UPDATE_TEMPLATE",
-      module: "TEMPLATES",
-      recordId: id,
-      ip: req.headers.get("x-forwarded-for") || "127.0.0.1",
-      details: `Updated template ${template.name}.`,
-      result: "success",
-    });
-
-    await saveDb(db);
-    return NextResponse.json({ success: true, template });
   });
 }
 
-export async function DELETE(req, admin) {
-  return withAdminAuth(req, "templates", async () => {
-    const { searchParams } = new URL(req.url);
-    const id = searchParams.get("id");
+export async function DELETE(req) {
+  return withAdminAuth(req, "templates", async (request, admin) => {
+    try {
+      const { searchParams } = new URL(request.url);
+      const id = searchParams.get("id");
 
-    if (!id) {
-      return NextResponse.json({ success: false, error: "Template ID required" }, { status: 400 });
+      if (!id) {
+        return NextResponse.json({ success: false, error: "Template ID required" }, { status: 400 });
+      }
+
+      await SettingsRepository.deleteEmailTemplate(id);
+
+      recordAuditLogSync({
+        adminId: admin.id,
+        adminEmail: admin.email,
+        action: "DELETE_TEMPLATE",
+        module: "TEMPLATES",
+        recordId: id,
+        ip: request.headers.get("x-forwarded-for") || "127.0.0.1",
+        details: `Deleted template ${id}.`,
+        result: "success",
+      });
+
+      return NextResponse.json({ success: true, message: "Template deleted." });
+    } catch (err) {
+      return NextResponse.json(
+        { success: false, error: err.message || "Failed to delete template" },
+        { status: 500 }
+      );
     }
-
-    const db = getDb();
-    db.templates = (db.templates || []).filter((t) => t.id !== id);
-
-    recordAuditLogSync({
-      adminId: admin.id,
-      adminEmail: admin.email,
-      action: "DELETE_TEMPLATE",
-      module: "TEMPLATES",
-      recordId: id,
-      ip: req.headers.get("x-forwarded-for") || "127.0.0.1",
-      details: `Deleted template ${id}.`,
-      result: "success",
-    });
-
-    await saveDb(db);
-    return NextResponse.json({ success: true, message: "Template deleted." });
   });
 }

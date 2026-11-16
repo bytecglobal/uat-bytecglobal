@@ -1,200 +1,182 @@
 import { NextResponse } from "next/server";
 import { withAdminAuth } from "@/lib/auth/guard";
-import { getDb, saveDb } from "@/lib/db";
+import { LeadRepository } from "@/lib/repositories/lead.repository";
+import { ClientRepository } from "@/lib/repositories/client.repository";
 import { recordAuditLogSync } from "@/lib/auth/session";
 
 export async function GET(req) {
   return withAdminAuth(req, "leads", async () => {
-    const { searchParams } = new URL(req.url);
-    const stage = searchParams.get("stage") || "all";
-    const search = (searchParams.get("search") || "").toLowerCase();
+    try {
+      const { searchParams } = new URL(req.url);
+      const stage = searchParams.get("stage") || "all";
+      const search = searchParams.get("search") || "";
 
-    const db = getDb();
-    let leads = [...(db.leads || [])];
+      const result = await LeadRepository.list({
+        stage,
+        search,
+        limit: 200,
+      });
 
-    if (search) {
-      leads = leads.filter(
-        (l) =>
-          l.name.toLowerCase().includes(search) ||
-          l.email.toLowerCase().includes(search) ||
-          (l.companyName || "").toLowerCase().includes(search) ||
-          (l.service || "").toLowerCase().includes(search)
+      return NextResponse.json({
+        success: true,
+        leads: result.leads,
+        total: result.total,
+      });
+    } catch (err) {
+      return NextResponse.json(
+        { success: false, error: err.message || "Failed to fetch leads" },
+        { status: 500 }
       );
     }
-
-    if (stage !== "all") {
-      leads = leads.filter((l) => l.stage === stage);
-    }
-
-    return NextResponse.json({
-      success: true,
-      leads,
-    });
   });
 }
 
-export async function POST(req, admin) {
-  return withAdminAuth(req, "leads", async () => {
-    const body = await req.json().catch(() => ({}));
-    const { action, leadId, name, email, phone, companyName, service, stage, estimatedValue } = body;
-    const db = getDb();
-    const now = new Date().toISOString();
+export async function POST(req) {
+  return withAdminAuth(req, "leads", async (request, admin) => {
+    try {
+      const body = await request.json().catch(() => ({}));
+      const { action, leadId, name, email, companyName, service, stage, estimatedValue } = body;
 
-    // Convert lead to client
-    if (action === "convert_to_client" && leadId) {
-      const lead = (db.leads || []).find((l) => l.id === leadId);
-      if (!lead) {
-        return NextResponse.json({ success: false, error: "Lead not found" }, { status: 404 });
+      // Convert lead to client
+      if (action === "convert_to_client" && leadId) {
+        const lead = await LeadRepository.findById(leadId);
+        if (!lead) {
+          return NextResponse.json({ success: false, error: "Lead not found" }, { status: 404 });
+        }
+
+        const updatedLead = await LeadRepository.update(leadId, { stage: "won" });
+
+        const newClient = await ClientRepository.create({
+          name: lead.companyName || lead.name,
+          contactPerson: lead.name,
+          email: lead.email,
+          industry: lead.service || "Enterprise",
+          status: "active",
+          totalValue: Number(lead.estimatedValue) || 20000,
+          notes: `Converted from lead ${lead.id}. Interested in ${lead.service}.`,
+        });
+
+        recordAuditLogSync({
+          adminId: admin.id,
+          adminEmail: admin.email,
+          action: "CONVERT_LEAD_TO_CLIENT",
+          module: "LEADS",
+          recordId: leadId,
+          ip: request.headers.get("x-forwarded-for") || "127.0.0.1",
+          details: `Converted lead ${leadId} into client ${newClient.id}.`,
+          result: "success",
+        });
+
+        return NextResponse.json({ success: true, client: newClient, lead: updatedLead });
       }
 
-      lead.stage = "won";
-      lead.updatedAt = now;
+      // Manual lead creation
+      if (!name || !email) {
+        return NextResponse.json({ success: false, error: "Name and email are required" }, { status: 400 });
+      }
 
-      const newClient = {
-        id: `cli_${Date.now()}_${Math.random().toString(36).substring(2, 6)}`,
-        name: lead.companyName || lead.name,
-        contactPerson: lead.name,
-        email: lead.email,
-        phone: lead.phone || "",
-        industry: lead.service || "Enterprise",
-        status: "active",
-        totalValue: Number(lead.estimatedValue) || 20000,
-        notes: `Converted from lead ${lead.id}. Interested in ${lead.service}.`,
-        createdAt: now,
-        updatedAt: now,
-      };
-
-      if (!db.clients) db.clients = [];
-      db.clients.unshift(newClient);
+      const newLead = await LeadRepository.create({
+        name,
+        email,
+        companyName: companyName || "",
+        service: service || "General Software Services",
+        stage: stage || "new",
+        estimatedValue: Number(estimatedValue) || 10000,
+        source: "Admin Created",
+        assignedTo: admin.id,
+      });
 
       recordAuditLogSync({
         adminId: admin.id,
         adminEmail: admin.email,
-        action: "CONVERT_LEAD_TO_CLIENT",
+        action: "CREATE_LEAD",
         module: "LEADS",
-        recordId: leadId,
-        ip: req.headers.get("x-forwarded-for") || "127.0.0.1",
-        details: `Converted lead ${leadId} into client ${newClient.id}.`,
+        recordId: newLead.id,
+        ip: request.headers.get("x-forwarded-for") || "127.0.0.1",
+        details: `Created new lead ${newLead.id} for ${email}.`,
         result: "success",
       });
 
-      await saveDb(db);
-      return NextResponse.json({ success: true, client: newClient, lead });
+      return NextResponse.json({ success: true, lead: newLead });
+    } catch (err) {
+      return NextResponse.json(
+        { success: false, error: err.message || "Failed to process lead request" },
+        { status: 500 }
+      );
     }
-
-    // Manual lead creation
-    if (!name || !email) {
-      return NextResponse.json({ success: false, error: "Name and email are required" }, { status: 400 });
-    }
-
-    const newLead = {
-      id: `lead_${Date.now()}_${Math.random().toString(36).substring(2, 6)}`,
-      name,
-      email,
-      phone: phone || "",
-      companyName: companyName || "",
-      service: service || "General Software Services",
-      stage: stage || "new",
-      estimatedValue: Number(estimatedValue) || 10000,
-      source: "Admin Created",
-      assignedTo: admin.id,
-      notes: [],
-      createdAt: now,
-      updatedAt: now,
-    };
-
-    if (!db.leads) db.leads = [];
-    db.leads.unshift(newLead);
-
-    recordAuditLogSync({
-      adminId: admin.id,
-      adminEmail: admin.email,
-      action: "CREATE_LEAD",
-      module: "LEADS",
-      recordId: newLead.id,
-      ip: req.headers.get("x-forwarded-for") || "127.0.0.1",
-      details: `Created new lead ${newLead.id} for ${email}.`,
-      result: "success",
-    });
-
-    await saveDb(db);
-    return NextResponse.json({ success: true, lead: newLead });
   });
 }
 
-export async function PATCH(req, admin) {
-  return withAdminAuth(req, "leads", async () => {
-    const body = await req.json().catch(() => ({}));
-    const { id, stage, estimatedValue, noteText } = body;
+export async function PATCH(req) {
+  return withAdminAuth(req, "leads", async (request, admin) => {
+    try {
+      const body = await request.json().catch(() => ({}));
+      const { id, stage, estimatedValue, noteText } = body;
 
-    if (!id) {
-      return NextResponse.json({ success: false, error: "Lead ID required" }, { status: 400 });
-    }
+      if (!id) {
+        return NextResponse.json({ success: false, error: "Lead ID required" }, { status: 400 });
+      }
 
-    const db = getDb();
-    const lead = (db.leads || []).find((l) => l.id === id);
+      const updates = {};
+      if (stage !== undefined) updates.stage = stage;
+      if (estimatedValue !== undefined) updates.estimatedValue = Number(estimatedValue);
 
-    if (!lead) {
-      return NextResponse.json({ success: false, error: "Lead not found" }, { status: 404 });
-    }
+      let lead = await LeadRepository.update(id, updates);
 
-    const now = new Date().toISOString();
+      if (noteText) {
+        lead = await LeadRepository.addNote(id, noteText, admin.name || admin.email);
+      }
 
-    if (stage) lead.stage = stage;
-    if (estimatedValue !== undefined) lead.estimatedValue = Number(estimatedValue);
-
-    if (noteText) {
-      if (!lead.notes) lead.notes = [];
-      lead.notes.push({
-        id: `note_${Date.now()}`,
-        author: admin.name || admin.email,
-        text: noteText,
-        createdAt: now,
+      recordAuditLogSync({
+        adminId: admin.id,
+        adminEmail: admin.email,
+        action: "UPDATE_LEAD",
+        module: "LEADS",
+        recordId: id,
+        ip: request.headers.get("x-forwarded-for") || "127.0.0.1",
+        details: `Updated lead ${id} (Stage: ${stage || lead.stage}).`,
+        result: "success",
       });
+
+      return NextResponse.json({ success: true, lead });
+    } catch (err) {
+      return NextResponse.json(
+        { success: false, error: err.message || "Failed to update lead" },
+        { status: 500 }
+      );
     }
-
-    lead.updatedAt = now;
-
-    recordAuditLogSync({
-      adminId: admin.id,
-      adminEmail: admin.email,
-      action: "UPDATE_LEAD",
-      module: "LEADS",
-      recordId: id,
-      ip: req.headers.get("x-forwarded-for") || "127.0.0.1",
-      details: `Updated lead ${id} (Stage: ${stage || lead.stage}).`,
-      result: "success",
-    });
-
-    await saveDb(db);
-    return NextResponse.json({ success: true, lead });
   });
 }
 
-export async function DELETE(req, admin) {
-  return withAdminAuth(req, "leads", async () => {
-    const { searchParams } = new URL(req.url);
-    const id = searchParams.get("id");
+export async function DELETE(req) {
+  return withAdminAuth(req, "leads", async (request, admin) => {
+    try {
+      const { searchParams } = new URL(request.url);
+      const id = searchParams.get("id");
 
-    if (!id) {
-      return NextResponse.json({ success: false, error: "Lead ID required" }, { status: 400 });
+      if (!id) {
+        return NextResponse.json({ success: false, error: "Lead ID required" }, { status: 400 });
+      }
+
+      await LeadRepository.delete(id);
+
+      recordAuditLogSync({
+        adminId: admin.id,
+        adminEmail: admin.email,
+        action: "DELETE_LEAD",
+        module: "LEADS",
+        recordId: id,
+        ip: request.headers.get("x-forwarded-for") || "127.0.0.1",
+        details: `Deleted lead ${id}.`,
+        result: "success",
+      });
+
+      return NextResponse.json({ success: true, message: "Lead deleted." });
+    } catch (err) {
+      return NextResponse.json(
+        { success: false, error: err.message || "Failed to delete lead" },
+        { status: 500 }
+      );
     }
-
-    const db = getDb();
-    db.leads = (db.leads || []).filter((l) => l.id !== id);
-
-    recordAuditLogSync({
-      adminId: admin.id,
-      adminEmail: admin.email,
-      action: "DELETE_LEAD",
-      module: "LEADS",
-      recordId: id,
-      ip: req.headers.get("x-forwarded-for") || "127.0.0.1",
-      details: `Deleted lead ${id}.`,
-      result: "success",
-    });
-
-    await saveDb(db);
-    return NextResponse.json({ success: true, message: "Lead deleted." });
   });
 }

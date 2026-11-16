@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getDb, saveDb } from "@/lib/db";
+import { AdminRepository } from "@/lib/repositories/admin.repository";
 import { recordAuditLogSync } from "@/lib/auth/session";
 import bcrypt from "bcryptjs";
 
@@ -16,33 +16,34 @@ export async function POST(req) {
       return NextResponse.json({ success: false, error: "Password must be at least 8 characters long." }, { status: 400 });
     }
 
-    const db = getDb();
-    const now = new Date();
-    const user = (db.users || []).find((u) => u.resetToken === token);
-
-    if (!user || !user.resetTokenExpires || new Date(user.resetTokenExpires) < now) {
+    const tokenRecord = await AdminRepository.findPasswordResetToken(token);
+    if (!tokenRecord || !tokenRecord.user_id) {
       return NextResponse.json({ success: false, error: "Invalid or expired reset token." }, { status: 400 });
     }
 
-    const salt = bcrypt.genSaltSync(10);
-    user.passwordHash = bcrypt.hashSync(newPassword, salt);
-    user.resetToken = null;
-    user.resetTokenExpires = null;
-    user.failedAttempts = 0;
-    user.lockoutUntil = null;
+    const salt = bcrypt.genSaltSync(12);
+    const passwordHash = bcrypt.hashSync(newPassword, salt);
+
+    await AdminRepository.updateUser(tokenRecord.user_id, {
+      passwordHash,
+      failedAttempts: 0,
+      lockoutUntil: null,
+    });
+
+    await AdminRepository.markPasswordResetTokenUsed(tokenRecord.id);
+
+    const user = tokenRecord.admin_users || (await AdminRepository.findById(tokenRecord.user_id));
 
     recordAuditLogSync({
-      adminId: user.id,
-      adminEmail: user.email,
+      adminId: tokenRecord.user_id,
+      adminEmail: user?.email || "unknown",
       action: "PASSWORD_RESET_COMPLETED",
       module: "AUTH",
-      recordId: user.id,
+      recordId: tokenRecord.user_id,
       ip: req.headers.get("x-forwarded-for") || "127.0.0.1",
       details: "Password successfully changed via reset token.",
       result: "success",
     });
-
-    await saveDb(db);
 
     return NextResponse.json({ success: true, message: "Password reset successful. You may now log in." });
   } catch (err) {

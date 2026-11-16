@@ -1,135 +1,118 @@
 import { NextResponse } from "next/server";
 import { withAdminAuth } from "@/lib/auth/guard";
-import { getDb, saveDb } from "@/lib/db";
+import { ContactRepository } from "@/lib/repositories/contact.repository";
 import { recordAuditLogSync } from "@/lib/auth/session";
 
 export async function GET(req) {
   return withAdminAuth(req, "contacts", async () => {
-    const { searchParams } = new URL(req.url);
-    const search = (searchParams.get("search") || "").toLowerCase();
-    const status = searchParams.get("status") || "all";
-    const format = searchParams.get("format");
+    try {
+      const { searchParams } = new URL(req.url);
+      const search = searchParams.get("search") || "";
+      const status = searchParams.get("status") || "all";
+      const format = searchParams.get("format");
+      const limit = format === "csv" ? 1000 : 200;
 
-    const db = getDb();
-    let contacts = [...(db.contacts || [])];
-
-    if (search) {
-      contacts = contacts.filter(
-        (c) =>
-          c.name.toLowerCase().includes(search) ||
-          c.email.toLowerCase().includes(search) ||
-          (c.companyName || "").toLowerCase().includes(search) ||
-          (c.service || "").toLowerCase().includes(search)
-      );
-    }
-
-    if (status !== "all") {
-      contacts = contacts.filter((c) => c.status === status);
-    }
-
-    if (format === "csv") {
-      const headers = "ID,Name,Email,Phone,Company,Service,Status,Created At\n";
-      const rows = contacts
-        .map(
-          (c) =>
-            `"${c.id}","${c.name}","${c.email}","${c.phone || ""}","${c.companyName || ""}","${c.service}","${c.status}","${c.createdAt}"`
-        )
-        .join("\n");
-
-      return new NextResponse(headers + rows, {
-        headers: {
-          "Content-Type": "text/csv",
-          "Content-Disposition": 'attachment; filename="bytec_contacts.csv"',
-        },
+      const { contacts, total } = await ContactRepository.list({
+        search,
+        status: status === "all" ? null : status,
+        limit,
       });
-    }
 
-    return NextResponse.json({
-      success: true,
-      contacts,
-      totalCount: contacts.length,
-    });
+      if (format === "csv") {
+        const headers = "ID,Name,Email,Company,Service,Status,Created At\n";
+        const rows = contacts
+          .map(
+            (c) =>
+              `"${c.id}","${c.name}","${c.email}","${c.companyName || ""}","${c.service}","${c.status}","${c.createdAt}"`
+          )
+          .join("\n");
+
+        return new NextResponse(headers + rows, {
+          headers: {
+            "Content-Type": "text/csv",
+            "Content-Disposition": 'attachment; filename="bytec_contacts.csv"',
+          },
+        });
+      }
+
+      return NextResponse.json({
+        success: true,
+        contacts,
+        totalCount: total,
+      });
+    } catch (err) {
+      console.error("Contacts GET error:", err);
+      return NextResponse.json({ success: false, error: "Failed to retrieve contacts." }, { status: 500 });
+    }
   });
 }
 
-export async function PATCH(req, admin) {
-  return withAdminAuth(req, "contacts", async () => {
-    const body = await req.json().catch(() => ({}));
-    const { id, status, assignedTo, noteText } = body;
+export async function PATCH(req) {
+  return withAdminAuth(req, "contacts", async (r, admin) => {
+    try {
+      const body = await req.json().catch(() => ({}));
+      const { id, status, assignedTo, noteText } = body;
 
-    if (!id) {
-      return NextResponse.json({ success: false, error: "Contact ID required" }, { status: 400 });
-    }
+      if (!id) {
+        return NextResponse.json({ success: false, error: "Contact ID required" }, { status: 400 });
+      }
 
-    const db = getDb();
-    const contact = (db.contacts || []).find((c) => c.id === id);
+      const updates = {};
+      if (status) updates.status = status;
+      if (assignedTo !== undefined) updates.assignedTo = assignedTo;
 
-    if (!contact) {
-      return NextResponse.json({ success: false, error: "Contact not found" }, { status: 404 });
-    }
+      let updatedContact = await ContactRepository.update(id, updates);
 
-    const now = new Date().toISOString();
+      if (noteText) {
+        updatedContact = await ContactRepository.addNote(id, noteText, admin.name || admin.email);
+      }
 
-    if (status) contact.status = status;
-    if (assignedTo !== undefined) contact.assignedTo = assignedTo;
-
-    if (noteText) {
-      if (!contact.notes) contact.notes = [];
-      contact.notes.push({
-        id: `note_${Date.now()}`,
-        author: admin.name || admin.email,
-        text: noteText,
-        createdAt: now,
+      recordAuditLogSync({
+        adminId: admin.id,
+        adminEmail: admin.email,
+        action: "UPDATE_CONTACT",
+        module: "CONTACTS",
+        recordId: id,
+        ip: req.headers.get("x-forwarded-for") || "127.0.0.1",
+        details: `Updated contact ${id} (${status ? "Status: " + status : "Note added"}).`,
+        result: "success",
       });
+
+      return NextResponse.json({ success: true, contact: updatedContact });
+    } catch (err) {
+      console.error("Contacts PATCH error:", err);
+      return NextResponse.json({ success: false, error: "Failed to update contact." }, { status: 500 });
     }
-
-    contact.updatedAt = now;
-
-    recordAuditLogSync({
-      adminId: admin.id,
-      adminEmail: admin.email,
-      action: "UPDATE_CONTACT",
-      module: "CONTACTS",
-      recordId: id,
-      ip: req.headers.get("x-forwarded-for") || "127.0.0.1",
-      details: `Updated contact ${id} (${status ? "Status: " + status : "Note added"}).`,
-      result: "success",
-    });
-
-    await saveDb(db);
-    return NextResponse.json({ success: true, contact });
   });
 }
 
-export async function DELETE(req, admin) {
-  return withAdminAuth(req, "contacts", async () => {
-    const { searchParams } = new URL(req.url);
-    const id = searchParams.get("id");
+export async function DELETE(req) {
+  return withAdminAuth(req, "contacts", async (r, admin) => {
+    try {
+      const { searchParams } = new URL(req.url);
+      const id = searchParams.get("id");
 
-    if (!id) {
-      return NextResponse.json({ success: false, error: "Contact ID required" }, { status: 400 });
+      if (!id) {
+        return NextResponse.json({ success: false, error: "Contact ID required" }, { status: 400 });
+      }
+
+      await ContactRepository.delete(id);
+
+      recordAuditLogSync({
+        adminId: admin.id,
+        adminEmail: admin.email,
+        action: "DELETE_CONTACT",
+        module: "CONTACTS",
+        recordId: id,
+        ip: req.headers.get("x-forwarded-for") || "127.0.0.1",
+        details: `Deleted contact record ${id}.`,
+        result: "success",
+      });
+
+      return NextResponse.json({ success: true, message: "Contact deleted successfully." });
+    } catch (err) {
+      console.error("Contacts DELETE error:", err);
+      return NextResponse.json({ success: false, error: "Failed to delete contact." }, { status: 500 });
     }
-
-    const db = getDb();
-    const initialLen = db.contacts.length;
-    db.contacts = db.contacts.filter((c) => c.id !== id);
-
-    if (db.contacts.length === initialLen) {
-      return NextResponse.json({ success: false, error: "Contact not found" }, { status: 404 });
-    }
-
-    recordAuditLogSync({
-      adminId: admin.id,
-      adminEmail: admin.email,
-      action: "DELETE_CONTACT",
-      module: "CONTACTS",
-      recordId: id,
-      ip: req.headers.get("x-forwarded-for") || "127.0.0.1",
-      details: `Deleted contact record ${id}.`,
-      result: "success",
-    });
-
-    await saveDb(db);
-    return NextResponse.json({ success: true, message: "Contact deleted successfully." });
   });
 }
