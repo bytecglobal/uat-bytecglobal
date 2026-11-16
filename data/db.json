@@ -1,0 +1,2496 @@
+{
+  "meta": {
+    "version": "1.0.0",
+    "createdAt": "2026-11-16T15:02:50.778Z",
+    "updatedAt": "2026-11-16T20:32:08.210Z"
+  },
+  "users": [
+    {
+      "id": "usr_superadmin",
+      "name": "Bytec Super Admin",
+      "email": "admin@bytecglobal.com",
+      "passwordHash": "$2b$10$BjhhOZZ8KWhvkQj6q6Thg.fYJ6up07rtzL08OdXCKOUCu4zGlsYpa",
+      "role": "SUPER_ADMIN",
+      "status": "active",
+      "createdAt": "2026-11-16T15:02:50.778Z",
+      "lastLogin": "2026-11-16T20:22:04.244Z",
+      "failedAttempts": 0,
+      "lockoutUntil": null
+    }
+  ],
+  "sessions": [],
+  "visitors": [
+    {
+      "visitorId": "vis_1794841370237_ei95f02",
+      "firstVisit": "2026-11-16T15:02:50.779Z",
+      "lastVisit": "2026-11-16T20:32:08.210Z",
+      "totalVisits": 10,
+      "landingPage": "/",
+      "exitPage": "/",
+      "pagesVisited": [
+        "/",
+        "/client-work/travel-booking-platform",
+        "/contact",
+        "/technologies",
+        "/projects",
+        "/solutions",
+        "/about"
+      ],
+      "referrer": "http://localhost:3000/",
+      "trafficSource": "Direct",
+      "browser": "Chrome",
+      "os": "Windows",
+      "deviceType": "Desktop",
+      "location": "India / Global",
+      "sessions": [
+        "ses_1794841370237_l0a4km8",
+        "ses_1794850192225_21ee3bw",
+        "ses_1794850331996_jwwo1sd",
+        "ses_1794850411411_y2vrsed",
+        "ses_1794859173223_or4yuoq",
+        "ses_1794860346990_3mvokr9",
+        "ses_1794860547518_y0j1xkw",
+        "ses_1794860821260_psrbtmi",
+        "ses_1794860873094_h1xvr32",
+        "ses_1794861003447_61zeevb"
+      ]
+    }
+  ],
+  "analytics_events": [
+    {
+      "id": "evt_1794861128210_nfzlo",
+      "eventName": "page_view",
+      "path": "/",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794861003447_61zeevb",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T20:32:08.210Z"
+    },
+    {
+      "id": "evt_1794861126088_a7m3y",
+      "eventName": "page_view",
+      "path": "/technologies",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794861003447_61zeevb",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T20:32:06.088Z"
+    },
+    {
+      "id": "evt_1794861120515_2ldhu",
+      "eventName": "page_view",
+      "path": "/",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794861003447_61zeevb",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T20:32:00.515Z"
+    },
+    {
+      "id": "evt_1794861087937_z9yqw",
+      "eventName": "page_view",
+      "path": "/contact",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794861003447_61zeevb",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T20:31:27.936Z"
+    },
+    {
+      "id": "evt_1794861081881_iffb8",
+      "eventName": "page_view",
+      "path": "/",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794861003447_61zeevb",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T20:31:21.881Z"
+    },
+    {
+      "id": "evt_1794861081836_dcg0g",
+      "eventName": "page_view",
+      "path": "/",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794861003447_61zeevb",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T20:31:21.835Z"
+    },
+    {
+      "id": "evt_1794861071743_1af1o",
+      "eventName": "page_view",
+      "path": "/",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794861003447_61zeevb",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T20:31:11.743Z"
+    },
+    {
+      "id": "evt_1794861071738_zhfh5",
+      "eventName": "page_view",
+      "path": "/",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794861003447_61zeevb",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T20:31:11.737Z"
+    },
+    {
+      "id": "evt_1794861004580_rl7in",
+      "eventName": "page_view",
+      "path": "/",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794861003447_61zeevb",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T20:30:04.580Z"
+    },
+    {
+      "id": "evt_1794861004573_fpah1",
+      "eventName": "page_view",
+      "path": "/",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794861003447_61zeevb",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T20:30:04.573Z"
+    },
+    {
+      "id": "evt_1794860874953_v2pdf",
+      "eventName": "page_view",
+      "path": "/",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794860873094_h1xvr32",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T20:27:54.952Z"
+    },
+    {
+      "id": "evt_1794860874941_rhu9c",
+      "eventName": "page_view",
+      "path": "/",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794860873094_h1xvr32",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T20:27:54.940Z"
+    },
+    {
+      "id": "evt_1794860841925_ogn74",
+      "eventName": "page_view",
+      "path": "/",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794860821260_psrbtmi",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T20:27:21.925Z"
+    },
+    {
+      "id": "evt_1794860841871_5ugk6",
+      "eventName": "page_view",
+      "path": "/",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794860821260_psrbtmi",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T20:27:21.870Z"
+    },
+    {
+      "id": "evt_1794860834984_6njcm",
+      "eventName": "page_view",
+      "path": "/",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794860821260_psrbtmi",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T20:27:14.983Z"
+    },
+    {
+      "id": "evt_1794860825204_lmuq8",
+      "eventName": "page_view",
+      "path": "/technologies",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794860821260_psrbtmi",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T20:27:05.203Z"
+    },
+    {
+      "id": "evt_1794860822340_59gve",
+      "eventName": "page_view",
+      "path": "/projects",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794860821260_psrbtmi",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T20:27:02.340Z"
+    },
+    {
+      "id": "evt_1794860822057_ho97k",
+      "eventName": "page_view",
+      "path": "/about",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794860821260_psrbtmi",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T20:27:02.056Z"
+    },
+    {
+      "id": "evt_1794860822047_dlup5",
+      "eventName": "page_view",
+      "path": "/about",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794860821260_psrbtmi",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T20:27:02.046Z"
+    },
+    {
+      "id": "evt_1794860549418_0guns",
+      "eventName": "page_view",
+      "path": "/contact",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794860547518_y0j1xkw",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T20:22:29.417Z"
+    },
+    {
+      "id": "evt_1794860548183_bnis8",
+      "eventName": "page_view",
+      "path": "/",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794860547518_y0j1xkw",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T20:22:28.182Z"
+    },
+    {
+      "id": "evt_1794860548168_ix0yx",
+      "eventName": "page_view",
+      "path": "/",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794860547518_y0j1xkw",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T20:22:28.164Z"
+    },
+    {
+      "id": "evt_1794860353725_ctpjl",
+      "eventName": "page_view",
+      "path": "/",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794860346990_3mvokr9",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T20:19:13.724Z"
+    },
+    {
+      "id": "evt_1794860350950_gkyld",
+      "eventName": "page_view",
+      "path": "/contact",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794860346990_3mvokr9",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T20:19:10.949Z"
+    },
+    {
+      "id": "evt_1794860348403_dl0ur",
+      "eventName": "page_view",
+      "path": "/",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794860346990_3mvokr9",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T20:19:08.403Z"
+    },
+    {
+      "id": "evt_1794860348395_z7glu",
+      "eventName": "page_view",
+      "path": "/",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794860346990_3mvokr9",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T20:19:08.395Z"
+    },
+    {
+      "id": "evt_1794859173739_x2vhc",
+      "eventName": "page_view",
+      "path": "/",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794859173223_or4yuoq",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T19:59:33.739Z"
+    },
+    {
+      "id": "evt_1794859173732_s48gj",
+      "eventName": "page_view",
+      "path": "/",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794859173223_or4yuoq",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T19:59:33.731Z"
+    },
+    {
+      "id": "evt_1794857470224_pnhsv",
+      "eventName": "page_view",
+      "path": "/contact",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794850411411_y2vrsed",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T19:31:10.224Z"
+    },
+    {
+      "id": "evt_1794857461146_6sks6",
+      "eventName": "page_view",
+      "path": "/",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794850411411_y2vrsed",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T19:31:01.146Z"
+    },
+    {
+      "id": "evt_1794857460088_fom8s",
+      "eventName": "page_view",
+      "path": "/about",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794850411411_y2vrsed",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T19:31:00.088Z"
+    },
+    {
+      "id": "evt_1794857458164_8bphe",
+      "eventName": "page_view",
+      "path": "/technologies",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794850411411_y2vrsed",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T19:30:58.164Z"
+    },
+    {
+      "id": "evt_1794857457430_3eys8",
+      "eventName": "page_view",
+      "path": "/projects",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794850411411_y2vrsed",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T19:30:57.430Z"
+    },
+    {
+      "id": "evt_1794857456715_d7dos",
+      "eventName": "page_view",
+      "path": "/contact",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794850411411_y2vrsed",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T19:30:56.715Z"
+    },
+    {
+      "id": "evt_1794857455940_rpb10",
+      "eventName": "page_view",
+      "path": "/technologies",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794850411411_y2vrsed",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T19:30:55.940Z"
+    },
+    {
+      "id": "evt_1794857454563_41q5c",
+      "eventName": "page_view",
+      "path": "/solutions",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794850411411_y2vrsed",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T19:30:54.563Z"
+    },
+    {
+      "id": "evt_1794857453179_u7bnf",
+      "eventName": "page_view",
+      "path": "/projects",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794850411411_y2vrsed",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T19:30:53.179Z"
+    },
+    {
+      "id": "evt_1794857441203_hjz1v",
+      "eventName": "page_view",
+      "path": "/technologies",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794850411411_y2vrsed",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T19:30:41.203Z"
+    },
+    {
+      "id": "evt_1794857441195_zaaop",
+      "eventName": "page_view",
+      "path": "/technologies",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794850411411_y2vrsed",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T19:30:41.195Z"
+    },
+    {
+      "id": "evt_1794857439599_fxbjn",
+      "eventName": "page_view",
+      "path": "/technologies",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794850411411_y2vrsed",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T19:30:39.598Z"
+    },
+    {
+      "id": "evt_1794857245531_xz99i",
+      "eventName": "page_view",
+      "path": "/",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794850411411_y2vrsed",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T19:27:25.530Z"
+    },
+    {
+      "id": "evt_1794857244264_iu2yg",
+      "eventName": "page_view",
+      "path": "/client-work/travel-booking-platform",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794850411411_y2vrsed",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T19:27:24.263Z"
+    },
+    {
+      "id": "evt_1794857238411_to4w7",
+      "eventName": "page_view",
+      "path": "/",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794850411411_y2vrsed",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T19:27:18.410Z"
+    },
+    {
+      "id": "evt_1794853741647_0vq9w",
+      "eventName": "page_view",
+      "path": "/contact",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794850411411_y2vrsed",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T18:29:01.647Z"
+    },
+    {
+      "id": "evt_1794851845057_2w6ey",
+      "eventName": "page_view",
+      "path": "/",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794850411411_y2vrsed",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T17:57:25.057Z"
+    },
+    {
+      "id": "evt_1794851156521_728jb",
+      "eventName": "page_view",
+      "path": "/contact",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794850411411_y2vrsed",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T17:45:56.521Z"
+    },
+    {
+      "id": "evt_1794850802563_edeex",
+      "eventName": "page_view",
+      "path": "/",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794850411411_y2vrsed",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T17:40:02.563Z"
+    },
+    {
+      "id": "evt_1794850767567_k3byi",
+      "eventName": "page_view",
+      "path": "/client-work/travel-booking-platform",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794850411411_y2vrsed",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T17:39:27.566Z"
+    },
+    {
+      "id": "evt_1794850411468_kwz77",
+      "eventName": "page_view",
+      "path": "/",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794850411411_y2vrsed",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T17:33:31.468Z"
+    },
+    {
+      "id": "evt_1794850411444_a285h",
+      "eventName": "page_view",
+      "path": "/",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794850411411_y2vrsed",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T17:33:31.443Z"
+    },
+    {
+      "id": "evt_1794850332227_sud8p",
+      "eventName": "page_view",
+      "path": "/",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794850331996_jwwo1sd",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T17:32:12.226Z"
+    },
+    {
+      "id": "evt_1794850332224_coajs",
+      "eventName": "page_view",
+      "path": "/",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794850331996_jwwo1sd",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T17:32:12.224Z"
+    },
+    {
+      "id": "evt_1794850192845_h4wbg",
+      "eventName": "page_view",
+      "path": "/",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794850192225_21ee3bw",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T17:29:52.845Z"
+    },
+    {
+      "id": "evt_1794850192842_4h9em",
+      "eventName": "page_view",
+      "path": "/",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794850192225_21ee3bw",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T17:29:52.841Z"
+    },
+    {
+      "id": "evt_1794841370782_iab46",
+      "eventName": "page_view",
+      "path": "/",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794841370237_l0a4km8",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T15:02:50.782Z"
+    },
+    {
+      "id": "evt_1794841370779_oxobm",
+      "eventName": "page_view",
+      "path": "/",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794841370237_l0a4km8",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T15:02:50.779Z"
+    }
+  ],
+  "contacts": [
+    {
+      "id": "cnt_1794860559131_f3ccc",
+      "name": "sdfawf",
+      "email": "subhamoysaha78@gmail.com",
+      "phone": "+918391008143",
+      "companyName": "",
+      "service": "Mobile App Development",
+      "subject": "Inquiry: Mobile App Development",
+      "message": "aefwqfsafqwaf",
+      "budget": "",
+      "timeline": "",
+      "sourcePage": "/contact",
+      "status": "new",
+      "assignedTo": "usr_superadmin",
+      "notes": [],
+      "clientIp": "::1",
+      "createdAt": "2026-11-16T20:22:39.131Z",
+      "updatedAt": "2026-11-16T20:22:39.131Z"
+    },
+    {
+      "id": "cnt_1794855420067_z8l0p",
+      "name": "SUBHAMOY SAHA",
+      "email": "subhamoysaha78@gmail.com",
+      "phone": "+918391008143",
+      "companyName": "",
+      "service": "Web Development",
+      "subject": "Inquiry: Web Development",
+      "message": "asdfwfsafwfsafdwf",
+      "budget": "",
+      "timeline": "",
+      "sourcePage": "/contact",
+      "status": "new",
+      "assignedTo": "usr_superadmin",
+      "notes": [],
+      "clientIp": "::1",
+      "createdAt": "2026-11-16T18:57:00.067Z",
+      "updatedAt": "2026-11-16T18:57:00.067Z"
+    },
+    {
+      "id": "cnt_1794853760242_oyaiq",
+      "name": "SUBHAMOY SAHA",
+      "email": "subhamoysaha78@gmail.com",
+      "phone": "+918391008143",
+      "companyName": "",
+      "service": "Software Development",
+      "subject": "Inquiry: Software Development",
+      "message": "nfbahbsfhuywfhbjdsbacnvbsjhfhuwf",
+      "budget": "",
+      "timeline": "",
+      "sourcePage": "/contact",
+      "status": "contacted",
+      "assignedTo": "usr_superadmin",
+      "notes": [],
+      "clientIp": "::1",
+      "createdAt": "2026-11-16T18:29:20.242Z",
+      "updatedAt": "2026-11-16T18:30:04.879Z"
+    },
+    {
+      "id": "cnt_welcome_demo",
+      "name": "Demo Enterprise Client",
+      "email": "client@example.com",
+      "phone": "+1 555-0199",
+      "companyName": "Acme Logistics Corp",
+      "service": "Software Development",
+      "subject": "Enterprise ERP Ingestion & Custom Cloud Platform",
+      "message": "We are interested in modernizing our inventory system and replacing legacy Excel sheets with a web-based portal.",
+      "budget": "$25,000 - $50,000",
+      "timeline": "2-3 months",
+      "sourcePage": "/start-project",
+      "status": "qualified",
+      "assignedTo": "usr_superadmin",
+      "notes": [
+        {
+          "id": "note_1",
+          "author": "Bytec Super Admin",
+          "text": "Initial inquiry reviewed. Fits our core custom ERP modernization competency.",
+          "createdAt": "2026-11-16T15:02:50.778Z"
+        }
+      ],
+      "createdAt": "2026-11-16T15:02:50.778Z",
+      "updatedAt": "2026-11-16T17:31:38.563Z"
+    }
+  ],
+  "leads": [
+    {
+      "id": "lead_1794853760245_3nom",
+      "contactId": "cnt_1794853760242_oyaiq",
+      "name": "SUBHAMOY SAHA",
+      "email": "subhamoysaha78@gmail.com",
+      "phone": "+918391008143",
+      "companyName": "",
+      "service": "Software Development",
+      "stage": "new",
+      "estimatedValue": 15000,
+      "source": "Automated Contact Ingestion",
+      "assignedTo": "usr_superadmin",
+      "notes": [
+        {
+          "id": "n_1794853760245",
+          "author": "Workflow Automation",
+          "text": "Auto-created lead from inquiry.",
+          "createdAt": "2026-11-16T18:29:20.245Z"
+        }
+      ],
+      "createdAt": "2026-11-16T18:29:20.245Z",
+      "updatedAt": "2026-11-16T18:29:20.245Z"
+    },
+    {
+      "id": "lead_welcome_demo",
+      "contactId": "cnt_welcome_demo",
+      "name": "Demo Enterprise Client",
+      "email": "client@example.com",
+      "phone": "+1 555-0199",
+      "companyName": "Acme Logistics Corp",
+      "service": "Software Development",
+      "stage": "qualified",
+      "estimatedValue": 35000,
+      "source": "Website Contact Form",
+      "assignedTo": "usr_superadmin",
+      "notes": [
+        {
+          "id": "lead_note_1",
+          "author": "Bytec Super Admin",
+          "text": "Proposal preparation underway.",
+          "createdAt": "2026-11-16T15:02:50.778Z"
+        }
+      ],
+      "createdAt": "2026-11-16T15:02:50.778Z",
+      "updatedAt": "2026-11-16T15:02:50.778Z"
+    }
+  ],
+  "clients": [
+    {
+      "id": "cli_1",
+      "name": "RetailEdge Inc.",
+      "contactPerson": "Marcus Vance",
+      "email": "contact@retailedge.io",
+      "phone": "+1 800-555-0143",
+      "industry": "Retail & E-commerce",
+      "status": "active",
+      "totalValue": 48000,
+      "notes": "Streamlined inventory management and customer portal.",
+      "createdAt": "2026-11-16T15:02:50.778Z",
+      "updatedAt": "2026-11-16T15:02:50.778Z"
+    },
+    {
+      "id": "cli_2",
+      "name": "BuildRight Contractors",
+      "contactPerson": "Sarah Jenkins",
+      "email": "operations@buildright.com",
+      "phone": "+1 888-555-0182",
+      "industry": "Construction",
+      "status": "active",
+      "totalValue": 32000,
+      "notes": "Field service mobile app for job tracking.",
+      "createdAt": "2026-11-16T15:02:50.778Z",
+      "updatedAt": "2026-11-16T15:02:50.778Z"
+    }
+  ],
+  "projects": [
+    {
+      "id": "prj_1",
+      "title": "Inventory & Orders ERP",
+      "clientId": "cli_1",
+      "clientName": "RetailEdge Inc.",
+      "category": "Software Development",
+      "description": "A custom ERP that replaced spreadsheets for a multi-branch distributor with real-time stock sync.",
+      "startDate": "2026-01-15",
+      "deadline": "2026-04-30",
+      "budget": 48000,
+      "priority": "high",
+      "status": "in_progress",
+      "progress": 75,
+      "assignedTeam": [
+        "Bytec Super Admin"
+      ],
+      "tasks": [
+        {
+          "id": "tsk_1",
+          "title": "Database schema & multi-tenant auth",
+          "completed": true
+        },
+        {
+          "id": "tsk_2",
+          "title": "Real-time stock ledger & branch sync",
+          "completed": true
+        },
+        {
+          "id": "tsk_3",
+          "title": "Automated invoice generator",
+          "completed": false
+        }
+      ],
+      "createdAt": "2026-11-16T15:02:50.778Z",
+      "updatedAt": "2026-11-16T17:34:32.527Z"
+    },
+    {
+      "id": "prj_2",
+      "title": "Field Service Mobile App",
+      "clientId": "cli_2",
+      "clientName": "BuildRight Contractors",
+      "category": "Mobile App Development",
+      "description": "An offline-first app syncing jobs, photos, and signatures to a manager dashboard.",
+      "startDate": "2026-02-01",
+      "deadline": "2026-05-15",
+      "budget": 32000,
+      "priority": "medium",
+      "status": "in_progress",
+      "progress": 60,
+      "assignedTeam": [
+        "Bytec Super Admin"
+      ],
+      "tasks": [
+        {
+          "id": "tsk_4",
+          "title": "Offline SQLite sync queue",
+          "completed": true
+        },
+        {
+          "id": "tsk_5",
+          "title": "Photo upload & GPS stamping",
+          "completed": true
+        },
+        {
+          "id": "tsk_6",
+          "title": "Manager review portal",
+          "completed": false
+        }
+      ],
+      "createdAt": "2026-11-16T15:02:50.778Z",
+      "updatedAt": "2026-11-16T15:02:50.778Z"
+    }
+  ],
+  "meetings": [
+    {
+      "id": "mtg_demo",
+      "clientName": "Marcus Vance",
+      "clientEmail": "contact@retailedge.io",
+      "title": "ERP Phase 2 Milestone Review",
+      "date": "2026-11-18",
+      "time": "15:00",
+      "durationMinutes": 45,
+      "status": "confirmed",
+      "meetingLink": "https://calendly.com/team-bytecglobal/30min",
+      "notes": "Reviewing invoice generator milestones and testing API endpoints.",
+      "source": "calendly",
+      "createdAt": "2026-11-16T15:02:50.778Z",
+      "updatedAt": "2026-11-16T15:02:50.778Z"
+    }
+  ],
+  "emails": [
+    {
+      "id": "eml_1794860559140_ypes",
+      "to": "subhamoysaha78@gmail.com",
+      "from": "BytecGlobal <onboarding@resend.dev>",
+      "subject": "Thank you for contacting BytecGlobal - We have received your inquiry",
+      "body": "Hello sdfawf,\n\nThank you for reaching out to BytecGlobal. We have received your project details regarding Mobile App Development.\n\nOur solutions engineering team is reviewing your requirements and will reach back out within 24 business hours.\n\nWarm regards,\nThe BytecGlobal Team\nhttps://bytecglobal.com",
+      "category": "Inquiry Confirmation",
+      "status": "sent",
+      "providerResponse": "Simulated delivery (dev mode)",
+      "sentAt": "2026-11-16T20:22:39.139Z",
+      "createdAt": "2026-11-16T20:22:39.139Z"
+    },
+    {
+      "id": "eml_1794855420073_nr07",
+      "to": "subhamoysaha78@gmail.com",
+      "from": "BytecGlobal <onboarding@resend.dev>",
+      "subject": "Thank you for contacting BytecGlobal - We have received your inquiry",
+      "body": "Hello SUBHAMOY SAHA,\n\nThank you for reaching out to BytecGlobal. We have received your project details regarding Web Development.\n\nOur solutions engineering team is reviewing your requirements and will reach back out within 24 business hours.\n\nWarm regards,\nThe BytecGlobal Team\nhttps://bytecglobal.com",
+      "category": "Inquiry Confirmation",
+      "status": "sent",
+      "providerResponse": "Simulated delivery (dev mode)",
+      "sentAt": "2026-11-16T18:57:00.071Z",
+      "createdAt": "2026-11-16T18:57:00.071Z"
+    },
+    {
+      "id": "eml_1794853760246_3xz6",
+      "to": "subhamoysaha78@gmail.com",
+      "from": "BytecGlobal <onboarding@resend.dev>",
+      "subject": "Thank you for contacting BytecGlobal - We have received your inquiry",
+      "body": "Hello SUBHAMOY SAHA,\n\nThank you for reaching out to BytecGlobal. We have received your project details regarding Software Development.\n\nOur solutions engineering team is reviewing your requirements and will reach back out within 24 business hours.\n\nWarm regards,\nThe BytecGlobal Team\nhttps://bytecglobal.com",
+      "category": "Inquiry Confirmation",
+      "status": "sent",
+      "providerResponse": "Simulated delivery (dev mode)",
+      "sentAt": "2026-11-16T18:29:20.245Z",
+      "createdAt": "2026-11-16T18:29:20.245Z"
+    },
+    {
+      "id": "eml_demo",
+      "to": "client@example.com",
+      "from": "BytecCloud Inquiries <inquiries@bytecglobal.com>",
+      "subject": "Thank you for reaching out to BytecGlobal",
+      "category": "Inquiry Confirmation",
+      "status": "sent",
+      "providerResponse": "Delivered via Resend REST Engine",
+      "sentAt": "2026-11-16T15:02:50.778Z",
+      "createdAt": "2026-11-16T15:02:50.778Z"
+    }
+  ],
+  "automations": [
+    {
+      "id": "aut_inquiry",
+      "name": "New Contact Inquiry Workflow",
+      "trigger": "contact_submit",
+      "description": "Automatically saves inquiry, creates lead, dispatches confirmation, and alerts admins.",
+      "enabled": true,
+      "actions": [
+        {
+          "type": "save_inquiry",
+          "params": {}
+        },
+        {
+          "type": "create_lead",
+          "params": {}
+        },
+        {
+          "type": "notify_admin",
+          "params": {
+            "channel": "in_app"
+          }
+        },
+        {
+          "type": "send_template_email",
+          "params": {
+            "templateId": "tpl_inquiry_confirmation"
+          }
+        }
+      ],
+      "executionCount": 4,
+      "lastRunAt": "2026-11-16T20:22:39.139Z",
+      "createdAt": "2026-11-16T15:02:50.778Z"
+    },
+    {
+      "id": "aut_meeting",
+      "name": "New Meeting Scheduled Workflow",
+      "trigger": "meeting_booked",
+      "description": "Logs meeting, sends calendar invite reference, and creates follow-up task.",
+      "enabled": true,
+      "actions": [
+        {
+          "type": "save_meeting",
+          "params": {}
+        },
+        {
+          "type": "notify_admin",
+          "params": {
+            "channel": "in_app"
+          }
+        }
+      ],
+      "executionCount": 1,
+      "lastRunAt": "2026-11-16T15:02:50.778Z",
+      "createdAt": "2026-11-16T15:02:50.778Z"
+    }
+  ],
+  "automation_logs": [
+    {
+      "id": "log_1794860559140_04ah",
+      "automationId": "aut_inquiry",
+      "automationName": "New Contact Inquiry Workflow",
+      "trigger": "contact_submit",
+      "status": "success",
+      "details": "Inquiry saved to database. In-app admin notification dispatched. Email (sent) logged for subhamoysaha78@gmail.com.",
+      "timestamp": "2026-11-16T20:22:39.139Z"
+    },
+    {
+      "id": "log_1794855420073_4b1a",
+      "automationId": "aut_inquiry",
+      "automationName": "New Contact Inquiry Workflow",
+      "trigger": "contact_submit",
+      "status": "success",
+      "details": "Inquiry saved to database. In-app admin notification dispatched. Email (sent) logged for subhamoysaha78@gmail.com.",
+      "timestamp": "2026-11-16T18:57:00.071Z"
+    },
+    {
+      "id": "log_1794853760246_qn4d",
+      "automationId": "aut_inquiry",
+      "automationName": "New Contact Inquiry Workflow",
+      "trigger": "contact_submit",
+      "status": "success",
+      "details": "Inquiry saved to database. Lead created (lead_1794853760245_3nom). In-app admin notification dispatched. Email (sent) logged for subhamoysaha78@gmail.com.",
+      "timestamp": "2026-11-16T18:29:20.245Z"
+    },
+    {
+      "id": "log_aut_init",
+      "automationId": "aut_inquiry",
+      "automationName": "New Contact Inquiry Workflow",
+      "trigger": "system_init",
+      "status": "success",
+      "details": "Automations engine initialized and active.",
+      "timestamp": "2026-11-16T15:02:50.778Z"
+    }
+  ],
+  "templates": [
+    {
+      "id": "tpl_inquiry_confirmation",
+      "name": "Inquiry Confirmation Email",
+      "category": "Inquiry Confirmation",
+      "subject": "Thank you for contacting BytecGlobal - We have received your inquiry",
+      "content": "Hello {{customer_name}},\n\nThank you for reaching out to BytecGlobal. We have received your project details regarding {{service_name}}.\n\nOur solutions engineering team is reviewing your requirements and will reach back out within 24 business hours.\n\nWarm regards,\nThe BytecGlobal Team\nhttps://bytecglobal.com",
+      "placeholders": [
+        "customer_name",
+        "customer_email",
+        "service_name",
+        "company_name"
+      ],
+      "createdAt": "2026-11-16T15:02:50.778Z",
+      "updatedAt": "2026-11-16T15:02:50.778Z"
+    },
+    {
+      "id": "tpl_meeting_confirmation",
+      "name": "Meeting Confirmation Email",
+      "category": "Meeting Confirmation",
+      "subject": "Meeting Confirmed: BytecGlobal Discovery Call on {{meeting_date}}",
+      "content": "Hi {{customer_name}},\n\nYour discovery meeting with BytecGlobal has been confirmed for {{meeting_date}}.\n\nMeeting link: {{meeting_link}}\n\nWe look forward to speaking with you!\n\nBest,\nBytecGlobal Engineering Team",
+      "placeholders": [
+        "customer_name",
+        "meeting_date",
+        "meeting_link"
+      ],
+      "createdAt": "2026-11-16T15:02:50.778Z",
+      "updatedAt": "2026-11-16T15:02:50.778Z"
+    },
+    {
+      "id": "tpl_followup",
+      "name": "Lead Follow-up Email",
+      "category": "Follow-up",
+      "subject": "Following up on your digital transformation project",
+      "content": "Hi {{customer_name}},\n\nI wanted to follow up on your recent inquiry regarding {{service_name}} for {{company_name}}.\n\nDo you have 15 minutes this week for a quick consultation?\n\nBest regards,\nBytecGlobal Team",
+      "placeholders": [
+        "customer_name",
+        "service_name",
+        "company_name"
+      ],
+      "createdAt": "2026-11-16T15:02:50.778Z",
+      "updatedAt": "2026-11-16T15:02:50.778Z"
+    }
+  ],
+  "cms_sections": {
+    "homepage": {
+      "categoryText": "Software · AI · Cloud · Data",
+      "mainHeading": "Your digital transformation",
+      "highlightedHeading": "partner.",
+      "description": "We turn spreadsheets, paper forms and manual follow-ups into custom software, web platforms, mobile apps and AI tools, built around how your business really works.",
+      "primaryButtonText": "Let's talk",
+      "primaryButtonUrl": "/start-project",
+      "secondaryButtonText": "See our work",
+      "secondaryButtonUrl": "/projects",
+      "tags": [
+        "100% custom-built",
+        "Web, mobile, AI & cloud under one roof"
+      ],
+      "visibility": true,
+      "updatedAt": "2026-11-16T15:02:50.778Z",
+      "publishedAt": "2026-11-16T15:02:50.778Z"
+    },
+    "heroAnimation": {
+      "enabled": true,
+      "particleCount": 160,
+      "particleSize": 3,
+      "animationSpeed": 1,
+      "visibility": true,
+      "behavior": "interactive-orbit",
+      "updatedAt": "2026-11-16T15:02:50.778Z",
+      "publishedAt": "2026-11-16T15:02:50.778Z"
+    },
+    "about": {
+      "heading": "Engineering Digital Excellence for Forward-Thinking Enterprises",
+      "subheading": "Custom solutions crafted around how your business really operates.",
+      "content": "BytecGlobal is a premier technology partner specializing in enterprise custom software, cloud architecture, and artificial intelligence solutions. We replace manual friction with seamless, reliable software.",
+      "visibility": true,
+      "updatedAt": "2026-11-16T15:02:50.778Z",
+      "publishedAt": "2026-11-16T15:02:50.778Z"
+    },
+    "branding": {
+      "name": "BytecGlobal",
+      "tagline": "Your digital transformation partner.",
+      "primaryColor": "#f5c518",
+      "accentInk": "#806000",
+      "darkBackground": "#29251b",
+      "logoText": "BytecGlobal",
+      "contactEmail": "bytecglobal@gmail.com",
+      "contactPhone": "+00 000 000 0000",
+      "location": "India",
+      "visibility": true,
+      "updatedAt": "2026-11-16T15:02:50.778Z",
+      "publishedAt": "2026-11-16T15:02:50.778Z"
+    }
+  },
+  "cms_services": [
+    {
+      "id": "srv_software-development",
+      "slug": "software-development",
+      "title": "Software Development",
+      "tagline": "Custom Software Solutions Built Around Your Business.",
+      "sectionTitle": "Software That Solves Real Business Problems",
+      "sectionIntro": "Your business shouldn’t have to adapt to software that doesn’t fit its workflow. Off-the-shelf tools may not support your processes, integrations, scalability requirements, or long-term product vision. We help identify the right software approach and build solutions aligned with operational needs.",
+      "short": "Turn business ideas and operational challenges into reliable software. We help startups and growing businesses design, develop, integrate, and improve applications that support their goals.",
+      "points": [
+        "Custom software: business applications, internal platforms, workflow systems, and integrations.",
+        "Product development: product discovery, technical planning, MVPs, SaaS applications, feature enhancements, and architecture planning.",
+        "API development: REST APIs, third-party integrations, backend services, authentication, authorization, and data exchange.",
+        "Software modernization: legacy application assessment, codebase improvements, performance optimization, and migration planning.",
+        "Maintenance: bug fixes, monitoring support, enhancements, documentation, and performance improvements."
+      ],
+      "tech": [
+        "Frontend: React, Next.js, JavaScript, TypeScript.",
+        "Backend: Node.js, Express.js, REST APIs.",
+        "Databases: PostgreSQL, MySQL, MongoDB.",
+        "Authentication: Clerk, AWS Cognito, and suitable secure integrations.",
+        "Cloud and delivery: AWS, Git, GitHub, testing, and CI/CD workflows."
+      ],
+      "process": [
+        "Discovery: understand business objectives, users, and requirements.",
+        "Planning: define scope, features, architecture, and milestones.",
+        "Design: plan user experience and application structure.",
+        "Development: build and integrate software components.",
+        "Testing: validate functionality, reliability, and performance.",
+        "Deployment: prepare and release the application.",
+        "Improvement: support future enhancements under an agreed scope."
+      ],
+      "whoWeWorkWith": "Startup founders building their first product; small businesses replacing manual operations; growing companies modernizing applications; product teams needing development capacity; and businesses connecting multiple systems.",
+      "faqs": [
+        {
+          "q": "Can you develop software from scratch?",
+          "a": "Yes, after discussing the concept, requirements, and objectives."
+        },
+        {
+          "q": "Can you work with existing software?",
+          "a": "Yes, we can assess improvements, integrations, maintenance, or modernization."
+        },
+        {
+          "q": "Do you develop MVPs?",
+          "a": "Yes, we can prioritize essential features for an initial release."
+        },
+        {
+          "q": "Do you provide ongoing support?",
+          "a": "Support arrangements can be discussed according to project requirements."
+        },
+        {
+          "q": "How do we start?",
+          "a": "Share your requirements or schedule a discovery call."
+        }
+      ],
+      "finalCTA": {
+        "heading": "Have a Software Idea? Let’s Turn It Into Something Real.",
+        "body": "Tell us about your business challenge, product concept, or software requirements.",
+        "buttonText": "Start Your Software Project"
+      },
+      "displayOrder": 1,
+      "visibility": true,
+      "updatedAt": "2026-11-16T15:02:50.778Z",
+      "publishedAt": "2026-11-16T15:02:50.778Z"
+    },
+    {
+      "id": "srv_web-development",
+      "slug": "web-development",
+      "title": "Web Development",
+      "tagline": "Websites and Web Applications Designed to Drive Business Growth.",
+      "sectionTitle": "Build a Stronger Digital Presence",
+      "sectionIntro": "A slow, outdated, or poorly structured website can make it difficult for customers to understand your business. We create intuitive, responsive, accessible digital experiences aligned with your brand and objectives.",
+      "short": "Your website should do more than look good. It should communicate your value, build credibility, and help turn visitors into customers. We design and develop responsive websites and web applications tailored to your business.",
+      "points": [
+        "Business websites: corporate websites, startup websites, professional service websites, landing pages, and portfolios.",
+        "Custom web applications: customer portals, admin dashboards, management systems, booking platforms, and data-driven applications.",
+        "SaaS development: authentication, subscription and billing integrations, dashboards, and role-based access.",
+        "E-commerce: storefronts, product catalogs, carts, payment integrations, and order management.",
+        "Redesign and optimization: UI/UX improvements, responsive design, restructuring, page speed, and technical SEO."
+      ],
+      "tech": [
+        "Frontend: HTML, CSS, JavaScript, React.",
+        "Framework: Next.js.",
+        "Styling: Tailwind CSS.",
+        "Backend: Node.js and Express.js.",
+        "Databases: PostgreSQL, MySQL, MongoDB.",
+        "Deployment: AWS and suitable hosting platforms."
+      ],
+      "process": [
+        "Understand your brand, audience, and objectives.",
+        "Plan site structure, user journeys, and features.",
+        "Create the visual direction and interface.",
+        "Develop frontend and backend.",
+        "Test responsiveness, functionality, and performance.",
+        "Deploy and provide agreed handover documentation."
+      ],
+      "whoWeWorkWith": "Startups establishing an online presence; consultants and professional service businesses; small and mid-sized companies; SaaS founders; businesses replacing outdated websites; and companies needing custom portals.",
+      "faqs": [
+        {
+          "q": "Can you build a website from scratch?",
+          "a": "Yes, based on agreed planning, design, development, testing, and deployment scope."
+        },
+        {
+          "q": "Will it work on mobile?",
+          "a": "We prioritize responsive design across desktop, tablet, and mobile."
+        },
+        {
+          "q": "Can you redesign an existing website?",
+          "a": "Yes, we can assess design, functionality, and performance."
+        },
+        {
+          "q": "Can you build dashboards and portals?",
+          "a": "Yes, including authenticated business applications."
+        },
+        {
+          "q": "Will it be SEO-friendly?",
+          "a": "We can implement technical SEO foundations; search rankings cannot be guaranteed."
+        }
+      ],
+      "finalCTA": {
+        "heading": "Your Website Is Often Your First Impression. Make It Count.",
+        "body": "Let’s build a digital experience that reflects your business and supports growth.",
+        "buttonText": "Let’s Build Your Website"
+      },
+      "displayOrder": 2,
+      "visibility": true,
+      "updatedAt": "2026-11-16T15:02:50.778Z",
+      "publishedAt": "2026-11-16T15:02:50.778Z"
+    },
+    {
+      "id": "srv_mobile-app-development",
+      "slug": "mobile-app-development",
+      "title": "Mobile App Development",
+      "tagline": "Turn Your App Idea Into a Mobile Experience.",
+      "sectionTitle": "Mobile Experiences That Connect Businesses and People",
+      "sectionIntro": "Customers expect convenient digital experiences wherever they are. A well-designed mobile application can improve engagement, streamline operations, and provide accessible services. We help evaluate your idea, identify essential features, and select an appropriate approach.",
+      "short": "Create mobile applications that connect with customers, simplify everyday tasks, and support business operations. We help plan and develop mobile applications with practical functionality, intuitive experiences, and scalable technical foundations.",
+      "points": [
+        "Cross-platform development: shared architecture, reusable UI components, navigation, interactions, and API connectivity.",
+        "Business applications: employee apps, customer apps, booking and appointment apps, service management, and internal tools.",
+        "Startup MVPs: feature prioritization, MVP planning, user flows, prototypes, and initial development.",
+        "Backend and API integration: REST APIs, authentication, database connectivity, push notifications, and third-party services.",
+        "Modernization: UI improvements, codebase assessment, API optimization, bug fixes, and enhancements."
+      ],
+      "tech": [
+        "Cross-platform: React Native.",
+        "Languages: JavaScript, TypeScript.",
+        "Backend: Node.js, REST APIs.",
+        "Databases: PostgreSQL, MongoDB.",
+        "Infrastructure: Cloud hosting and authentication integrations."
+      ],
+      "process": [
+        "Product discovery: understand users, business model, and goals.",
+        "Feature planning: identify essentials and prioritize the MVP.",
+        "UX planning: define user flows and interface requirements.",
+        "Development: build mobile interfaces and backend services.",
+        "Testing: validate functionality across supported devices.",
+        "Release preparation: prepare deployment and app-store submission where included in scope.",
+        "Enhancements: plan improvements based on feedback."
+      ],
+      "whoWeWorkWith": "Startup founders developing mobile-first products; businesses digitizing services; companies building customer applications; organizations requiring internal mobile tools; and product owners improving existing applications.",
+      "faqs": [
+        {
+          "q": "Do you develop Android and iOS apps?",
+          "a": "We can discuss cross-platform options based on target devices and requirements."
+        },
+        {
+          "q": "Can you build an MVP?",
+          "a": "Yes, we can define and develop essential functionality."
+        },
+        {
+          "q": "Can the app connect to an existing backend?",
+          "a": "Yes, subject to assessment and API planning."
+        },
+        {
+          "q": "Can you help publish it?",
+          "a": "Release preparation and store submission can be included in scope."
+        },
+        {
+          "q": "Can you update an existing app?",
+          "a": "Yes, including maintenance, redesign, and feature improvements."
+        }
+      ],
+      "finalCTA": {
+        "heading": "Have a Mobile App Idea? Let’s Explore It Together.",
+        "body": "Start with a conversation about your users, features, and product goals.",
+        "buttonText": "Discuss Your App"
+      },
+      "displayOrder": 3,
+      "visibility": true,
+      "updatedAt": "2026-11-16T15:02:50.778Z",
+      "publishedAt": "2026-11-16T15:02:50.778Z"
+    },
+    {
+      "id": "srv_ai-ml-development",
+      "slug": "ai-ml-development",
+      "title": "AI & ML Development",
+      "tagline": "Make Your Business Smarter With Practical AI Solutions.",
+      "sectionTitle": "Move Beyond AI Experiments",
+      "sectionIntro": "Many businesses are interested in AI but aren’t sure where to begin. The challenge is identifying the right use case, understanding available data, selecting suitable technologies, and integrating solutions into business processes. Our approach focuses on business requirements, feasibility, and measurable outcomes.",
+      "short": "Artificial intelligence is most valuable when it solves a real problem. We help businesses explore, plan, and develop AI-powered applications and automation solutions that improve workflows, enhance user experiences, and support better decisions.",
+      "points": [
+        "AI-powered applications: assistants, intelligent search, conversational interfaces, document processing, and context-aware features.",
+        "Generative AI: LLM API integrations, chat interfaces, prompt engineering, RAG solutions, and AI-powered information workflows.",
+        "Business automation: information processing, email and document workflows, AI-assisted support, data extraction, and workflow orchestration.",
+        "Machine learning: predictive modeling, classification, recommendations, pattern identification, and model evaluation where data supports the use case.",
+        "AI consulting: opportunity assessment, use-case identification, feasibility, model/API selection, and implementation roadmaps."
+      ],
+      "tech": [
+        "LLM integrations: OpenAI, Anthropic, and other model APIs.",
+        "Retrieval-Augmented Generation (RAG) solutions.",
+        "Languages: Python, JavaScript, TypeScript.",
+        "Frameworks: LangChain, vector databases, REST APIs.",
+        "Infrastructure: Cloud hosting and secure API integrations."
+      ],
+      "process": [
+        "Identify a business problem worth solving.",
+        "Assess available data, systems, and feasibility.",
+        "Select suitable models, APIs, and architecture.",
+        "Build a proof of concept where appropriate.",
+        "Integrate AI into the application or workflow.",
+        "Evaluate outputs, accuracy, reliability, and cost.",
+        "Plan monitoring, human oversight, and improvements."
+      ],
+      "whoWeWorkWith": "Startups developing AI-powered products; businesses exploring automation; companies building intelligent customer experiences; teams integrating LLMs into applications; and organizations seeking practical AI consulting.",
+      "faqs": [
+        {
+          "q": "Can you integrate ChatGPT or other LLMs?",
+          "a": "Yes, we can evaluate model APIs and integration options."
+        },
+        {
+          "q": "Can you build a custom AI chatbot?",
+          "a": "Yes, after defining purpose, knowledge sources, integrations, and user experience."
+        },
+        {
+          "q": "Do we need our own ML model?",
+          "a": "Not necessarily; existing models and APIs may be sufficient."
+        },
+        {
+          "q": "Can AI automate processes?",
+          "a": "Potentially; we first assess workflow suitability, constraints, and human approvals."
+        },
+        {
+          "q": "How are costs determined?",
+          "a": "Costs depend on complexity, integrations, data, infrastructure, and model usage."
+        }
+      ],
+      "finalCTA": {
+        "heading": "Let’s Identify Where AI Can Create Real Value for Your Business.",
+        "body": "Tell us about the process you want to improve or product you want to build.",
+        "buttonText": "Book an AI Consultation"
+      },
+      "displayOrder": 4,
+      "visibility": true,
+      "updatedAt": "2026-11-16T15:02:50.778Z",
+      "publishedAt": "2026-11-16T15:02:50.778Z"
+    },
+    {
+      "id": "srv_data-science",
+      "slug": "data-science",
+      "title": "Data Science",
+      "tagline": "Turn Your Business Data Into Better Decisions.",
+      "sectionTitle": "Make Better Decisions With Your Data",
+      "sectionIntro": "Information is often spread across spreadsheets, databases, applications, and operational systems. Without a structured approach, it can be difficult to identify trends or understand performance. We help make data more useful through analysis, visualization, and reporting.",
+      "short": "Your business generates valuable information every day. We help businesses organize, analyze, visualize, and interpret data to uncover patterns, understand performance, and support informed decisions.",
+      "points": [
+        "Data analysis: exploratory analysis, cleaning, preparation, transformation, statistics, and trend identification.",
+        "Data visualization: interactive dashboards, business reporting, KPI visualization, performance dashboards, and data storytelling.",
+        "Business intelligence: reporting workflows, aggregation, KPI tracking, performance analysis, and management dashboards.",
+        "Predictive analytics: forecasting approaches, trend modeling, predictive analysis, customer behavior analysis, and model evaluation.",
+        "Data pipelines: extraction, transformation, integration, structured storage, and automated reporting."
+      ],
+      "tech": [
+        "Programming: Python and SQL.",
+        "Data processing: Pandas and NumPy.",
+        "Visualization: Power BI, Tableau, and Python visualization libraries.",
+        "Databases: PostgreSQL and MySQL.",
+        "Machine learning: Scikit-learn where appropriate."
+      ],
+      "process": [
+        "Understand the business question.",
+        "Review data sources and availability.",
+        "Clean, validate, and prepare data.",
+        "Analyze and identify relevant patterns.",
+        "Create visualizations and reports.",
+        "Present findings in a business-friendly format.",
+        "Discuss recommendations and next steps."
+      ],
+      "whoWeWorkWith": "Startups seeking business visibility; small businesses managing operational data; sales and marketing teams; e-commerce businesses; companies requiring custom dashboards; and organizations exploring predictive analytics.",
+      "faqs": [
+        {
+          "q": "Do we need a large dataset?",
+          "a": "Not always; the approach depends on the question and data quality and quantity."
+        },
+        {
+          "q": "Can you create dashboards?",
+          "a": "Yes, with requirements and data sources scoped in advance."
+        },
+        {
+          "q": "Can you work with Excel and CSV files?",
+          "a": "Yes, structured spreadsheet data can be assessed and processed."
+        },
+        {
+          "q": "Do you provide recommendations?",
+          "a": "We can explain findings and opportunities based on available data; decisions remain with your organization."
+        },
+        {
+          "q": "Can you automate recurring reports?",
+          "a": "Yes, we can explore scheduled processing and reporting workflows."
+        }
+      ],
+      "finalCTA": {
+        "heading": "Your Data Has a Story. Let’s Understand It.",
+        "body": "Tell us what information you have and what business questions you want to answer.",
+        "buttonText": "Start a Data Consultation"
+      },
+      "displayOrder": 5,
+      "visibility": true,
+      "updatedAt": "2026-11-16T15:02:50.778Z",
+      "publishedAt": "2026-11-16T15:02:50.778Z"
+    },
+    {
+      "id": "srv_cloud-devops",
+      "slug": "cloud-devops",
+      "title": "Cloud & DevOps",
+      "tagline": "Build, Deploy, and Scale With Confidence.",
+      "sectionTitle": "Infrastructure That Supports Growth",
+      "sectionIntro": "As applications grow, infrastructure requirements become more complex. Manual deployments, poorly configured environments, limited monitoring, and inefficient resource usage can create operational challenges. We help improve how applications are built, deployed, monitored, and maintained.",
+      "short": "Your software infrastructure should support your business, not slow it down. We help businesses plan cloud environments, improve deployment workflows, and establish practical DevOps processes for reliable application delivery.",
+      "points": [
+        "Cloud consulting: readiness assessment, infrastructure planning, architecture guidance, service selection, and migration planning.",
+        "Cloud setup: environment configuration, application hosting, storage, database connectivity, and access management.",
+        "CI/CD: automated build workflows, testing integration, deployment pipelines, Git-based workflows, and environment management.",
+        "DevOps automation: infrastructure and deployment automation, configuration, workflow optimization, and release support.",
+        "Monitoring and optimization: resource and application monitoring, logging, diagnostics, performance assessment, and cost optimization recommendations."
+      ],
+      "tech": [
+        "Cloud: AWS.",
+        "CI/CD: GitHub Actions and AWS Amplify.",
+        "Containers: Docker.",
+        "Infrastructure as code: Terraform where appropriate.",
+        "Version control: Git and GitHub.",
+        "Monitoring: Cloud-native monitoring tools."
+      ],
+      "process": [
+        "Review current infrastructure.",
+        "Understand application architecture and deployment needs.",
+        "Identify operational risks and opportunities.",
+        "Recommend a suitable cloud and DevOps approach.",
+        "Implement agreed changes.",
+        "Validate deployment and monitoring workflows.",
+        "Provide documentation and handover."
+      ],
+      "whoWeWorkWith": "Startups deploying their first production application; businesses migrating to cloud platforms; teams with manual deployment workflows; SaaS companies improving infrastructure; businesses seeking cloud cost visibility; and teams requiring deployment consulting.",
+      "faqs": [
+        {
+          "q": "Do you work with AWS?",
+          "a": "AWS is a platform we can use depending on project needs."
+        },
+        {
+          "q": "Can you set up CI/CD?",
+          "a": "Yes, after reviewing the repository and deployment process."
+        },
+        {
+          "q": "Can you help reduce cloud costs?",
+          "a": "We can identify optimization opportunities; savings depend on architecture and usage."
+        },
+        {
+          "q": "Can you containerize an application?",
+          "a": "We can assess whether Docker is appropriate."
+        },
+        {
+          "q": "Can you support existing infrastructure?",
+          "a": "Yes, through reviews, configuration improvements, deployment workflows, and agreed support."
+        }
+      ],
+      "finalCTA": {
+        "heading": "Ready to Improve Your Cloud Infrastructure?",
+        "body": "Let’s discuss your current setup and practical improvements.",
+        "buttonText": "Book a Cloud Consultation"
+      },
+      "displayOrder": 6,
+      "visibility": true,
+      "updatedAt": "2026-11-16T15:02:50.778Z",
+      "publishedAt": "2026-11-16T15:02:50.778Z"
+    },
+    {
+      "id": "srv_technical-project-guidance",
+      "slug": "technical-project-guidance",
+      "title": "Technical Project Guidance",
+      "tagline": "The Right Technical Decisions Start With the Right Guidance.",
+      "sectionTitle": "Clarity Before Development",
+      "sectionIntro": "Starting without a clear technical direction can lead to unnecessary complexity, avoidable expenses, and delays. Whether planning a product, evaluating a technology stack, or improving an application, we help assess options and define a practical path forward.",
+      "short": "Building a technology product involves more than writing code. You need the right architecture, technology choices, development priorities, and implementation strategy. We help founders and businesses make informed technical decisions before and during software development.",
+      "points": [
+        "Technical discovery: requirements, feature identification, feasibility, scope, and roadmap.",
+        "Software architecture: application architecture review, frontend/backend architecture, database design, API architecture, and scalability considerations.",
+        "MVP and startup consulting: feature prioritization, product scope, technology selection, development planning, and release strategy.",
+        "Technology evaluation: frameworks, databases, cloud platforms, third-party services, and technical trade-offs.",
+        "Codebase review: code quality, architecture, technical debt, performance, and improvement recommendations."
+      ],
+      "tech": [],
+      "process": [
+        "Initial discussion: understand the product, goals, and challenges.",
+        "Technical assessment: review relevant requirements, documentation, or systems.",
+        "Recommendations: present suitable approaches and trade-offs.",
+        "Roadmap: define priorities, milestones, and implementation steps.",
+        "Execution support: help implement recommendations where agreed.",
+        "Review: discuss progress and next steps."
+      ],
+      "whoWeWorkWith": "Non-technical founders with product ideas; startups preparing an MVP; businesses evaluating digital transformation; product owners planning modernization; companies selecting technology vendors; and development teams needing architecture guidance.",
+      "faqs": [
+        {
+          "q": "Do I need a technical background?",
+          "a": "No, we can explain decisions in straightforward language."
+        },
+        {
+          "q": "Can you plan an app before development?",
+          "a": "Yes, including scope, features, architecture, and roadmap."
+        },
+        {
+          "q": "Do you provide architecture documentation?",
+          "a": "It can be included as an agreed deliverable."
+        },
+        {
+          "q": "Can you review an existing codebase?",
+          "a": "Yes, subject to access and scope."
+        },
+        {
+          "q": "Can consulting lead to development?",
+          "a": "Yes, implementation can be scoped and commercially agreed separately."
+        }
+      ],
+      "finalCTA": {
+        "heading": "Have a Technical Challenge? Let’s Find the Right Direction.",
+        "body": "Start with a conversation about your product, architecture, or development plans.",
+        "buttonText": "Talk to a Technical Consultant"
+      },
+      "displayOrder": 7,
+      "visibility": true,
+      "updatedAt": "2026-11-16T15:02:50.778Z",
+      "publishedAt": "2026-11-16T15:02:50.778Z"
+    },
+    {
+      "id": "srv_seo",
+      "slug": "seo",
+      "title": "SEO",
+      "tagline": "Rank Higher, Get Found, Grow Your Business.",
+      "sectionTitle": "Search Engine Optimisation That Drives Real Results",
+      "sectionIntro": "Being invisible in search results means losing potential customers to competitors every day. We help businesses improve their organic search visibility through technical SEO, on-page optimisation, and content strategy aligned with business goals.",
+      "short": "Get found by the right people at the right time. We help businesses improve search engine rankings and drive qualified organic traffic through technical SEO, content optimisation, and strategic planning.",
+      "points": [
+        "Technical SEO: site audits, crawlability, indexation, page speed, Core Web Vitals, structured data, and XML sitemaps.",
+        "On-page optimisation: keyword research, meta tags, heading structure, content alignment, internal linking, and URL optimisation.",
+        "Content strategy: content planning, topic clusters, landing page optimisation, and content gap analysis.",
+        "Local SEO: Google Business Profile optimisation, local citations, NAP consistency, and local keyword targeting.",
+        "SEO reporting: rank tracking, traffic analysis, competitor benchmarking, and monthly performance reporting."
+      ],
+      "tech": [
+        "Tools: Google Search Console and Google Analytics.",
+        "Research: Ahrefs and SEMrush for keyword and competitor analysis.",
+        "Technical: Next.js SSR/SSG for SEO-friendly architecture, structured data (JSON-LD).",
+        "Reporting: custom dashboards and monthly reporting workflows."
+      ],
+      "process": [
+        "SEO audit: assess current rankings, technical health, and opportunities.",
+        "Keyword research: identify target keywords aligned with business goals.",
+        "Strategy: create a prioritised SEO roadmap.",
+        "Technical fixes: resolve crawl errors, speed issues, and structural problems.",
+        "On-page optimisation: implement content and metadata improvements.",
+        "Content development: create or improve pages targeting priority keywords.",
+        "Monitor and report: track rankings, traffic, and progress monthly."
+      ],
+      "whoWeWorkWith": "Startups building organic traffic from day one; small businesses wanting to rank locally; e-commerce companies driving product discovery; professional service businesses targeting specific keywords; and businesses with existing websites needing SEO improvements.",
+      "faqs": [
+        {
+          "q": "How long does SEO take?",
+          "a": "Results typically take 3–6 months; timelines depend on competition, domain authority, and the scope of optimisation."
+        },
+        {
+          "q": "Can you guarantee rankings?",
+          "a": "No ethical SEO provider can guarantee specific rankings; we can commit to a thorough, best-practice approach."
+        },
+        {
+          "q": "Do you do local SEO?",
+          "a": "Yes, including Google Business Profile optimisation and local citation management."
+        },
+        {
+          "q": "Will you create content?",
+          "a": "Content creation can be included in scope depending on project requirements."
+        },
+        {
+          "q": "Can you audit my existing website?",
+          "a": "Yes, a technical and on-page SEO audit can be scoped as a standalone engagement."
+        }
+      ],
+      "finalCTA": {
+        "heading": "Ready to Rank Higher and Attract More Customers?",
+        "body": "Let’s review your current search presence and identify the best opportunities for growth.",
+        "buttonText": "Book an SEO Consultation"
+      },
+      "displayOrder": 8,
+      "visibility": true,
+      "updatedAt": "2026-11-16T15:02:50.778Z",
+      "publishedAt": "2026-11-16T15:02:50.778Z"
+    }
+  ],
+  "cms_solutions": [
+    {
+      "id": "sol_1",
+      "title": "ERP & Internal Tools",
+      "text": "Replace spreadsheets and paper forms with one connected system for orders, stock, HR and finance.",
+      "displayOrder": 1,
+      "visibility": true,
+      "updatedAt": "2026-11-16T15:02:50.778Z",
+      "publishedAt": "2026-11-16T15:02:50.778Z"
+    },
+    {
+      "id": "sol_2",
+      "title": "Online Platforms",
+      "text": "Customer portals, marketplaces and booking systems built to grow with you.",
+      "displayOrder": 2,
+      "visibility": true,
+      "updatedAt": "2026-11-16T15:02:50.778Z",
+      "publishedAt": "2026-11-16T15:02:50.778Z"
+    },
+    {
+      "id": "sol_3",
+      "title": "Mobile Apps",
+      "text": "Apps for customers or field teams, with real-time data and offline support.",
+      "displayOrder": 3,
+      "visibility": true,
+      "updatedAt": "2026-11-16T15:02:50.778Z",
+      "publishedAt": "2026-11-16T15:02:50.778Z"
+    },
+    {
+      "id": "sol_4",
+      "title": "AI Automation",
+      "text": "Automate repetitive work: document reading, replies, reporting and approvals.",
+      "displayOrder": 4,
+      "visibility": true,
+      "updatedAt": "2026-11-16T15:02:50.778Z",
+      "publishedAt": "2026-11-16T15:02:50.778Z"
+    },
+    {
+      "id": "sol_5",
+      "title": "Data & Dashboards",
+      "text": "One trusted view of your numbers, updated automatically.",
+      "displayOrder": 5,
+      "visibility": true,
+      "updatedAt": "2026-11-16T15:02:50.778Z",
+      "publishedAt": "2026-11-16T15:02:50.778Z"
+    },
+    {
+      "id": "sol_6",
+      "title": "Cloud Modernisation",
+      "text": "Move to the cloud safely, with CI/CD, monitoring and backups in place.",
+      "displayOrder": 6,
+      "visibility": true,
+      "updatedAt": "2026-11-16T15:02:50.778Z",
+      "publishedAt": "2026-11-16T15:02:50.778Z"
+    }
+  ],
+  "cms_projects": [
+    {
+      "id": "prj_inventory-erp",
+      "slug": "inventory-erp",
+      "title": "Inventory & Orders ERP",
+      "tag": "Software",
+      "summary": "A custom ERP that replaced spreadsheets for a multi-branch distributor.",
+      "challenge": "Orders and stock lived in separate spreadsheets, causing delays and errors.",
+      "solution": "A single web system for orders, stock, invoicing and reports with role-based access.",
+      "results": [
+        "Single source of truth for stock",
+        "Faster order processing",
+        "Real-time branch reports"
+      ],
+      "stack": [
+        "Next.js",
+        "Node.js",
+        "PostgreSQL",
+        "AWS"
+      ],
+      "featured": true,
+      "displayOrder": 1,
+      "visibility": true,
+      "updatedAt": "2026-11-16T15:02:50.778Z",
+      "publishedAt": "2026-11-16T15:02:50.778Z"
+    },
+    {
+      "id": "prj_field-service-app",
+      "slug": "field-service-app",
+      "title": "Field Service Mobile App",
+      "tag": "Mobile",
+      "summary": "A mobile app for technicians to receive jobs, capture photos and sign off on site.",
+      "challenge": "Job updates were passed by chat messages and often lost.",
+      "solution": "An offline-first app syncing jobs, photos and signatures to a manager dashboard.",
+      "results": [
+        "Jobs tracked end-to-end",
+        "Works without signal",
+        "Less admin follow-up"
+      ],
+      "stack": [
+        "React Native",
+        "Firebase",
+        "TypeScript"
+      ],
+      "featured": true,
+      "displayOrder": 2,
+      "visibility": true,
+      "updatedAt": "2026-11-16T15:02:50.778Z",
+      "publishedAt": "2026-11-16T15:02:50.778Z"
+    },
+    {
+      "id": "prj_sales-insights-dashboard",
+      "slug": "sales-insights-dashboard",
+      "title": "Sales Insights Dashboard",
+      "tag": "Data & AI",
+      "summary": "A live dashboard with forecasting that unified data from several systems.",
+      "challenge": "Management waited days for manual monthly reports.",
+      "solution": "Automated pipelines feeding dashboards with simple demand forecasting.",
+      "results": [
+        "Reports always current",
+        "Clear trend visibility",
+        "Better stock planning"
+      ],
+      "stack": [
+        "Python",
+        "dbt",
+        "BigQuery",
+        "Next.js"
+      ],
+      "featured": true,
+      "displayOrder": 3,
+      "visibility": true,
+      "updatedAt": "2026-11-16T15:02:50.778Z",
+      "publishedAt": "2026-11-16T15:02:50.778Z"
+    }
+  ],
+  "cms_technologies": [
+    {
+      "id": "tech_1",
+      "group": "Frontend",
+      "items": [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "React Native",
+        "Flutter"
+      ],
+      "displayOrder": 1,
+      "visibility": true,
+      "updatedAt": "2026-11-16T15:02:50.778Z",
+      "publishedAt": "2026-11-16T15:02:50.778Z"
+    },
+    {
+      "id": "tech_2",
+      "group": "Backend",
+      "items": [
+        "Node.js",
+        "Python",
+        "Django",
+        "FastAPI",
+        "GraphQL",
+        "REST"
+      ],
+      "displayOrder": 2,
+      "visibility": true,
+      "updatedAt": "2026-11-16T15:02:50.778Z",
+      "publishedAt": "2026-11-16T15:02:50.778Z"
+    },
+    {
+      "id": "tech_3",
+      "group": "Data & AI",
+      "items": [
+        "PostgreSQL",
+        "MongoDB",
+        "BigQuery",
+        "PyTorch",
+        "OpenAI",
+        "LangChain"
+      ],
+      "displayOrder": 3,
+      "visibility": true,
+      "updatedAt": "2026-11-16T15:02:50.778Z",
+      "publishedAt": "2026-11-16T15:02:50.778Z"
+    },
+    {
+      "id": "tech_4",
+      "group": "Cloud & DevOps",
+      "items": [
+        "AWS",
+        "Azure",
+        "GCP",
+        "Docker",
+        "Kubernetes",
+        "GitHub Actions"
+      ],
+      "displayOrder": 4,
+      "visibility": true,
+      "updatedAt": "2026-11-16T15:02:50.778Z",
+      "publishedAt": "2026-11-16T15:02:50.778Z"
+    }
+  ],
+  "cms_navigation": [
+    {
+      "id": "nav_1",
+      "label": "Home",
+      "href": "/",
+      "dropdown": false,
+      "displayOrder": 1,
+      "visibility": true,
+      "updatedAt": "2026-11-16T15:02:50.778Z",
+      "publishedAt": "2026-11-16T15:02:50.778Z"
+    },
+    {
+      "id": "nav_2",
+      "label": "About",
+      "href": "/about",
+      "dropdown": false,
+      "displayOrder": 2,
+      "visibility": true,
+      "updatedAt": "2026-11-16T15:02:50.778Z",
+      "publishedAt": "2026-11-16T15:02:50.778Z"
+    },
+    {
+      "id": "nav_3",
+      "label": "Services",
+      "href": "/services",
+      "dropdown": true,
+      "displayOrder": 3,
+      "visibility": true,
+      "updatedAt": "2026-11-16T15:02:50.778Z",
+      "publishedAt": "2026-11-16T15:02:50.778Z"
+    },
+    {
+      "id": "nav_4",
+      "label": "Solutions",
+      "href": "/solutions",
+      "dropdown": false,
+      "displayOrder": 4,
+      "visibility": true,
+      "updatedAt": "2026-11-16T15:02:50.778Z",
+      "publishedAt": "2026-11-16T15:02:50.778Z"
+    },
+    {
+      "id": "nav_5",
+      "label": "Projects",
+      "href": "/projects",
+      "dropdown": false,
+      "displayOrder": 5,
+      "visibility": true,
+      "updatedAt": "2026-11-16T15:02:50.778Z",
+      "publishedAt": "2026-11-16T15:02:50.778Z"
+    },
+    {
+      "id": "nav_6",
+      "label": "Technologies",
+      "href": "/technologies",
+      "dropdown": false,
+      "displayOrder": 6,
+      "visibility": true,
+      "updatedAt": "2026-11-16T15:02:50.778Z",
+      "publishedAt": "2026-11-16T15:02:50.778Z"
+    },
+    {
+      "id": "nav_7",
+      "label": "Contact",
+      "href": "/contact",
+      "dropdown": false,
+      "displayOrder": 7,
+      "visibility": true,
+      "updatedAt": "2026-11-16T15:02:50.778Z",
+      "publishedAt": "2026-11-16T15:02:50.778Z"
+    }
+  ],
+  "cms_footer": {
+    "brandDescription": "Software, AI and cloud engineering for ambitious businesses.",
+    "contactEmail": "bytecglobal@gmail.com",
+    "meetingUrl": "https://calendly.com/team-bytecglobal/30min",
+    "meetingLabel": "Book a Meeting",
+    "adminLoginLink": {
+      "label": "Admin Login",
+      "url": "/admin/login",
+      "enabled": true,
+      "displayOrder": 2,
+      "showLockIcon": true
+    },
+    "copyrightText": "© 2026 BytecGlobal. All rights reserved.",
+    "companyLinks": [
+      {
+        "label": "About",
+        "href": "/about",
+        "enabled": true
+      },
+      {
+        "label": "How we work",
+        "href": "/how-we-work",
+        "enabled": true
+      },
+      {
+        "label": "Projects",
+        "href": "/projects",
+        "enabled": true
+      },
+      {
+        "label": "Technologies",
+        "href": "/technologies",
+        "enabled": true
+      },
+      {
+        "label": "Contact",
+        "href": "/contact",
+        "enabled": true
+      }
+    ],
+    "socialLinks": [
+      {
+        "platform": "LinkedIn",
+        "url": "https://linkedin.com",
+        "enabled": true
+      },
+      {
+        "platform": "GitHub",
+        "url": "https://github.com",
+        "enabled": true
+      }
+    ],
+    "visibility": true,
+    "updatedAt": "2026-11-16T15:02:50.778Z",
+    "publishedAt": "2026-11-16T15:02:50.778Z"
+  },
+  "seo_settings": {
+    "global": {
+      "siteName": "BytecGlobal",
+      "titleTemplate": "%s | BytecGlobal - Engineering Digital Excellence",
+      "defaultTitle": "BytecGlobal | Custom Software, AI & Cloud Engineering",
+      "defaultDescription": "BytecGlobal builds enterprise custom software, web platforms, mobile apps, and AI solutions tailored to operational business needs.",
+      "canonicalBase": "https://bytecglobal.com",
+      "robots": "index, follow",
+      "ogImage": "/og-image.png"
+    },
+    "pages": {
+      "/": {
+        "title": "BytecGlobal — Digital Transformation & Custom Software",
+        "description": "We turn spreadsheets, paper forms and manual follow-ups into custom software, web platforms, mobile apps and AI tools."
+      },
+      "/about": {
+        "title": "About Us — BytecGlobal",
+        "description": "Learn about BytecGlobal's philosophy, engineering standards, and mission to deliver exceptional digital platforms."
+      },
+      "/services": {
+        "title": "Services — BytecGlobal Engineering Solutions",
+        "description": "Full-cycle software engineering: Web, Mobile, AI/ML, Data Science, and Cloud DevOps."
+      },
+      "/solutions": {
+        "title": "Enterprise Solutions — BytecGlobal",
+        "description": "From custom ERPs to intelligent automation workflows, explore our end-to-end business solutions."
+      },
+      "/projects": {
+        "title": "Client Work & Case Studies — BytecGlobal",
+        "description": "Explore real enterprise software, mobile apps, and automated dashboards engineered by BytecGlobal."
+      },
+      "/technologies": {
+        "title": "Technology Stack — BytecGlobal",
+        "description": "Our modern tech stack: React, Next.js, Node.js, Python, PostgreSQL, AWS, and modern AI models."
+      },
+      "/contact": {
+        "title": "Contact Us — BytecGlobal",
+        "description": "Connect with our engineering leadership to discuss your project requirements or book a consultation."
+      }
+    }
+  },
+  "media": [
+    {
+      "id": "med_sample_logo",
+      "filename": "bytec-logo.svg",
+      "originalName": "bytec-logo.svg",
+      "mimeType": "image/svg+xml",
+      "size": 4210,
+      "path": "/uploads/bytec-logo.svg",
+      "category": "branding",
+      "altText": "BytecGlobal Corporate Logo",
+      "createdAt": "2026-11-16T15:02:50.778Z"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "notif_1794860559139_954v",
+      "title": "New CONTACT SUBMIT",
+      "message": "sdfawf (subhamoysaha78@gmail.com) triggered New Contact Inquiry Workflow.",
+      "category": "inquiry",
+      "read": false,
+      "link": "/admin/contacts",
+      "createdAt": "2026-11-16T20:22:39.139Z"
+    },
+    {
+      "id": "notif_1794855420072_exqu",
+      "title": "New CONTACT SUBMIT",
+      "message": "SUBHAMOY SAHA (subhamoysaha78@gmail.com) triggered New Contact Inquiry Workflow.",
+      "category": "inquiry",
+      "read": false,
+      "link": "/admin/contacts",
+      "createdAt": "2026-11-16T18:57:00.071Z"
+    },
+    {
+      "id": "notif_1794853760245_uaxm",
+      "title": "New CONTACT SUBMIT",
+      "message": "SUBHAMOY SAHA (subhamoysaha78@gmail.com) triggered New Contact Inquiry Workflow.",
+      "category": "inquiry",
+      "read": true,
+      "link": "/admin/contacts",
+      "createdAt": "2026-11-16T18:29:20.245Z"
+    },
+    {
+      "id": "notif_welcome",
+      "title": "Enterprise Admin Panel Ready",
+      "message": "BytecGlobal Enterprise Admin Panel & CMS initialized with full RBAC, Visitor Tracking, and CMS engine.",
+      "category": "security",
+      "read": false,
+      "link": "/admin/dashboard",
+      "createdAt": "2026-11-16T15:02:50.778Z"
+    }
+  ],
+  "whatsapp_settings": {
+    "phoneNumber": "",
+    "defaultMessage": "Hello BytecGlobal team, I would like to inquire about your software and engineering services.",
+    "enabled": true,
+    "position": "bottom-right",
+    "clickCount": 0,
+    "createdAt": "2026-11-16T15:02:50.778Z",
+    "updatedAt": "2026-11-16T15:02:50.778Z"
+  },
+  "testimonials": [
+    {
+      "id": "rev_1",
+      "clientName": "David Sterling",
+      "companyName": "Nexus Global Supply",
+      "designation": "Chief Operating Officer",
+      "reviewText": "BytecGlobal replaced our disjointed spreadsheets with a clean, ultra-responsive ERP system. Our order turnaround time dropped by 65%.",
+      "rating": 5,
+      "clientImage": null,
+      "featured": true,
+      "status": "published",
+      "createdAt": "2026-11-16T15:02:50.778Z"
+    },
+    {
+      "id": "rev_2",
+      "clientName": "Elena Rodriguez",
+      "companyName": "Vertex Logistics",
+      "designation": "VP of Product",
+      "reviewText": "The offline-first mobile app engineered by BytecGlobal is flawless. Our field technicians love it and data syncs seamlessly to headquarters.",
+      "rating": 5,
+      "clientImage": null,
+      "featured": true,
+      "status": "published",
+      "createdAt": "2026-11-16T15:02:50.778Z"
+    }
+  ],
+  "newsletter": [
+    {
+      "id": "sub_1",
+      "email": "techlead@partner-corp.com",
+      "status": "subscribed",
+      "campaignsReceived": 1,
+      "subscribedAt": "2026-11-16T15:02:50.778Z"
+    }
+  ],
+  "audit_logs": [
+    {
+      "id": "aud_1794860524306_lk0tn",
+      "adminId": "usr_superadmin",
+      "adminEmail": "admin@bytecglobal.com",
+      "action": "LOGIN_SUCCESS",
+      "module": "AUTH",
+      "recordId": "usr_superadmin",
+      "ip": "::1",
+      "details": "Successful admin authentication.",
+      "result": "success",
+      "timestamp": "2026-11-16T20:22:04.306Z"
+    },
+    {
+      "id": "aud_1794860513989_v7x0y",
+      "adminId": "usr_superadmin",
+      "adminEmail": "admin@bytecglobal.com",
+      "action": "LOGIN_FAILED",
+      "module": "AUTH",
+      "recordId": "usr_superadmin",
+      "ip": "::1",
+      "details": "Password mismatch (Attempt 2/5).",
+      "result": "failure",
+      "timestamp": "2026-11-16T20:21:53.989Z"
+    },
+    {
+      "id": "aud_1794860501762_tztue",
+      "adminId": "usr_superadmin",
+      "adminEmail": "admin@bytecglobal.com",
+      "action": "LOGIN_FAILED",
+      "module": "AUTH",
+      "recordId": "usr_superadmin",
+      "ip": "::1",
+      "details": "Password mismatch (Attempt 1/5).",
+      "result": "failure",
+      "timestamp": "2026-11-16T20:21:41.762Z"
+    },
+    {
+      "id": "aud_1794853804879_v8hvf",
+      "adminId": "system",
+      "adminEmail": "system",
+      "action": "UPDATE_CONTACT",
+      "module": "CONTACTS",
+      "recordId": "cnt_1794853760242_oyaiq",
+      "ip": "::1",
+      "details": "Updated contact cnt_1794853760242_oyaiq (Status: contacted).",
+      "result": "success",
+      "timestamp": "2026-11-16T18:30:04.879Z"
+    },
+    {
+      "id": "aud_1794853800514_ule8v",
+      "adminId": "system",
+      "adminEmail": "system",
+      "action": "UPDATE_CONTACT",
+      "module": "CONTACTS",
+      "recordId": "cnt_1794853760242_oyaiq",
+      "ip": "::1",
+      "details": "Updated contact cnt_1794853760242_oyaiq (Status: converted).",
+      "result": "success",
+      "timestamp": "2026-11-16T18:30:00.514Z"
+    },
+    {
+      "id": "aud_1794853798433_kldhe",
+      "adminId": "system",
+      "adminEmail": "system",
+      "action": "UPDATE_CONTACT",
+      "module": "CONTACTS",
+      "recordId": "cnt_1794853760242_oyaiq",
+      "ip": "::1",
+      "details": "Updated contact cnt_1794853760242_oyaiq (Status: meeting_scheduled).",
+      "result": "success",
+      "timestamp": "2026-11-16T18:29:58.433Z"
+    },
+    {
+      "id": "aud_1794853794409_z3leh",
+      "adminId": "system",
+      "adminEmail": "system",
+      "action": "UPDATE_CONTACT",
+      "module": "CONTACTS",
+      "recordId": "cnt_1794853760242_oyaiq",
+      "ip": "::1",
+      "details": "Updated contact cnt_1794853760242_oyaiq (Status: contacted).",
+      "result": "success",
+      "timestamp": "2026-11-16T18:29:54.409Z"
+    },
+    {
+      "id": "aud_1794853786674_wh4if",
+      "adminId": "system",
+      "adminEmail": "system",
+      "action": "UPDATE_CONTACT",
+      "module": "CONTACTS",
+      "recordId": "cnt_1794853760242_oyaiq",
+      "ip": "::1",
+      "details": "Updated contact cnt_1794853760242_oyaiq (Status: archived).",
+      "result": "success",
+      "timestamp": "2026-11-16T18:29:46.674Z"
+    },
+    {
+      "id": "aud_1794853784811_bocce",
+      "adminId": "system",
+      "adminEmail": "system",
+      "action": "UPDATE_CONTACT",
+      "module": "CONTACTS",
+      "recordId": "cnt_1794853760242_oyaiq",
+      "ip": "::1",
+      "details": "Updated contact cnt_1794853760242_oyaiq (Status: contacted).",
+      "result": "success",
+      "timestamp": "2026-11-16T18:29:44.811Z"
+    },
+    {
+      "id": "aud_1794850472527_lm65s",
+      "adminId": "system",
+      "adminEmail": "system",
+      "action": "UPDATE_PROJECT",
+      "module": "PROJECTS",
+      "recordId": "prj_1",
+      "ip": "::1",
+      "details": "Updated project prj_1 (Inventory & Orders ERP).",
+      "result": "success",
+      "timestamp": "2026-11-16T17:34:32.527Z"
+    },
+    {
+      "id": "aud_1794850471153_8xdho",
+      "adminId": "system",
+      "adminEmail": "system",
+      "action": "UPDATE_PROJECT",
+      "module": "PROJECTS",
+      "recordId": "prj_1",
+      "ip": "::1",
+      "details": "Updated project prj_1 (Inventory & Orders ERP).",
+      "result": "success",
+      "timestamp": "2026-11-16T17:34:31.153Z"
+    },
+    {
+      "id": "aud_1794850469429_8dxpl",
+      "adminId": "system",
+      "adminEmail": "system",
+      "action": "UPDATE_PROJECT",
+      "module": "PROJECTS",
+      "recordId": "prj_1",
+      "ip": "::1",
+      "details": "Updated project prj_1 (Inventory & Orders ERP).",
+      "result": "success",
+      "timestamp": "2026-11-16T17:34:29.429Z"
+    },
+    {
+      "id": "aud_1794850467994_lkc9k",
+      "adminId": "system",
+      "adminEmail": "system",
+      "action": "UPDATE_PROJECT",
+      "module": "PROJECTS",
+      "recordId": "prj_1",
+      "ip": "::1",
+      "details": "Updated project prj_1 (Inventory & Orders ERP).",
+      "result": "success",
+      "timestamp": "2026-11-16T17:34:27.994Z"
+    },
+    {
+      "id": "aud_1794850466417_xjwzw",
+      "adminId": "system",
+      "adminEmail": "system",
+      "action": "UPDATE_PROJECT",
+      "module": "PROJECTS",
+      "recordId": "prj_1",
+      "ip": "::1",
+      "details": "Updated project prj_1 (Inventory & Orders ERP).",
+      "result": "success",
+      "timestamp": "2026-11-16T17:34:26.417Z"
+    },
+    {
+      "id": "aud_1794850298563_948db",
+      "adminId": "system",
+      "adminEmail": "system",
+      "action": "UPDATE_CONTACT",
+      "module": "CONTACTS",
+      "recordId": "cnt_welcome_demo",
+      "ip": "::1",
+      "details": "Updated contact cnt_welcome_demo (Status: qualified).",
+      "result": "success",
+      "timestamp": "2026-11-16T17:31:38.563Z"
+    },
+    {
+      "id": "aud_1794850296673_8olox",
+      "adminId": "system",
+      "adminEmail": "system",
+      "action": "UPDATE_CONTACT",
+      "module": "CONTACTS",
+      "recordId": "cnt_welcome_demo",
+      "ip": "::1",
+      "details": "Updated contact cnt_welcome_demo (Status: archived).",
+      "result": "success",
+      "timestamp": "2026-11-16T17:31:36.673Z"
+    },
+    {
+      "id": "aud_1794850245209_zt6ku",
+      "adminId": "usr_superadmin",
+      "adminEmail": "admin@bytecglobal.com",
+      "action": "LOGIN_SUCCESS",
+      "module": "AUTH",
+      "recordId": "usr_superadmin",
+      "ip": "::1",
+      "details": "Successful admin authentication.",
+      "result": "success",
+      "timestamp": "2026-11-16T17:30:45.209Z"
+    },
+    {
+      "id": "aud_init",
+      "adminId": "usr_superadmin",
+      "adminEmail": "admin@bytecglobal.com",
+      "action": "SYSTEM_INITIALIZATION",
+      "module": "SYSTEM",
+      "recordId": "system",
+      "ip": "127.0.0.1",
+      "details": "BytecGlobal Enterprise Admin & CMS initial database seeded successfully.",
+      "result": "success",
+      "timestamp": "2026-11-16T15:02:50.778Z"
+    }
+  ],
+  "backups": [],
+  "system_settings": {
+    "general": {
+      "siteName": "BytecGlobal",
+      "supportEmail": "bytecglobal@gmail.com",
+      "timezone": "Asia/Kolkata",
+      "dateFormat": "YYYY-MM-DD",
+      "maintenanceMode": false
+    },
+    "security": {
+      "maxLoginAttempts": 5,
+      "lockoutDurationMinutes": 15,
+      "sessionExpiryHours": 24,
+      "enforceStrongPasswords": true
+    },
+    "integrations": {
+      "resend": {
+        "configured": false,
+        "status": "Not Configured"
+      },
+      "whatsapp": {
+        "configured": false,
+        "status": "Not Configured"
+      },
+      "calendly": {
+        "configured": true,
+        "status": "Connected (Default Meeting Link)"
+      }
+    }
+  }
+}

@@ -3,35 +3,69 @@
 /.pnp
 .pnp.js
 
-# Testing
+# Testing & Coverage
 /coverage
+*.lcov
 
-# Next.js
+# Next.js Build Output
 /.next/
 /out/
 
-# Production
+# Production & Packaging
 /build
+/dist
 
-# Misc
+# Operating System Files
 .DS_Store
-*.pem
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
 
-# Debug
+# Security & Secrets
+*.pem
+*.key
+*.cert
+*.crt
+.env
+.env*.local
+.env.development
+.env.test
+.env.production
+!.env.example
+
+# Debugging & Error Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+*.log
 
-# Local env files
-.env*.local
-.env
-!.env.example
+# Editor & IDE Directories
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
-# Vercel
+# Vercel & Deployment
 .vercel
 
-# TypeScript
+# TypeScript Caches
 *.tsbuildinfo
 next-env.d.ts
+<<<<<<< HEAD
+
+# Backups & Uploads
+/data/backups/
+/public/uploads/
+
+=======
 .next-dev/
 .next-stale-backup/
+>>>>>>> 702af4d32637397ff9c75b2261877929e1d45f9a
