@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
 
 export const CLIENT_PROJECTS = [
   {
@@ -81,24 +80,17 @@ export const CLIENT_PROJECTS = [
 
 export default function ClientWorkGrid() {
   return (
-    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="client-work-grid grid gap-6 sm:grid-cols-2">
       {CLIENT_PROJECTS.map((p) => (
-        <Link key={p.slug} href={`/client-work/${p.slug}`} className="group">
-          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl border border-border bg-subtle transition-all hover:border-border-strong hover:shadow-lg">
+        <Link key={p.slug} href={`/client-work/${p.slug}`} className="client-work-card group">
+          <div className="client-work-image relative aspect-video w-full overflow-hidden rounded-xl">
             <img
               src={p.cover}
               alt={p.title}
               loading="lazy"
-              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              className="h-full w-full object-contain"
             />
-            <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-              <div className="flex w-full items-center justify-between p-4">
-                <span className="text-sm font-medium text-white">{p.title}</span>
-                <span className="grid h-8 w-8 place-items-center rounded-full bg-white/20 backdrop-blur-sm">
-                  <ArrowUpRight className="h-4 w-4 text-white" />
-                </span>
-              </div>
-            </div>
+
           </div>
           <p className="mt-4 font-mono text-xs uppercase tracking-[0.08em] text-muted">{p.tag}</p>
           <h3 className="mt-1 text-lg font-semibold tracking-[-0.03em]">{p.title}</h3>

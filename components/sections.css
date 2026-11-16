@@ -99,3 +99,18 @@
 @media(max-width:380px){.vx-steps{grid-template-columns:minmax(0,1fr)}.vx-step-top>svg{display:none}.vx-phone{padding:16px 9px 10px}.vx-phone-row{padding:6px 0}}
 @media(prefers-reduced-motion:reduce){.vx-cta-orbit{animation:none}.vx-card,.vx-dashboard,.vx-phone,.vx-project-arrow,.vx-text-link>span{transition:none}}
 
+#selected-work{background:var(--surface-dark);color:var(--fg-on-dark)}
+#selected-work .vx-eyebrow{color:var(--accent)}
+.client-work-card{display:block;padding:16px 16px 24px;border:1px solid #fff8df26;border-radius:24px;background:#353025;color:var(--fg-on-dark);transition:border-color .25s,box-shadow .25s}
+.client-work-card .client-work-image{background:#211e17}
+.client-work-card>p{color:#d4cbbb}
+.client-work-card>p:first-of-type{color:var(--accent);margin-top:22px}
+.client-work-card>h3{font-size:24px;color:var(--fg-on-dark);margin-block:8px}
+.client-work-card:hover,.client-work-card:focus-visible{border-color:var(--accent);box-shadow:0 12px 28px #0003}
+#our-clients{background:linear-gradient(120deg,#fff0b5,#e8e2d4)}
+#our-clients .vx-company-card{background:var(--surface-dark);color:var(--fg-on-dark);border:1px solid #fff8df26;box-shadow:0 10px 24px #29251b1a}
+#our-clients .vx-company-card h3{color:var(--fg-on-dark)}
+#our-clients .vx-company-card p{color:#d4cbbb}
+#our-clients .vx-company-card .vx-company-industry{color:var(--accent)}
+#our-clients .vx-card-icon{background:#49402b;color:var(--accent);box-shadow:none}
+#our-clients .vx-card-number{color:#d4cbbb}
