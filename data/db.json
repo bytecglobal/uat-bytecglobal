@@ -2,7 +2,7 @@
   "meta": {
     "version": "1.0.0",
     "createdAt": "2026-11-16T15:02:50.778Z",
-    "updatedAt": "2026-11-16T17:57:25.058Z"
+    "updatedAt": "2026-11-16T18:57:00.074Z"
   },
   "users": [
     {
@@ -23,10 +23,10 @@
     {
       "visitorId": "vis_1794841370237_ei95f02",
       "firstVisit": "2026-11-16T15:02:50.779Z",
-      "lastVisit": "2026-11-16T17:57:25.057Z",
+      "lastVisit": "2026-11-16T18:29:01.647Z",
       "totalVisits": 4,
       "landingPage": "/",
-      "exitPage": "/",
+      "exitPage": "/contact",
       "pagesVisited": [
         "/",
         "/client-work/travel-booking-platform",
@@ -47,6 +47,19 @@
     }
   ],
   "analytics_events": [
+    {
+      "id": "evt_1794853741647_0vq9w",
+      "eventName": "page_view",
+      "path": "/contact",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794850411411_y2vrsed",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T18:29:01.647Z"
+    },
     {
       "id": "evt_1794851845057_2w6ey",
       "eventName": "page_view",
@@ -206,6 +219,44 @@
   ],
   "contacts": [
     {
+      "id": "cnt_1794855420067_z8l0p",
+      "name": "SUBHAMOY SAHA",
+      "email": "subhamoysaha78@gmail.com",
+      "phone": "+918391008143",
+      "companyName": "",
+      "service": "Web Development",
+      "subject": "Inquiry: Web Development",
+      "message": "asdfwfsafwfsafdwf",
+      "budget": "",
+      "timeline": "",
+      "sourcePage": "/contact",
+      "status": "new",
+      "assignedTo": "usr_superadmin",
+      "notes": [],
+      "clientIp": "::1",
+      "createdAt": "2026-11-16T18:57:00.067Z",
+      "updatedAt": "2026-11-16T18:57:00.067Z"
+    },
+    {
+      "id": "cnt_1794853760242_oyaiq",
+      "name": "SUBHAMOY SAHA",
+      "email": "subhamoysaha78@gmail.com",
+      "phone": "+918391008143",
+      "companyName": "",
+      "service": "Software Development",
+      "subject": "Inquiry: Software Development",
+      "message": "nfbahbsfhuywfhbjdsbacnvbsjhfhuwf",
+      "budget": "",
+      "timeline": "",
+      "sourcePage": "/contact",
+      "status": "contacted",
+      "assignedTo": "usr_superadmin",
+      "notes": [],
+      "clientIp": "::1",
+      "createdAt": "2026-11-16T18:29:20.242Z",
+      "updatedAt": "2026-11-16T18:30:04.879Z"
+    },
+    {
       "id": "cnt_welcome_demo",
       "name": "Demo Enterprise Client",
       "email": "client@example.com",
@@ -232,6 +283,29 @@
     }
   ],
   "leads": [
+    {
+      "id": "lead_1794853760245_3nom",
+      "contactId": "cnt_1794853760242_oyaiq",
+      "name": "SUBHAMOY SAHA",
+      "email": "subhamoysaha78@gmail.com",
+      "phone": "+918391008143",
+      "companyName": "",
+      "service": "Software Development",
+      "stage": "new",
+      "estimatedValue": 15000,
+      "source": "Automated Contact Ingestion",
+      "assignedTo": "usr_superadmin",
+      "notes": [
+        {
+          "id": "n_1794853760245",
+          "author": "Workflow Automation",
+          "text": "Auto-created lead from inquiry.",
+          "createdAt": "2026-11-16T18:29:20.245Z"
+        }
+      ],
+      "createdAt": "2026-11-16T18:29:20.245Z",
+      "updatedAt": "2026-11-16T18:29:20.245Z"
+    },
     {
       "id": "lead_welcome_demo",
       "contactId": "cnt_welcome_demo",
@@ -377,6 +451,30 @@
   ],
   "emails": [
     {
+      "id": "eml_1794855420073_nr07",
+      "to": "subhamoysaha78@gmail.com",
+      "from": "BytecGlobal <onboarding@resend.dev>",
+      "subject": "Thank you for contacting BytecGlobal - We have received your inquiry",
+      "body": "Hello SUBHAMOY SAHA,\n\nThank you for reaching out to BytecGlobal. We have received your project details regarding Web Development.\n\nOur solutions engineering team is reviewing your requirements and will reach back out within 24 business hours.\n\nWarm regards,\nThe BytecGlobal Team\nhttps://bytecglobal.com",
+      "category": "Inquiry Confirmation",
+      "status": "sent",
+      "providerResponse": "Simulated delivery (dev mode)",
+      "sentAt": "2026-11-16T18:57:00.071Z",
+      "createdAt": "2026-11-16T18:57:00.071Z"
+    },
+    {
+      "id": "eml_1794853760246_3xz6",
+      "to": "subhamoysaha78@gmail.com",
+      "from": "BytecGlobal <onboarding@resend.dev>",
+      "subject": "Thank you for contacting BytecGlobal - We have received your inquiry",
+      "body": "Hello SUBHAMOY SAHA,\n\nThank you for reaching out to BytecGlobal. We have received your project details regarding Software Development.\n\nOur solutions engineering team is reviewing your requirements and will reach back out within 24 business hours.\n\nWarm regards,\nThe BytecGlobal Team\nhttps://bytecglobal.com",
+      "category": "Inquiry Confirmation",
+      "status": "sent",
+      "providerResponse": "Simulated delivery (dev mode)",
+      "sentAt": "2026-11-16T18:29:20.245Z",
+      "createdAt": "2026-11-16T18:29:20.245Z"
+    },
+    {
       "id": "eml_demo",
       "to": "client@example.com",
       "from": "BytecCloud Inquiries <inquiries@bytecglobal.com>",
@@ -417,8 +515,8 @@
           }
         }
       ],
-      "executionCount": 1,
-      "lastRunAt": "2026-11-16T15:02:50.778Z",
+      "executionCount": 3,
+      "lastRunAt": "2026-11-16T18:57:00.071Z",
       "createdAt": "2026-11-16T15:02:50.778Z"
     },
     {
@@ -445,6 +543,24 @@
     }
   ],
   "automation_logs": [
+    {
+      "id": "log_1794855420073_4b1a",
+      "automationId": "aut_inquiry",
+      "automationName": "New Contact Inquiry Workflow",
+      "trigger": "contact_submit",
+      "status": "success",
+      "details": "Inquiry saved to database. In-app admin notification dispatched. Email (sent) logged for subhamoysaha78@gmail.com.",
+      "timestamp": "2026-11-16T18:57:00.071Z"
+    },
+    {
+      "id": "log_1794853760246_qn4d",
+      "automationId": "aut_inquiry",
+      "automationName": "New Contact Inquiry Workflow",
+      "trigger": "contact_submit",
+      "status": "success",
+      "details": "Inquiry saved to database. Lead created (lead_1794853760245_3nom). In-app admin notification dispatched. Email (sent) logged for subhamoysaha78@gmail.com.",
+      "timestamp": "2026-11-16T18:29:20.245Z"
+    },
     {
       "id": "log_aut_init",
       "automationId": "aut_inquiry",
@@ -1440,6 +1556,24 @@
   ],
   "notifications": [
     {
+      "id": "notif_1794855420072_exqu",
+      "title": "New CONTACT SUBMIT",
+      "message": "SUBHAMOY SAHA (subhamoysaha78@gmail.com) triggered New Contact Inquiry Workflow.",
+      "category": "inquiry",
+      "read": false,
+      "link": "/admin/contacts",
+      "createdAt": "2026-11-16T18:57:00.071Z"
+    },
+    {
+      "id": "notif_1794853760245_uaxm",
+      "title": "New CONTACT SUBMIT",
+      "message": "SUBHAMOY SAHA (subhamoysaha78@gmail.com) triggered New Contact Inquiry Workflow.",
+      "category": "inquiry",
+      "read": true,
+      "link": "/admin/contacts",
+      "createdAt": "2026-11-16T18:29:20.245Z"
+    },
+    {
       "id": "notif_welcome",
       "title": "Enterprise Admin Panel Ready",
       "message": "BytecGlobal Enterprise Admin Panel & CMS initialized with full RBAC, Visitor Tracking, and CMS engine.",
@@ -1494,6 +1628,78 @@
     }
   ],
   "audit_logs": [
+    {
+      "id": "aud_1794853804879_v8hvf",
+      "adminId": "system",
+      "adminEmail": "system",
+      "action": "UPDATE_CONTACT",
+      "module": "CONTACTS",
+      "recordId": "cnt_1794853760242_oyaiq",
+      "ip": "::1",
+      "details": "Updated contact cnt_1794853760242_oyaiq (Status: contacted).",
+      "result": "success",
+      "timestamp": "2026-11-16T18:30:04.879Z"
+    },
+    {
+      "id": "aud_1794853800514_ule8v",
+      "adminId": "system",
+      "adminEmail": "system",
+      "action": "UPDATE_CONTACT",
+      "module": "CONTACTS",
+      "recordId": "cnt_1794853760242_oyaiq",
+      "ip": "::1",
+      "details": "Updated contact cnt_1794853760242_oyaiq (Status: converted).",
+      "result": "success",
+      "timestamp": "2026-11-16T18:30:00.514Z"
+    },
+    {
+      "id": "aud_1794853798433_kldhe",
+      "adminId": "system",
+      "adminEmail": "system",
+      "action": "UPDATE_CONTACT",
+      "module": "CONTACTS",
+      "recordId": "cnt_1794853760242_oyaiq",
+      "ip": "::1",
+      "details": "Updated contact cnt_1794853760242_oyaiq (Status: meeting_scheduled).",
+      "result": "success",
+      "timestamp": "2026-11-16T18:29:58.433Z"
+    },
+    {
+      "id": "aud_1794853794409_z3leh",
+      "adminId": "system",
+      "adminEmail": "system",
+      "action": "UPDATE_CONTACT",
+      "module": "CONTACTS",
+      "recordId": "cnt_1794853760242_oyaiq",
+      "ip": "::1",
+      "details": "Updated contact cnt_1794853760242_oyaiq (Status: contacted).",
+      "result": "success",
+      "timestamp": "2026-11-16T18:29:54.409Z"
+    },
+    {
+      "id": "aud_1794853786674_wh4if",
+      "adminId": "system",
+      "adminEmail": "system",
+      "action": "UPDATE_CONTACT",
+      "module": "CONTACTS",
+      "recordId": "cnt_1794853760242_oyaiq",
+      "ip": "::1",
+      "details": "Updated contact cnt_1794853760242_oyaiq (Status: archived).",
+      "result": "success",
+      "timestamp": "2026-11-16T18:29:46.674Z"
+    },
+    {
+      "id": "aud_1794853784811_bocce",
+      "adminId": "system",
+      "adminEmail": "system",
+      "action": "UPDATE_CONTACT",
+      "module": "CONTACTS",
+      "recordId": "cnt_1794853760242_oyaiq",
+      "ip": "::1",
+      "details": "Updated contact cnt_1794853760242_oyaiq (Status: contacted).",
+      "result": "success",
+      "timestamp": "2026-11-16T18:29:44.811Z"
+    },
     {
       "id": "aud_1794850472527_lm65s",
       "adminId": "system",
