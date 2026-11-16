@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { MEETING_EMAIL_URL } from "@/lib/meeting";
 import { usePathname } from "next/navigation";
 import { ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
 import { NAV, SERVICES, SITE } from "@/lib/site";
@@ -87,7 +88,7 @@ export default function Navbar() {
             ))}
           </ul>
           <div className="vx-nav-actions">
-            <Button href="https://calendly.com/team-bytecglobal/30min" variant="accent" size="sm" className="vx-meeting">Book a Meeting</Button>
+            <Button href={MEETING_EMAIL_URL} variant="accent" size="sm" className="vx-meeting">Book a Meeting</Button>
             <button ref={toggleRef} type="button" className="vx-menu-toggle" onClick={() => setOpen(!open)} aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} aria-controls="mobile-menu">{open ? <X size={21} /> : <Menu size={21} />}</button>
           </div>
         </nav>
@@ -99,7 +100,7 @@ export default function Navbar() {
             {link.dropdown && mobileServices && <div id="mobile-services" className="vx-mobile-services">{SERVICES.map((service) => <Link key={service.slug} href={`/services/${service.slug}`} onClick={() => setOpen(false)}>{service.title}<ArrowUpRight size={14} /></Link>)}</div>}
           </li>)}
         </ul>
-        <div className="vx-mobile-foot"><p>Software, AI and cloud engineering for ambitious businesses.</p><a href={`mailto:${SITE.email}`}>{SITE.email}</a><Button href="https://calendly.com/team-bytecglobal/30min" variant="accent" size="sm">Book a Meeting</Button></div>
+        <div className="vx-mobile-foot"><p>Software, AI and cloud engineering for ambitious businesses.</p><a href={`mailto:${SITE.email}`}>{SITE.email}</a><Button href={MEETING_EMAIL_URL} variant="accent" size="sm">Book a Meeting</Button></div>
       </div>}
     </>
   );

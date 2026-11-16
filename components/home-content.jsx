@@ -250,6 +250,21 @@ export function SolutionsShowcase() {
 
 export function ServicesShowcase() {
 	const [active, setActive] = useState(0);
+	const [hovered, setHovered] = useState(false);
+	const [focused, setFocused] = useState(false);
+	const accordionRef = useRef(null);
+	useEffect(() => {
+		if (hovered || focused) return;
+		const reduced = matchMedia("(prefers-reduced-motion: reduce)");
+		const timer = setInterval(() => {
+			if (document.hidden || reduced.matches || !accordionRef.current) return;
+			const rect = accordionRef.current.getBoundingClientRect();
+			if (rect.top < innerHeight && rect.bottom > 0) {
+				setActive(index => index === null ? 0 : (index + 1) % SERVICES.length);
+			}
+		}, 7000);
+		return () => clearInterval(timer);
+	}, [active, hovered, focused]);
 	return (
 		<section id="services" className="home-services">
 			<div className="site-wrap">
@@ -258,7 +273,14 @@ export function ServicesShowcase() {
 					<h2>Everything you need to go digital</h2>
 					<p>From first idea to launch and beyond, one team across software, web, mobile, AI, data and cloud.</p>
 				</div>
-				<div className="service-accordion">
+				<div
+					className="service-accordion"
+					ref={accordionRef}
+					onPointerEnter={event => { if (event.pointerType === "mouse") setHovered(true); }}
+					onPointerLeave={() => setHovered(false)}
+					onFocusCapture={() => setFocused(true)}
+					onBlurCapture={event => { if (!event.currentTarget.contains(event.relatedTarget)) setFocused(false); }}
+				>
 					{SERVICES.map((s, i) => (
 						<article key={s.slug} className={`service-panel ${active === i ? "expanded" : ""} ${i % 2 ? "service-dark" : ""}`}>
 							<button

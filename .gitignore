@@ -59,8 +59,13 @@ lerna-debug.log*
 # TypeScript Caches
 *.tsbuildinfo
 next-env.d.ts
+<<<<<<< HEAD
 
 # Backups & Uploads
 /data/backups/
 /public/uploads/
 
+=======
+.next-dev/
+.next-stale-backup/
+>>>>>>> 702af4d32637397ff9c75b2261877929e1d45f9a

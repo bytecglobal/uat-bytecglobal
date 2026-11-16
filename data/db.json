@@ -2,7 +2,7 @@
   "meta": {
     "version": "1.0.0",
     "createdAt": "2026-11-16T15:02:50.778Z",
-    "updatedAt": "2026-11-16T18:57:00.074Z"
+    "updatedAt": "2026-11-16T20:22:39.141Z"
   },
   "users": [
     {
@@ -13,7 +13,7 @@
       "role": "SUPER_ADMIN",
       "status": "active",
       "createdAt": "2026-11-16T15:02:50.778Z",
-      "lastLogin": "2026-11-16T17:30:45.142Z",
+      "lastLogin": "2026-11-16T20:22:04.244Z",
       "failedAttempts": 0,
       "lockoutUntil": null
     }
@@ -23,14 +23,18 @@
     {
       "visitorId": "vis_1794841370237_ei95f02",
       "firstVisit": "2026-11-16T15:02:50.779Z",
-      "lastVisit": "2026-11-16T18:29:01.647Z",
-      "totalVisits": 4,
+      "lastVisit": "2026-11-16T20:22:29.417Z",
+      "totalVisits": 7,
       "landingPage": "/",
       "exitPage": "/contact",
       "pagesVisited": [
         "/",
         "/client-work/travel-booking-platform",
-        "/contact"
+        "/contact",
+        "/technologies",
+        "/projects",
+        "/solutions",
+        "/about"
       ],
       "referrer": "http://localhost:3000/",
       "trafficSource": "Direct",
@@ -42,11 +46,326 @@
         "ses_1794841370237_l0a4km8",
         "ses_1794850192225_21ee3bw",
         "ses_1794850331996_jwwo1sd",
-        "ses_1794850411411_y2vrsed"
+        "ses_1794850411411_y2vrsed",
+        "ses_1794859173223_or4yuoq",
+        "ses_1794860346990_3mvokr9",
+        "ses_1794860547518_y0j1xkw"
       ]
     }
   ],
   "analytics_events": [
+    {
+      "id": "evt_1794860549418_0guns",
+      "eventName": "page_view",
+      "path": "/contact",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794860547518_y0j1xkw",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T20:22:29.417Z"
+    },
+    {
+      "id": "evt_1794860548183_bnis8",
+      "eventName": "page_view",
+      "path": "/",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794860547518_y0j1xkw",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T20:22:28.182Z"
+    },
+    {
+      "id": "evt_1794860548168_ix0yx",
+      "eventName": "page_view",
+      "path": "/",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794860547518_y0j1xkw",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T20:22:28.164Z"
+    },
+    {
+      "id": "evt_1794860353725_ctpjl",
+      "eventName": "page_view",
+      "path": "/",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794860346990_3mvokr9",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T20:19:13.724Z"
+    },
+    {
+      "id": "evt_1794860350950_gkyld",
+      "eventName": "page_view",
+      "path": "/contact",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794860346990_3mvokr9",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T20:19:10.949Z"
+    },
+    {
+      "id": "evt_1794860348403_dl0ur",
+      "eventName": "page_view",
+      "path": "/",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794860346990_3mvokr9",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T20:19:08.403Z"
+    },
+    {
+      "id": "evt_1794860348395_z7glu",
+      "eventName": "page_view",
+      "path": "/",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794860346990_3mvokr9",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T20:19:08.395Z"
+    },
+    {
+      "id": "evt_1794859173739_x2vhc",
+      "eventName": "page_view",
+      "path": "/",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794859173223_or4yuoq",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T19:59:33.739Z"
+    },
+    {
+      "id": "evt_1794859173732_s48gj",
+      "eventName": "page_view",
+      "path": "/",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794859173223_or4yuoq",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T19:59:33.731Z"
+    },
+    {
+      "id": "evt_1794857470224_pnhsv",
+      "eventName": "page_view",
+      "path": "/contact",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794850411411_y2vrsed",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T19:31:10.224Z"
+    },
+    {
+      "id": "evt_1794857461146_6sks6",
+      "eventName": "page_view",
+      "path": "/",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794850411411_y2vrsed",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T19:31:01.146Z"
+    },
+    {
+      "id": "evt_1794857460088_fom8s",
+      "eventName": "page_view",
+      "path": "/about",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794850411411_y2vrsed",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T19:31:00.088Z"
+    },
+    {
+      "id": "evt_1794857458164_8bphe",
+      "eventName": "page_view",
+      "path": "/technologies",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794850411411_y2vrsed",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T19:30:58.164Z"
+    },
+    {
+      "id": "evt_1794857457430_3eys8",
+      "eventName": "page_view",
+      "path": "/projects",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794850411411_y2vrsed",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T19:30:57.430Z"
+    },
+    {
+      "id": "evt_1794857456715_d7dos",
+      "eventName": "page_view",
+      "path": "/contact",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794850411411_y2vrsed",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T19:30:56.715Z"
+    },
+    {
+      "id": "evt_1794857455940_rpb10",
+      "eventName": "page_view",
+      "path": "/technologies",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794850411411_y2vrsed",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T19:30:55.940Z"
+    },
+    {
+      "id": "evt_1794857454563_41q5c",
+      "eventName": "page_view",
+      "path": "/solutions",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794850411411_y2vrsed",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T19:30:54.563Z"
+    },
+    {
+      "id": "evt_1794857453179_u7bnf",
+      "eventName": "page_view",
+      "path": "/projects",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794850411411_y2vrsed",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T19:30:53.179Z"
+    },
+    {
+      "id": "evt_1794857441203_hjz1v",
+      "eventName": "page_view",
+      "path": "/technologies",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794850411411_y2vrsed",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T19:30:41.203Z"
+    },
+    {
+      "id": "evt_1794857441195_zaaop",
+      "eventName": "page_view",
+      "path": "/technologies",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794850411411_y2vrsed",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T19:30:41.195Z"
+    },
+    {
+      "id": "evt_1794857439599_fxbjn",
+      "eventName": "page_view",
+      "path": "/technologies",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794850411411_y2vrsed",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T19:30:39.598Z"
+    },
+    {
+      "id": "evt_1794857245531_xz99i",
+      "eventName": "page_view",
+      "path": "/",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794850411411_y2vrsed",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T19:27:25.530Z"
+    },
+    {
+      "id": "evt_1794857244264_iu2yg",
+      "eventName": "page_view",
+      "path": "/client-work/travel-booking-platform",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794850411411_y2vrsed",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T19:27:24.263Z"
+    },
+    {
+      "id": "evt_1794857238411_to4w7",
+      "eventName": "page_view",
+      "path": "/",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794850411411_y2vrsed",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T19:27:18.410Z"
+    },
     {
       "id": "evt_1794853741647_0vq9w",
       "eventName": "page_view",
@@ -218,6 +537,25 @@
     }
   ],
   "contacts": [
+    {
+      "id": "cnt_1794860559131_f3ccc",
+      "name": "sdfawf",
+      "email": "subhamoysaha78@gmail.com",
+      "phone": "+918391008143",
+      "companyName": "",
+      "service": "Mobile App Development",
+      "subject": "Inquiry: Mobile App Development",
+      "message": "aefwqfsafqwaf",
+      "budget": "",
+      "timeline": "",
+      "sourcePage": "/contact",
+      "status": "new",
+      "assignedTo": "usr_superadmin",
+      "notes": [],
+      "clientIp": "::1",
+      "createdAt": "2026-11-16T20:22:39.131Z",
+      "updatedAt": "2026-11-16T20:22:39.131Z"
+    },
     {
       "id": "cnt_1794855420067_z8l0p",
       "name": "SUBHAMOY SAHA",
@@ -451,6 +789,18 @@
   ],
   "emails": [
     {
+      "id": "eml_1794860559140_ypes",
+      "to": "subhamoysaha78@gmail.com",
+      "from": "BytecGlobal <onboarding@resend.dev>",
+      "subject": "Thank you for contacting BytecGlobal - We have received your inquiry",
+      "body": "Hello sdfawf,\n\nThank you for reaching out to BytecGlobal. We have received your project details regarding Mobile App Development.\n\nOur solutions engineering team is reviewing your requirements and will reach back out within 24 business hours.\n\nWarm regards,\nThe BytecGlobal Team\nhttps://bytecglobal.com",
+      "category": "Inquiry Confirmation",
+      "status": "sent",
+      "providerResponse": "Simulated delivery (dev mode)",
+      "sentAt": "2026-11-16T20:22:39.139Z",
+      "createdAt": "2026-11-16T20:22:39.139Z"
+    },
+    {
       "id": "eml_1794855420073_nr07",
       "to": "subhamoysaha78@gmail.com",
       "from": "BytecGlobal <onboarding@resend.dev>",
@@ -515,8 +865,8 @@
           }
         }
       ],
-      "executionCount": 3,
-      "lastRunAt": "2026-11-16T18:57:00.071Z",
+      "executionCount": 4,
+      "lastRunAt": "2026-11-16T20:22:39.139Z",
       "createdAt": "2026-11-16T15:02:50.778Z"
     },
     {
@@ -543,6 +893,15 @@
     }
   ],
   "automation_logs": [
+    {
+      "id": "log_1794860559140_04ah",
+      "automationId": "aut_inquiry",
+      "automationName": "New Contact Inquiry Workflow",
+      "trigger": "contact_submit",
+      "status": "success",
+      "details": "Inquiry saved to database. In-app admin notification dispatched. Email (sent) logged for subhamoysaha78@gmail.com.",
+      "timestamp": "2026-11-16T20:22:39.139Z"
+    },
     {
       "id": "log_1794855420073_4b1a",
       "automationId": "aut_inquiry",
@@ -1556,6 +1915,15 @@
   ],
   "notifications": [
     {
+      "id": "notif_1794860559139_954v",
+      "title": "New CONTACT SUBMIT",
+      "message": "sdfawf (subhamoysaha78@gmail.com) triggered New Contact Inquiry Workflow.",
+      "category": "inquiry",
+      "read": false,
+      "link": "/admin/contacts",
+      "createdAt": "2026-11-16T20:22:39.139Z"
+    },
+    {
       "id": "notif_1794855420072_exqu",
       "title": "New CONTACT SUBMIT",
       "message": "SUBHAMOY SAHA (subhamoysaha78@gmail.com) triggered New Contact Inquiry Workflow.",
@@ -1628,6 +1996,42 @@
     }
   ],
   "audit_logs": [
+    {
+      "id": "aud_1794860524306_lk0tn",
+      "adminId": "usr_superadmin",
+      "adminEmail": "admin@bytecglobal.com",
+      "action": "LOGIN_SUCCESS",
+      "module": "AUTH",
+      "recordId": "usr_superadmin",
+      "ip": "::1",
+      "details": "Successful admin authentication.",
+      "result": "success",
+      "timestamp": "2026-11-16T20:22:04.306Z"
+    },
+    {
+      "id": "aud_1794860513989_v7x0y",
+      "adminId": "usr_superadmin",
+      "adminEmail": "admin@bytecglobal.com",
+      "action": "LOGIN_FAILED",
+      "module": "AUTH",
+      "recordId": "usr_superadmin",
+      "ip": "::1",
+      "details": "Password mismatch (Attempt 2/5).",
+      "result": "failure",
+      "timestamp": "2026-11-16T20:21:53.989Z"
+    },
+    {
+      "id": "aud_1794860501762_tztue",
+      "adminId": "usr_superadmin",
+      "adminEmail": "admin@bytecglobal.com",
+      "action": "LOGIN_FAILED",
+      "module": "AUTH",
+      "recordId": "usr_superadmin",
+      "ip": "::1",
+      "details": "Password mismatch (Attempt 1/5).",
+      "result": "failure",
+      "timestamp": "2026-11-16T20:21:41.762Z"
+    },
     {
       "id": "aud_1794853804879_v8hvf",
       "adminId": "system",
