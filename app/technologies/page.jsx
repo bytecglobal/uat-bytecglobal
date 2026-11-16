@@ -1,5 +1,5 @@
 import { PageHeader, Section, CTA, card } from "@/components/section";
-import { TECH } from "@/lib/site";
+import { TECH, TECH_LOGOS } from "@/lib/site";
 export const metadata = { title: "Technologies" };
 export default function Technologies() {
   return (
@@ -10,7 +10,12 @@ export default function Technologies() {
           {TECH.map((g) => (
             <div key={g.group} className={card}>
               <h3 className="mb-4 font-mono text-xs uppercase tracking-[0.08em] text-muted">{g.group}</h3>
-              <div className="flex flex-wrap gap-2">{g.items.map((i) => <span key={i} className="rounded-md border border-border bg-subtle px-3 py-1.5 font-mono text-xs">{i}</span>)}</div>
+              <div className="flex flex-wrap gap-2">{g.items.map((i) => (
+                <span key={i} className="inline-flex items-center gap-2 rounded-md border border-border bg-subtle px-3 py-1.5 font-mono text-xs">
+                  {TECH_LOGOS[i] && <img src={TECH_LOGOS[i]} alt="" aria-hidden="true" width={16} height={16} loading="lazy" className="h-4 w-4 object-contain" />}
+                  {i}
+                </span>
+              ))}</div>
             </div>
           ))}
         </div>

@@ -10,7 +10,7 @@
  --shadow-raise:12px 12px 28px rgba(160,166,186,.42),-12px -12px 28px rgba(255,255,255,.95);
  --shadow-soft:6px 6px 16px rgba(160,166,186,.35),-6px -6px 16px rgba(255,255,255,.9);
  --shadow-press:inset 6px 6px 14px rgba(160,166,186,.38),inset -6px -6px 14px rgba(255,255,255,.95);
- --ease:cubic-bezier(.22,1,.36,1); --gutter:clamp(16px,4vw,56px);
+ --ease:cubic-bezier(.22,1,.36,1); --gutter:clamp(16px,4vw,56px); --grid-size:64px;
  --font-body:"Figtree","Segoe UI",sans-serif; --font-display:"Outfit","Avenir Next","Segoe UI",sans-serif;
  color-scheme:light;
 }
@@ -18,6 +18,8 @@
 html {scroll-behavior:smooth;scroll-padding-top:110px}
 body {margin:0;background:var(--bg);color:var(--fg);font-family:var(--font-body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
 html,body {overflow-x:clip}
+/* Site-wide blueprint grid: fixed layer behind all content for a premium, engineered feel */
+body::before {content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(to right,var(--grid-line) 1px,transparent 1px),linear-gradient(to bottom,var(--grid-line) 1px,transparent 1px);background-size:var(--grid-size) var(--grid-size);mask-image:radial-gradient(130% 115% at 50% 0%,#000 55%,transparent 100%);-webkit-mask-image:radial-gradient(130% 115% at 50% 0%,#000 55%,transparent 100%)}
 h1,h2,h3,h4 {font-family:var(--font-display);letter-spacing:-.035em;line-height:1.06;text-wrap:balance}
 button,a {-webkit-tap-highlight-color:transparent}
 button {font:inherit}
@@ -42,7 +44,7 @@ html.lenis,html.lenis body {height:auto}
 .lenis.lenis-smooth {scroll-behavior:auto!important}
 .lenis.lenis-stopped {overflow:hidden}
 .lenis.lenis-smooth [data-lenis-prevent] {overscroll-behavior:contain}
-@media(max-width:600px){body{font-size:16px}.back-to-top{right:20px;bottom:92px}}
+@media(max-width:600px){body{font-size:16px}.back-to-top{right:20px;bottom:92px}:root{--grid-size:40px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}[data-entering]{will-change:auto}}
 
 /* Hide scrollbar on thumbnail strip */

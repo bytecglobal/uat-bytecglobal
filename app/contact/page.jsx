@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import { SITE } from "@/lib/site";
 import { PageHeader, Section, card } from "@/components/section";
 export const metadata = { title: "Contact" };
@@ -6,7 +6,6 @@ export const metadata = { title: "Contact" };
 export default function Contact() {
   const items = [
     [Mail, "Email", SITE.email, `mailto:${SITE.email}`],
-    [Phone, "Phone", SITE.phone, `tel:${SITE.phone.replace(/\s/g, "")}`],
     [MapPin, "Location", SITE.location, null],
   ];
   return (
