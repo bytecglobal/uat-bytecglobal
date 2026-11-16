@@ -22,6 +22,17 @@ export default function Hero() {
   const scatter = () => { if (!motionReduced) { setPaused(false); setBurstKey(key => key + 1); } };
 
   return <section className="home-hero" aria-labelledby="hero-title">
+    <div className="hero-ambient" aria-hidden="true">
+      {Array.from({ length: 28 }, (_, i) => <i key={i} style={{
+        left: `${4 + ((i * 37) % 93)}%`,
+        top: `${5 + ((i * 23) % 89)}%`,
+        "--dot-size": `${3 + (i % 4) * 2}px`,
+        "--drift-x": `${(i % 2 ? 1 : -1) * (16 + i % 19)}px`,
+        "--drift-y": `${-18 - i % 25}px`,
+        "--drift-time": `${32 + i % 17}s`,
+        "--drift-delay": `${-i * 3}s`,
+      }} />)}
+    </div>
     <div className="site-wrap hero-grid">
       <div className="hero-copy">
         <p className="eyebrow hero-enter">Software · AI · Cloud · Data</p>
@@ -35,7 +46,7 @@ export default function Hero() {
         <p className="particle-hint"><span className="particle-hint-pointer">Move to explore · click to scatter</span><span className="particle-hint-touch">Tap to scatter & reform</span></p>
         <div className="particle-status">
           <i className={`status-orbit ${paused || motionReduced ? "is-paused" : ""}`} aria-hidden="true" />
-          <b>BytecGlobal</b>
+          <b>{["Apps", "Websites", "SEO", "AI ML", "DevOps"][stage]}</b>
           <div className="status-dots" aria-hidden="true">{[0, 1, 2, 3, 4].map(i => <i key={i} className={i === stage ? "active" : ""} />)}</div>
           <div className="particle-controls">
             <button type="button" className="particle-control" onClick={scatter} disabled={motionReduced} aria-label="Scatter and reform the particles" title="Scatter & reform"><RotateCcw size={14} /></button>

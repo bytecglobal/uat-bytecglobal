@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { MEETING_EMAIL_URL } from "@/lib/meeting";
 import { ArrowLeft, Check } from "lucide-react";
 import { CLIENT_PROJECTS } from "@/components/client-work-grid";
 import ClientWorkGallery from "@/components/client-work-gallery";
@@ -104,7 +105,8 @@ export default function ClientWorkPage({ params }) {
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Link
-                href="https://calendly.com/team-bytecglobal/30min"
+                href={MEETING_EMAIL_URL}
+                target="_blank" rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-medium text-accent-fg transition-opacity hover:opacity-90"
               >
                 Book a Meeting

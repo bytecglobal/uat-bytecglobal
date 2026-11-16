@@ -2,7 +2,6 @@ import "./globals.css";
 import { SITE } from "@/lib/site";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
-import WhatsAppFab from "@/components/whatsapp-fab";
 import PageEffects from "@/components/page-effects";
 import CursorTrail from "@/components/cursor-trail";
 
@@ -31,7 +30,6 @@ export default function RootLayout({ children }) {
           <main>{children}</main>
           <Footer />
         </div>
-        <WhatsAppFab />
       </body>
     </html>
   );

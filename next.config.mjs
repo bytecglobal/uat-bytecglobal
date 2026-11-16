@@ -10,4 +10,8 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+// Keep production builds from overwriting the running development server's assets.
+export default (phase) => ({
+  ...nextConfig,
+  distDir: phase === 'phase-development-server' ? '.next-dev' : '.next',
+});
