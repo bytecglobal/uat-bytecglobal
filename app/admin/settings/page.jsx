@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Settings, Save, CheckCircle2, ShieldCheck, Mail, MessageSquare, Compass, Globe, Lock } from "lucide-react";
+import { Settings, Save, CheckCircle2, ShieldCheck, Mail, Database, Compass, Globe, Lock } from "lucide-react";
 
 export default function SystemSettingsPage() {
   const [settings, setSettings] = useState({
@@ -20,7 +20,7 @@ export default function SystemSettingsPage() {
     },
     integrations: {
       resend: { configured: false, status: "Not Configured" },
-      whatsapp: { configured: false, status: "Not Configured" },
+      supabase: { configured: true, status: "Connected (PostgreSQL)" },
       calendly: { configured: true, status: "Connected" },
     },
   });
@@ -123,25 +123,25 @@ export default function SystemSettingsPage() {
             </p>
           </div>
 
-          {/* WhatsApp Direct */}
+          {/* Supabase Database */}
           <div className="rounded-xl border border-gray-100 p-4 bg-gray-50/50 space-y-1.5">
             <div className="flex items-center justify-between">
               <span className="font-bold text-gray-900 flex items-center gap-1.5">
-                <MessageSquare size={15} className="text-emerald-600" />
-                <span>WhatsApp Business</span>
+                <Database size={15} className="text-[#806000]" />
+                <span>Supabase PostgreSQL</span>
               </span>
               <span
                 className={`rounded-full px-2 py-0.5 text-[10px] font-bold uppercase ${
-                  settings.integrations?.whatsapp?.configured
+                  settings.integrations?.supabase?.configured
                     ? "bg-emerald-100 text-emerald-800"
                     : "bg-gray-100 text-gray-600"
                 }`}
               >
-                {settings.integrations?.whatsapp?.configured ? "Active" : "Unset"}
+                {settings.integrations?.supabase?.configured ? "Active" : "Unset"}
               </span>
             </div>
             <p className="text-[11px] text-gray-500">
-              {settings.integrations?.whatsapp?.status}
+              {settings.integrations?.supabase?.status || "Connected (Supabase PostgreSQL)"}
             </p>
           </div>
 

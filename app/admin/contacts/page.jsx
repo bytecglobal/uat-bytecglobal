@@ -165,7 +165,6 @@ export default function ContactsManagementPage() {
                       <div className="font-bold text-gray-900">{c.name}</div>
                       <div className="text-[11px] text-gray-500 font-mono">
                         <a href={`mailto:${c.email}`} className="hover:text-[#806000]">{c.email}</a>
-                        {c.phone && <span> · {c.phone}</span>}
                       </div>
                       {c.companyName && <span className="text-[10px] text-gray-400 font-medium">({c.companyName})</span>}
                     </td>
@@ -234,8 +233,8 @@ export default function ContactsManagementPage() {
                 <p className="font-semibold text-gray-900"><a href={`mailto:${selectedContact.email}`} className="text-[#806000] underline">{selectedContact.email}</a></p>
               </div>
               <div>
-                <span className="text-gray-400 font-mono uppercase text-[10px]">Phone / WhatsApp</span>
-                <p className="font-semibold text-gray-900">{selectedContact.phone || "Not specified"}</p>
+                <span className="text-gray-400 font-mono uppercase text-[10px]">Source Page</span>
+                <p className="font-semibold text-gray-900">{selectedContact.sourcePage || "/contact"}</p>
               </div>
               <div>
                 <span className="text-gray-400 font-mono uppercase text-[10px]">Company Name</span>

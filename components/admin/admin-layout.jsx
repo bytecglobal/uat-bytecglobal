@@ -69,7 +69,6 @@ const SIDEBAR_SECTIONS = [
       { label: "Automation Management", href: "/admin/automations", icon: Zap },
       { label: "Template Management", href: "/admin/templates", icon: FileCode },
       { label: "Notifications", href: "/admin/notifications", icon: Bell },
-      { label: "WhatsApp Management", href: "/admin/whatsapp", icon: MessageSquare },
       { label: "Newsletter", href: "/admin/newsletter", icon: Newspaper },
     ],
   },

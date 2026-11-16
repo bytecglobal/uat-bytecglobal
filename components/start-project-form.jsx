@@ -8,7 +8,6 @@ export default function StartProjectForm() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    phone: "",
     service: "",
     budget: "",
     timeline: "",
@@ -59,7 +58,6 @@ export default function StartProjectForm() {
       setFormData({
         name: "",
         email: "",
-        phone: "",
         service: "",
         budget: "",
         timeline: "",

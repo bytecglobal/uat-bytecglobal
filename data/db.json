@@ -2,7 +2,7 @@
   "meta": {
     "version": "1.0.0",
     "createdAt": "2026-11-16T15:02:50.778Z",
-    "updatedAt": "2026-11-16T20:32:08.210Z"
+    "updatedAt": "2026-11-16T21:42:08.875Z"
   },
   "users": [
     {
@@ -13,7 +13,7 @@
       "role": "SUPER_ADMIN",
       "status": "active",
       "createdAt": "2026-11-16T15:02:50.778Z",
-      "lastLogin": "2026-11-16T20:22:04.244Z",
+      "lastLogin": "2026-11-16T21:05:14.818Z",
       "failedAttempts": 0,
       "lockoutUntil": null
     }
@@ -23,10 +23,10 @@
     {
       "visitorId": "vis_1794841370237_ei95f02",
       "firstVisit": "2026-11-16T15:02:50.779Z",
-      "lastVisit": "2026-11-16T20:32:08.210Z",
-      "totalVisits": 10,
+      "lastVisit": "2026-11-16T21:42:08.875Z",
+      "totalVisits": 12,
       "landingPage": "/",
-      "exitPage": "/",
+      "exitPage": "/about",
       "pagesVisited": [
         "/",
         "/client-work/travel-booking-platform",
@@ -52,11 +52,234 @@
         "ses_1794860547518_y0j1xkw",
         "ses_1794860821260_psrbtmi",
         "ses_1794860873094_h1xvr32",
-        "ses_1794861003447_61zeevb"
+        "ses_1794861003447_61zeevb",
+        "ses_1794862901667_xslhap6",
+        "ses_1794863163081_3q85z2p"
       ]
     }
   ],
   "analytics_events": [
+    {
+      "id": "evt_1794865328875_y3qh6",
+      "eventName": "page_view",
+      "path": "/about",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794863163081_3q85z2p",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T21:42:08.875Z"
+    },
+    {
+      "id": "evt_1794865327586_zcojm",
+      "eventName": "page_view",
+      "path": "/contact",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794863163081_3q85z2p",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T21:42:07.586Z"
+    },
+    {
+      "id": "evt_1794865325563_tzvju",
+      "eventName": "page_view",
+      "path": "/about",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794863163081_3q85z2p",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T21:42:05.562Z"
+    },
+    {
+      "id": "evt_1794865298932_0jd7r",
+      "eventName": "page_view",
+      "path": "/technologies",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794863163081_3q85z2p",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T21:41:38.932Z"
+    },
+    {
+      "id": "evt_1794865286643_p0cui",
+      "eventName": "page_view",
+      "path": "/projects",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794863163081_3q85z2p",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T21:41:26.643Z"
+    },
+    {
+      "id": "evt_1794865262783_uk452",
+      "eventName": "page_view",
+      "path": "/solutions",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794863163081_3q85z2p",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T21:41:02.781Z"
+    },
+    {
+      "id": "evt_1794865175788_y4d4u",
+      "eventName": "page_view",
+      "path": "/contact",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794863163081_3q85z2p",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T21:39:35.788Z"
+    },
+    {
+      "id": "evt_1794865153589_cwqh3",
+      "eventName": "page_view",
+      "path": "/",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794863163081_3q85z2p",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T21:39:13.589Z"
+    },
+    {
+      "id": "evt_1794865153586_8fx1i",
+      "eventName": "page_view",
+      "path": "/",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794863163081_3q85z2p",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T21:39:13.586Z"
+    },
+    {
+      "id": "evt_1794863166022_7uxha",
+      "eventName": "page_view",
+      "path": "/contact",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794863163081_3q85z2p",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T21:06:06.022Z"
+    },
+    {
+      "id": "evt_1794863164959_joskb",
+      "eventName": "page_view",
+      "path": "/",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794863163081_3q85z2p",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T21:06:04.959Z"
+    },
+    {
+      "id": "evt_1794863164950_4073h",
+      "eventName": "page_view",
+      "path": "/",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794863163081_3q85z2p",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T21:06:04.949Z"
+    },
+    {
+      "id": "evt_1794863031383_hd9sv",
+      "eventName": "page_view",
+      "path": "/contact",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794862901667_xslhap6",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T21:03:51.382Z"
+    },
+    {
+      "id": "evt_1794862974711_b0f2o",
+      "eventName": "page_view",
+      "path": "/",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794862901667_xslhap6",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T21:02:54.710Z"
+    },
+    {
+      "id": "evt_1794862974579_behsb",
+      "eventName": "page_view",
+      "path": "/",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794862901667_xslhap6",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T21:02:54.577Z"
+    },
+    {
+      "id": "evt_1794862902880_lmsih",
+      "eventName": "page_view",
+      "path": "/",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794862901667_xslhap6",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T21:01:42.880Z"
+    },
+    {
+      "id": "evt_1794862902873_rv9k2",
+      "eventName": "page_view",
+      "path": "/",
+      "visitorId": "vis_1794841370237_ei95f02",
+      "sessionId": "ses_1794862901667_xslhap6",
+      "browser": "Chrome",
+      "os": "Windows",
+      "device": "Desktop",
+      "trafficSource": "Direct",
+      "metadata": {},
+      "timestamp": "2026-11-16T21:01:42.872Z"
+    },
     {
       "id": "evt_1794861128210_nfzlo",
       "eventName": "page_view",
@@ -788,33 +1011,14 @@
   ],
   "contacts": [
     {
-      "id": "cnt_1794860559131_f3ccc",
-      "name": "sdfawf",
-      "email": "subhamoysaha78@gmail.com",
-      "phone": "+918391008143",
-      "companyName": "",
-      "service": "Mobile App Development",
-      "subject": "Inquiry: Mobile App Development",
-      "message": "aefwqfsafqwaf",
-      "budget": "",
-      "timeline": "",
-      "sourcePage": "/contact",
-      "status": "new",
-      "assignedTo": "usr_superadmin",
-      "notes": [],
-      "clientIp": "::1",
-      "createdAt": "2026-11-16T20:22:39.131Z",
-      "updatedAt": "2026-11-16T20:22:39.131Z"
-    },
-    {
-      "id": "cnt_1794855420067_z8l0p",
+      "id": "cnt_1794863374924_1i3iy",
       "name": "SUBHAMOY SAHA",
       "email": "subhamoysaha78@gmail.com",
-      "phone": "+918391008143",
+      "phone": "",
       "companyName": "",
       "service": "Web Development",
       "subject": "Inquiry: Web Development",
-      "message": "asdfwfsafwfsafdwf",
+      "message": "hi qdfwasdf",
       "budget": "",
       "timeline": "",
       "sourcePage": "/contact",
@@ -822,52 +1026,27 @@
       "assignedTo": "usr_superadmin",
       "notes": [],
       "clientIp": "::1",
-      "createdAt": "2026-11-16T18:57:00.067Z",
-      "updatedAt": "2026-11-16T18:57:00.067Z"
+      "createdAt": "2026-11-16T21:09:34.924Z",
+      "updatedAt": "2026-11-16T21:09:34.924Z"
     },
     {
-      "id": "cnt_1794853760242_oyaiq",
+      "id": "cnt_1794863184271_0o639",
       "name": "SUBHAMOY SAHA",
       "email": "subhamoysaha78@gmail.com",
-      "phone": "+918391008143",
+      "phone": "",
       "companyName": "",
-      "service": "Software Development",
-      "subject": "Inquiry: Software Development",
-      "message": "nfbahbsfhuywfhbjdsbacnvbsjhfhuwf",
+      "service": "Web Development",
+      "subject": "Inquiry: Web Development",
+      "message": "main nsdfnafjds",
       "budget": "",
       "timeline": "",
       "sourcePage": "/contact",
-      "status": "contacted",
+      "status": "new",
       "assignedTo": "usr_superadmin",
       "notes": [],
       "clientIp": "::1",
-      "createdAt": "2026-11-16T18:29:20.242Z",
-      "updatedAt": "2026-11-16T18:30:04.879Z"
-    },
-    {
-      "id": "cnt_welcome_demo",
-      "name": "Demo Enterprise Client",
-      "email": "client@example.com",
-      "phone": "+1 555-0199",
-      "companyName": "Acme Logistics Corp",
-      "service": "Software Development",
-      "subject": "Enterprise ERP Ingestion & Custom Cloud Platform",
-      "message": "We are interested in modernizing our inventory system and replacing legacy Excel sheets with a web-based portal.",
-      "budget": "$25,000 - $50,000",
-      "timeline": "2-3 months",
-      "sourcePage": "/start-project",
-      "status": "qualified",
-      "assignedTo": "usr_superadmin",
-      "notes": [
-        {
-          "id": "note_1",
-          "author": "Bytec Super Admin",
-          "text": "Initial inquiry reviewed. Fits our core custom ERP modernization competency.",
-          "createdAt": "2026-11-16T15:02:50.778Z"
-        }
-      ],
-      "createdAt": "2026-11-16T15:02:50.778Z",
-      "updatedAt": "2026-11-16T17:31:38.563Z"
+      "createdAt": "2026-11-16T21:06:24.271Z",
+      "updatedAt": "2026-11-16T21:06:24.271Z"
     }
   ],
   "leads": [
@@ -1039,6 +1218,30 @@
   ],
   "emails": [
     {
+      "id": "eml_1794863374939_3sdf",
+      "to": "subhamoysaha78@gmail.com",
+      "from": "BytecGlobal <onboarding@resend.dev>",
+      "subject": "Thank you for contacting BytecGlobal - We have received your inquiry",
+      "body": "Hello SUBHAMOY SAHA,\n\nThank you for reaching out to BytecGlobal. We have received your project details regarding Web Development.\n\nOur solutions engineering team is reviewing your requirements and will reach back out within 24 business hours.\n\nWarm regards,\nThe BytecGlobal Team\nhttps://bytecglobal.com",
+      "category": "Inquiry Confirmation",
+      "status": "sent",
+      "providerResponse": "Simulated delivery (dev mode)",
+      "sentAt": "2026-11-16T21:09:34.937Z",
+      "createdAt": "2026-11-16T21:09:34.937Z"
+    },
+    {
+      "id": "eml_1794863184276_jxo2",
+      "to": "subhamoysaha78@gmail.com",
+      "from": "BytecGlobal <onboarding@resend.dev>",
+      "subject": "Thank you for contacting BytecGlobal - We have received your inquiry",
+      "body": "Hello SUBHAMOY SAHA,\n\nThank you for reaching out to BytecGlobal. We have received your project details regarding Web Development.\n\nOur solutions engineering team is reviewing your requirements and will reach back out within 24 business hours.\n\nWarm regards,\nThe BytecGlobal Team\nhttps://bytecglobal.com",
+      "category": "Inquiry Confirmation",
+      "status": "sent",
+      "providerResponse": "Simulated delivery (dev mode)",
+      "sentAt": "2026-11-16T21:06:24.276Z",
+      "createdAt": "2026-11-16T21:06:24.276Z"
+    },
+    {
       "id": "eml_1794860559140_ypes",
       "to": "subhamoysaha78@gmail.com",
       "from": "BytecGlobal <onboarding@resend.dev>",
@@ -1115,8 +1318,8 @@
           }
         }
       ],
-      "executionCount": 4,
-      "lastRunAt": "2026-11-16T20:22:39.139Z",
+      "executionCount": 6,
+      "lastRunAt": "2026-11-16T21:09:34.937Z",
       "createdAt": "2026-11-16T15:02:50.778Z"
     },
     {
@@ -1143,6 +1346,24 @@
     }
   ],
   "automation_logs": [
+    {
+      "id": "log_1794863374940_130x",
+      "automationId": "aut_inquiry",
+      "automationName": "New Contact Inquiry Workflow",
+      "trigger": "contact_submit",
+      "status": "success",
+      "details": "Inquiry saved to database. In-app admin notification dispatched. Email (sent) logged for subhamoysaha78@gmail.com.",
+      "timestamp": "2026-11-16T21:09:34.937Z"
+    },
+    {
+      "id": "log_1794863184276_8dup",
+      "automationId": "aut_inquiry",
+      "automationName": "New Contact Inquiry Workflow",
+      "trigger": "contact_submit",
+      "status": "success",
+      "details": "Inquiry saved to database. In-app admin notification dispatched. Email (sent) logged for subhamoysaha78@gmail.com.",
+      "timestamp": "2026-11-16T21:06:24.276Z"
+    },
     {
       "id": "log_1794860559140_04ah",
       "automationId": "aut_inquiry",
@@ -2165,40 +2386,13 @@
   ],
   "notifications": [
     {
-      "id": "notif_1794860559139_954v",
-      "title": "New CONTACT SUBMIT",
-      "message": "sdfawf (subhamoysaha78@gmail.com) triggered New Contact Inquiry Workflow.",
-      "category": "inquiry",
-      "read": false,
-      "link": "/admin/contacts",
-      "createdAt": "2026-11-16T20:22:39.139Z"
-    },
-    {
-      "id": "notif_1794855420072_exqu",
+      "id": "notif_1794863374938_vr3a",
       "title": "New CONTACT SUBMIT",
       "message": "SUBHAMOY SAHA (subhamoysaha78@gmail.com) triggered New Contact Inquiry Workflow.",
       "category": "inquiry",
       "read": false,
       "link": "/admin/contacts",
-      "createdAt": "2026-11-16T18:57:00.071Z"
-    },
-    {
-      "id": "notif_1794853760245_uaxm",
-      "title": "New CONTACT SUBMIT",
-      "message": "SUBHAMOY SAHA (subhamoysaha78@gmail.com) triggered New Contact Inquiry Workflow.",
-      "category": "inquiry",
-      "read": true,
-      "link": "/admin/contacts",
-      "createdAt": "2026-11-16T18:29:20.245Z"
-    },
-    {
-      "id": "notif_welcome",
-      "title": "Enterprise Admin Panel Ready",
-      "message": "BytecGlobal Enterprise Admin Panel & CMS initialized with full RBAC, Visitor Tracking, and CMS engine.",
-      "category": "security",
-      "read": false,
-      "link": "/admin/dashboard",
-      "createdAt": "2026-11-16T15:02:50.778Z"
+      "createdAt": "2026-11-16T21:09:34.937Z"
     }
   ],
   "whatsapp_settings": {
@@ -2246,6 +2440,66 @@
     }
   ],
   "audit_logs": [
+    {
+      "id": "aud_1794863144536_ngtub",
+      "adminId": "system",
+      "adminEmail": "system",
+      "action": "DELETE_CONTACT",
+      "module": "CONTACTS",
+      "recordId": "cnt_welcome_demo",
+      "ip": "::1",
+      "details": "Deleted contact record cnt_welcome_demo.",
+      "result": "success",
+      "timestamp": "2026-11-16T21:05:44.536Z"
+    },
+    {
+      "id": "aud_1794863143147_j8s0m",
+      "adminId": "system",
+      "adminEmail": "system",
+      "action": "DELETE_CONTACT",
+      "module": "CONTACTS",
+      "recordId": "cnt_1794853760242_oyaiq",
+      "ip": "::1",
+      "details": "Deleted contact record cnt_1794853760242_oyaiq.",
+      "result": "success",
+      "timestamp": "2026-11-16T21:05:43.147Z"
+    },
+    {
+      "id": "aud_1794863141671_tvbjp",
+      "adminId": "system",
+      "adminEmail": "system",
+      "action": "DELETE_CONTACT",
+      "module": "CONTACTS",
+      "recordId": "cnt_1794855420067_z8l0p",
+      "ip": "::1",
+      "details": "Deleted contact record cnt_1794855420067_z8l0p.",
+      "result": "success",
+      "timestamp": "2026-11-16T21:05:41.671Z"
+    },
+    {
+      "id": "aud_1794863139399_ifmbu",
+      "adminId": "system",
+      "adminEmail": "system",
+      "action": "DELETE_CONTACT",
+      "module": "CONTACTS",
+      "recordId": "cnt_1794860559131_f3ccc",
+      "ip": "::1",
+      "details": "Deleted contact record cnt_1794860559131_f3ccc.",
+      "result": "success",
+      "timestamp": "2026-11-16T21:05:39.399Z"
+    },
+    {
+      "id": "aud_1794863114904_ev4yb",
+      "adminId": "usr_superadmin",
+      "adminEmail": "admin@bytecglobal.com",
+      "action": "LOGIN_SUCCESS",
+      "module": "AUTH",
+      "recordId": "usr_superadmin",
+      "ip": "::1",
+      "details": "Successful admin authentication.",
+      "result": "success",
+      "timestamp": "2026-11-16T21:05:14.904Z"
+    },
     {
       "id": "aud_1794860524306_lk0tn",
       "adminId": "usr_superadmin",

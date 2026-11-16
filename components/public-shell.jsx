@@ -3,7 +3,6 @@
 import { usePathname } from "next/navigation";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
-import WhatsAppFab from "@/components/whatsapp-fab";
 import PageEffects from "@/components/page-effects";
 import CursorTrail from "@/components/cursor-trail";
 import AnalyticsTracker from "@/components/analytics-tracker";
@@ -26,7 +25,6 @@ export default function PublicShell({ children }) {
         <main>{children}</main>
         <Footer />
       </div>
-      <WhatsAppFab />
     </>
   );
 }

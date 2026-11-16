@@ -176,7 +176,7 @@ export default function AdminDashboardPage() {
             {kpis.conversionRate ?? "0%"}
           </div>
           <div className="mt-1 text-[11px] text-gray-500">
-            <span className="text-gray-700 font-semibold">{kpis.whatsappClicks ?? 0}</span> WA chats
+            <span className="text-gray-700 font-semibold">{kpis.totalInquiries ?? 0}</span> inquiries
           </div>
         </div>
       </div>
