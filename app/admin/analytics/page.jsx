@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { BarChart3, TrendingUp, Compass, Globe, Smartphone, Monitor, Eye, MousePointerClick, RefreshCw } from "lucide-react";
+import { BarChart3, TrendingUp, Compass, Globe, Smartphone, Monitor, Eye, MousePointerClick, RefreshCw, Users2 } from "lucide-react";
 import { DailyTrafficChart, DeviceDonut } from "@/components/admin/charts";
 
 export default function AnalyticsPage() {

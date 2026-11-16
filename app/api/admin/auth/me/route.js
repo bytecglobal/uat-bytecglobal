@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { getCurrentAdmin } from "@/lib/auth/session";
-import { getDb } from "@/lib/db";
+import { NotificationRepository } from "@/lib/repositories/notification.repository";
 
 export async function GET() {
   try {
@@ -9,8 +9,7 @@ export async function GET() {
       return NextResponse.json({ authenticated: false }, { status: 401 });
     }
 
-    const db = getDb();
-    const unreadCount = (db.notifications || []).filter((n) => !n.read).length;
+    const { unreadCount } = await NotificationRepository.list({ unreadOnly: true, limit: 1 });
 
     return NextResponse.json({
       authenticated: true,

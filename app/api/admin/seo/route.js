@@ -1,53 +1,60 @@
 import { NextResponse } from "next/server";
 import { withAdminAuth } from "@/lib/auth/guard";
-import { getDb, saveDb } from "@/lib/db";
+import { SettingsRepository } from "@/lib/repositories/settings.repository";
 import { recordAuditLogSync } from "@/lib/auth/session";
 
 export async function GET(req) {
   return withAdminAuth(req, "seo", async () => {
-    const db = getDb();
-    return NextResponse.json({
-      success: true,
-      seo: db.seo_settings || {},
-    });
+    try {
+      const seo = await SettingsRepository.getSeoSettings();
+      return NextResponse.json({
+        success: true,
+        seo,
+      });
+    } catch (err) {
+      return NextResponse.json(
+        { success: false, error: err.message || "Failed to fetch SEO settings" },
+        { status: 500 }
+      );
+    }
   });
 }
 
-export async function POST(req, admin) {
-  return withAdminAuth(req, "seo", async () => {
-    const body = await req.json().catch(() => ({}));
-    const { global, pagePath, pageSeo } = body;
+export async function POST(req) {
+  return withAdminAuth(req, "seo", async (request, admin) => {
+    try {
+      const body = await request.json().catch(() => ({}));
+      const { global, pagePath, pageSeo } = body;
 
-    const db = getDb();
-    if (!db.seo_settings) db.seo_settings = {};
+      const payload = {};
+      if (global) payload.global = global;
+      if (pagePath && pageSeo) {
+        payload.pages = { [pagePath]: pageSeo };
+      }
 
-    if (global) {
-      db.seo_settings.global = {
-        ...db.seo_settings.global,
-        ...global,
-      };
+      const seo = await SettingsRepository.updateSeoSettings(payload);
+
+      recordAuditLogSync({
+        adminId: admin.id,
+        adminEmail: admin.email,
+        action: "UPDATE_SEO",
+        module: "SEO",
+        recordId: pagePath || "global",
+        ip: request.headers.get("x-forwarded-for") || "127.0.0.1",
+        details: `Updated SEO configuration (${pagePath || "global settings"}).`,
+        result: "success",
+      });
+
+      return NextResponse.json({
+        success: true,
+        message: "SEO settings updated successfully.",
+        seo,
+      });
+    } catch (err) {
+      return NextResponse.json(
+        { success: false, error: err.message || "Failed to update SEO settings" },
+        { status: 500 }
+      );
     }
-
-    if (pagePath && pageSeo) {
-      if (!db.seo_settings.pages) db.seo_settings.pages = {};
-      db.seo_settings.pages[pagePath] = {
-        ...db.seo_settings.pages[pagePath],
-        ...pageSeo,
-      };
-    }
-
-    recordAuditLogSync({
-      adminId: admin.id,
-      adminEmail: admin.email,
-      action: "UPDATE_SEO",
-      module: "SEO",
-      recordId: pagePath || "global",
-      ip: req.headers.get("x-forwarded-for") || "127.0.0.1",
-      details: `Updated SEO configuration (${pagePath || "global settings"}).`,
-      result: "success",
-    });
-
-    await saveDb(db);
-    return NextResponse.json({ success: true, message: "SEO settings updated successfully.", seo: db.seo_settings });
   });
 }

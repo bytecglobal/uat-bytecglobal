@@ -1,56 +1,65 @@
 import { NextResponse } from "next/server";
 import { withAdminAuth } from "@/lib/auth/guard";
-import { getDb, saveDb } from "@/lib/db";
+import { NotificationRepository } from "@/lib/repositories/notification.repository";
 
 export async function GET(req) {
   return withAdminAuth(req, "notifications", async () => {
-    const db = getDb();
-    const notifications = db.notifications || [];
-    const unreadCount = notifications.filter((n) => !n.read).length;
-
-    return NextResponse.json({
-      success: true,
-      notifications,
-      unreadCount,
-    });
+    try {
+      const result = await NotificationRepository.list({ limit: 100 });
+      return NextResponse.json({
+        success: true,
+        notifications: result.notifications,
+        unreadCount: result.unreadCount,
+      });
+    } catch (err) {
+      return NextResponse.json(
+        { success: false, error: err.message || "Failed to fetch notifications" },
+        { status: 500 }
+      );
+    }
   });
 }
 
 export async function PATCH(req) {
-  return withAdminAuth(req, "notifications", async () => {
-    const body = await req.json().catch(() => ({}));
-    const { id, markAllRead } = body;
+  return withAdminAuth(req, "notifications", async (request) => {
+    try {
+      const body = await request.json().catch(() => ({}));
+      const { id, markAllRead } = body;
 
-    const db = getDb();
+      if (markAllRead) {
+        await NotificationRepository.markAllAsRead();
+      } else if (id) {
+        await NotificationRepository.markAsRead(id);
+      }
 
-    if (markAllRead) {
-      (db.notifications || []).forEach((n) => {
-        n.read = true;
-      });
-    } else if (id) {
-      const notif = (db.notifications || []).find((n) => n.id === id);
-      if (notif) notif.read = true;
+      return NextResponse.json({ success: true, message: "Notifications updated." });
+    } catch (err) {
+      return NextResponse.json(
+        { success: false, error: err.message || "Failed to update notifications" },
+        { status: 500 }
+      );
     }
-
-    await saveDb(db);
-    return NextResponse.json({ success: true, message: "Notifications updated." });
   });
 }
 
 export async function DELETE(req) {
-  return withAdminAuth(req, "notifications", async () => {
-    const { searchParams } = new URL(req.url);
-    const id = searchParams.get("id");
+  return withAdminAuth(req, "notifications", async (request) => {
+    try {
+      const { searchParams } = new URL(request.url);
+      const id = searchParams.get("id");
 
-    const db = getDb();
+      if (id === "all") {
+        await NotificationRepository.deleteAll();
+      } else if (id) {
+        await NotificationRepository.delete(id);
+      }
 
-    if (id === "all") {
-      db.notifications = [];
-    } else if (id) {
-      db.notifications = (db.notifications || []).filter((n) => n.id !== id);
+      return NextResponse.json({ success: true, message: "Notification(s) deleted." });
+    } catch (err) {
+      return NextResponse.json(
+        { success: false, error: err.message || "Failed to delete notification(s)" },
+        { status: 500 }
+      );
     }
-
-    await saveDb(db);
-    return NextResponse.json({ success: true, message: "Notification(s) deleted." });
   });
 }

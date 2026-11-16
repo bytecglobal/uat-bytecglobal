@@ -48,7 +48,7 @@ export default function AnalyticsTracker() {
     } catch {}
   }, [pathname]);
 
-  // Global click listener for important website actions (WhatsApp, Calendly, CTA buttons)
+  // Global click listener for important website actions (Calendly, CTA buttons)
   useEffect(() => {
     if (initializedRef.current) return;
     initializedRef.current = true;

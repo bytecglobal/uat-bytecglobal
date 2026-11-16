@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { KanbanSquare, Plus, ArrowRight, UserCheck, DollarSign, Building2, Phone, Mail, MoreHorizontal, CheckCircle2 } from "lucide-react";
+import { KanbanSquare, Plus, ArrowRight, UserCheck, DollarSign, Building2, Mail, MoreHorizontal, CheckCircle2 } from "lucide-react";
 import { Modal } from "@/components/admin/modal";
 
 const STAGES = [

@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getDb, saveDb } from "@/lib/db";
+import { AdminRepository } from "@/lib/repositories/admin.repository";
 import { recordAuditLogSync } from "@/lib/auth/session";
 import crypto from "crypto";
 
@@ -12,10 +12,9 @@ export async function POST(req) {
       return NextResponse.json({ success: false, error: "Email is required." }, { status: 400 });
     }
 
-    const db = getDb();
-    const user = (db.users || []).find((u) => u.email.toLowerCase() === String(email).trim().toLowerCase());
+    const user = await AdminRepository.findByEmail(String(email).trim().toLowerCase());
 
-    // Even if user not found, don't leak account existence to prevent user enumeration
+    // Do not leak account existence (prevent user enumeration attacks)
     if (!user) {
       return NextResponse.json({
         success: true,
@@ -26,8 +25,7 @@ export async function POST(req) {
     const resetToken = crypto.randomBytes(32).toString("hex");
     const expiresAt = new Date(Date.now() + 3600000).toISOString(); // 1 hour
 
-    user.resetToken = resetToken;
-    user.resetTokenExpires = expiresAt;
+    await AdminRepository.createPasswordResetToken(user.id, resetToken, expiresAt);
 
     recordAuditLogSync({
       adminId: user.id,
@@ -40,12 +38,9 @@ export async function POST(req) {
       result: "success",
     });
 
-    await saveDb(db);
-
     return NextResponse.json({
       success: true,
       message: "If that email is registered, a password reset link has been dispatched.",
-      // In dev mode/setup: provide the token for verification
       demoResetToken: process.env.NODE_ENV !== "production" ? resetToken : undefined,
     });
   } catch (err) {

@@ -1,28 +1,56 @@
 import { NextResponse } from "next/server";
 import { withAdminAuth } from "@/lib/auth/guard";
 import { getAnalyticsOverview } from "@/lib/analytics";
-import { getDb } from "@/lib/db";
+import { AnalyticsRepository } from "@/lib/repositories/analytics.repository";
+import { ContactRepository } from "@/lib/repositories/contact.repository";
+import { LeadRepository } from "@/lib/repositories/lead.repository";
+import { MeetingRepository } from "@/lib/repositories/meeting.repository";
+import { ProjectRepository } from "@/lib/repositories/project.repository";
+import { AdminRepository } from "@/lib/repositories/admin.repository";
+import { NotificationRepository } from "@/lib/repositories/notification.repository";
 
 export async function GET(req) {
   return withAdminAuth(req, "overview", async () => {
-    const { searchParams } = new URL(req.url);
-    const range = searchParams.get("range") || "30d";
+    try {
+      const { searchParams } = new URL(req.url);
+      const range = searchParams.get("range") || "30d";
 
-    const overview = getAnalyticsOverview(range);
-    const db = getDb();
+      const [
+        overview,
+        { visitors: recentVisitors },
+        { contacts: recentInquiries },
+        { leads: recentLeads },
+        { meetings: upcomingMeetings },
+        { projects: recentProjects },
+        { logs: recentActivities },
+        { notifications: systemNotifications },
+      ] = await Promise.all([
+        getAnalyticsOverview(range),
+        AnalyticsRepository.listVisitors({ limit: 5 }),
+        ContactRepository.list({ limit: 5 }),
+        LeadRepository.list({ limit: 5 }),
+        MeetingRepository.list({ status: "confirmed", limit: 5 }),
+        ProjectRepository.list({ limit: 4 }),
+        AdminRepository.listAuditLogs({ limit: 8 }),
+        NotificationRepository.list({ limit: 5 }),
+      ]);
 
-    return NextResponse.json({
-      success: true,
-      data: {
-        ...overview,
-        recentVisitors: (db.visitors || []).slice(0, 5),
-        recentInquiries: (db.contacts || []).slice(0, 5),
-        recentLeads: (db.leads || []).slice(0, 5),
-        upcomingMeetings: (db.meetings || []).filter((m) => m.status === "confirmed").slice(0, 5),
-        recentProjects: (db.projects || []).slice(0, 4),
-        recentActivities: (db.audit_logs || []).slice(0, 8),
-        systemNotifications: (db.notifications || []).slice(0, 5),
-      },
-    });
+      return NextResponse.json({
+        success: true,
+        data: {
+          ...overview,
+          recentVisitors,
+          recentInquiries,
+          recentLeads,
+          upcomingMeetings,
+          recentProjects,
+          recentActivities,
+          systemNotifications,
+        },
+      });
+    } catch (err) {
+      console.error("Dashboard overview error:", err);
+      return NextResponse.json({ success: false, error: "Failed to load dashboard data." }, { status: 500 });
+    }
   });
 }
