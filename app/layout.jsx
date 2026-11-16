@@ -1,10 +1,6 @@
 import "./globals.css";
 import { SITE } from "@/lib/site";
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
-import WhatsAppFab from "@/components/whatsapp-fab";
-import PageEffects from "@/components/page-effects";
-import CursorTrail from "@/components/cursor-trail";
+import PublicShell from "@/components/public-shell";
 
 const siteTitle = `${SITE.name} | Software, AI & Cloud Engineering`;
 const siteDescription =
@@ -103,14 +99,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="bg-background font-sans text-foreground antialiased">
-        <PageEffects />
-        <CursorTrail />
-        <Navbar />
-        <div>
-          <main>{children}</main>
-          <Footer />
-        </div>
-        <WhatsAppFab />
+        <PublicShell>{children}</PublicShell>
       </body>
     </html>
   );

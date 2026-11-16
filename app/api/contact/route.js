@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import { ContactFormSchema } from "@/lib/validation";
 import { checkRateLimit, isDuplicateSubmission } from "@/lib/rate-limiter";
 import { getContactRecipientEmail, getResendApiKey } from "@/lib/env";
+import { getDb, saveDb } from "@/lib/db";
+import { triggerWorkflow } from "@/lib/automations";
 
 const MAX_BODY_SIZE_BYTES = 32 * 1024; // 32KB max payload
 
@@ -18,7 +20,6 @@ function escapeHtml(text) {
 function getClientIp(req) {
   const forwardedFor = req.headers.get("x-forwarded-for");
   if (forwardedFor) {
-    // Return first non-empty IP in comma-separated list
     const firstIp = forwardedFor.split(",")[0].trim();
     if (firstIp) return firstIp;
   }
@@ -96,7 +97,6 @@ export async function POST(req) {
     const data = validationResult.data;
 
     // 5. Bot & Honeypot detection
-    // If the hidden 'website' field is populated, silently return success without sending
     if (data.website && data.website.trim().length > 0) {
       return NextResponse.json(
         { success: true, message: "Thank you for reaching out. We will get back to you shortly." },
@@ -115,11 +115,49 @@ export async function POST(req) {
       );
     }
 
-    // 7. Email sending via Resend API
+    // 7. Save inquiry into real enterprise database
+    const db = getDb();
+    const now = new Date().toISOString();
+    const contactId = `cnt_${Date.now()}_${Math.random().toString(36).substring(2, 7)}`;
+
+    const newContact = {
+      id: contactId,
+      name: data.name,
+      email: data.email,
+      phone: data.phone || "",
+      companyName: data.company || "",
+      service: data.service || "General Inquiry",
+      subject: `Inquiry: ${data.service || "Software & Cloud Services"}`,
+      message: data.message,
+      budget: data.budget || "",
+      timeline: data.timeline || "",
+      sourcePage: parsedJson.sourcePage || "/contact",
+      status: "new",
+      assignedTo: "usr_superadmin",
+      notes: [],
+      clientIp,
+      createdAt: now,
+      updatedAt: now,
+    };
+
+    if (!db.contacts) db.contacts = [];
+    db.contacts.unshift(newContact);
+    await saveDb(db);
+
+    // 8. Execute automated workflows
+    await triggerWorkflow("contact_submit", {
+      contactId,
+      name: data.name,
+      email: data.email,
+      phone: data.phone,
+      companyName: data.company,
+      service: data.service,
+      message: data.message,
+    });
+
+    // 9. Email sending via Resend API if configured
     const resendApiKey = getResendApiKey();
     const recipientEmail = getContactRecipientEmail();
-
-    // Prepare safe content
     const sanitizedSubject = `New Website Inquiry from ${data.name.replace(/[\r\n]/g, "")}`;
     const htmlBody = `
       <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; color: #1f1c1d; border: 1px solid #e9ebf1; border-radius: 8px;">
@@ -159,14 +197,14 @@ export async function POST(req) {
           <div style="background: #f7f8fb; padding: 16px; border-radius: 6px; white-space: pre-wrap; font-size: 14px; line-height: 1.6;">${escapeHtml(data.message)}</div>
         </div>
         <p style="margin-top: 24px; font-size: 12px; color: #7b838b;">
-          Submitted via BytecCloud / BytecGlobal website contact system. Client IP: ${escapeHtml(clientIp)}
+          Submitted via BytecGlobal website contact system. Client IP: ${escapeHtml(clientIp)}
         </p>
       </div>
     `;
 
     if (resendApiKey && resendApiKey !== "re_your_api_key_here") {
       try {
-        const emailResponse = await fetch("https://api.resend.com/emails", {
+        await fetch("https://api.resend.com/emails", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -180,26 +218,8 @@ export async function POST(req) {
             html: htmlBody,
           }),
         });
-
-        if (!emailResponse.ok) {
-          // Log without leaking API keys
-          // Return clean client error without exposing vendor error details
-          return NextResponse.json(
-            {
-              success: false,
-              message: "Unable to deliver inquiry at this moment. Please email us directly.",
-            },
-            { status: 502 }
-          );
-        }
-      } catch {
-        return NextResponse.json(
-          {
-            success: false,
-            message: "Unable to deliver inquiry at this moment. Please email us directly.",
-          },
-          { status: 502 }
-        );
+      } catch (err) {
+        console.error("Resend API warning:", err.message);
       }
     }
 
@@ -210,7 +230,8 @@ export async function POST(req) {
       },
       { status: 200 }
     );
-  } catch {
+  } catch (err) {
+    console.error("Contact API error:", err);
     return NextResponse.json(
       { success: false, message: "An unexpected error occurred while processing your request." },
       { status: 500 }

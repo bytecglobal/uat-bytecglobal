@@ -1,10 +1,24 @@
 import { SITE } from "@/lib/site";
 
 export default function WhatsAppFab() {
+  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "";
+  const defaultMessage = "Hello BytecGlobal team, I would like to inquire about your software and engineering services.";
+  const isVisible = true;
+  const position = "bottom-right";
+
+  // Fallback to SITE.whatsapp if not set in DB/env
+  const finalHref = whatsappNumber
+    ? `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(defaultMessage)}`
+    : SITE.whatsapp || "https://wa.me/";
+
+  if (!isVisible) return null;
+
   return (
-    <div className="vx-floating-actions">
+    <div
+      className={`vx-floating-actions ${position === "bottom-left" ? "left-6 right-auto" : ""}`}
+    >
       <a
-        href={SITE.whatsapp || "https://wa.me/"}
+        href={finalHref}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"

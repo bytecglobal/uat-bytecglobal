@@ -76,6 +76,11 @@
 .vx-footer-grid a:not(.vx-button):hover{color:var(--nav-accent)}
 .vx-footer-contact>a:not(.vx-button){font-size:14px;overflow-wrap:anywhere}
 .vx-footer-contact>.vx-button{margin-top:24px}
+.vx-footer-admin-link{margin-top:14px}
+.vx-admin-login-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-family:var(--font-body);color:var(--fg-muted-on-dark);opacity:.8;transition:all .25s ease;text-decoration:none}
+.vx-admin-login-link:hover{color:#f5c518;opacity:1}
+.vx-admin-login-link svg{opacity:.75}
+.vx-admin-login-link:hover svg{opacity:1}
 .vx-footer-sign{position:relative;margin-top:clamp(48px,7vw,90px);padding:clamp(36px,5vw,60px) 0 clamp(40px,6vw,80px);border-top:1px solid #fff8df19;display:grid;gap:24px}
 .vx-footer-eyebrow{position:relative;z-index:1;display:flex;align-items:center;gap:16px;color:var(--nav-accent);font-family:var(--font-mono,"JetBrains Mono"),monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
 .vx-footer-eyebrow i{width:7px;height:7px;border-radius:50%;background:var(--nav-accent);box-shadow:12px 0 0 -1px #e5ba97;margin-right:10px}
