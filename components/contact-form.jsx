@@ -1,8 +1,10 @@
 "use client";
 
-import { useRef, useState, useTransition } from "react";
-import { submitContact } from "@/app/actions/contact";
+import { useRef, useState } from "react";
 import { Send, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
+
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
 
 const field =
   "w-full rounded-lg border border-border bg-surface px-4 py-2.5 text-sm text-foreground placeholder:text-faint transition-colors focus:border-accent-ink focus:outline-none";
@@ -12,21 +14,47 @@ export default function ContactForm() {
   const formRef = useRef(null);
   const [status, setStatus] = useState(null); // null | "success" | "error"
   const [errorMsg, setErrorMsg] = useState("");
-  const [isPending, startTransition] = useTransition();
+  const [loading, setLoading] = useState(false);
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    const data = new FormData(formRef.current);
-    startTransition(async () => {
-      const result = await submitContact(data);
-      if (result.ok) {
-        setStatus("success");
-        formRef.current?.reset();
-      } else {
-        setErrorMsg(result.error || "Something went wrong.");
-        setStatus("error");
+    setLoading(true);
+    setStatus(null);
+
+    const fd = new FormData(formRef.current);
+    const payload = {
+      name: fd.get("name")?.toString().trim(),
+      email: fd.get("email")?.toString().trim(),
+      company: fd.get("company")?.toString().trim() || null,
+      message: fd.get("message")?.toString().trim(),
+    };
+
+    try {
+      const res = await fetch(`${SUPABASE_URL}/rest/v1/contacts`, {
+        method: "POST",
+        headers: {
+          apikey: SUPABASE_KEY,
+          Authorization: `Bearer ${SUPABASE_KEY}`,
+          "Content-Type": "application/json",
+          Prefer: "return=minimal",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) {
+        const body = await res.text();
+        console.error("Supabase error:", res.status, body);
+        throw new Error("Failed to send message.");
       }
-    });
+
+      setStatus("success");
+      formRef.current?.reset();
+    } catch (err) {
+      setErrorMsg(err.message || "Something went wrong. Please try again.");
+      setStatus("error");
+    } finally {
+      setLoading(false);
+    }
   }
 
   if (status === "success") {
@@ -95,10 +123,10 @@ export default function ContactForm() {
 
       <button
         type="submit"
-        disabled={isPending}
+        disabled={loading}
         className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-2.5 text-sm font-medium text-accent-fg transition-opacity hover:opacity-90 disabled:opacity-60"
       >
-        {isPending ? (
+        {loading ? (
           <>
             <Loader2 className="h-4 w-4 animate-spin" />
             Sending…
